@@ -30,8 +30,8 @@
     "cordova-plugin-firebase@0.1.18",
     "cordova-plugin-firebase@~0.1.18",
     "ionic-plugin-deeplinks",
-    "cordova-plugin-app-version",
-    "cordova-plugin-console"
+    "cordova-plugin-console",
+    "cordova-plugin-app-version"
   ],
   "cordovaPlatforms": [
     "android"
