@@ -39,6 +39,10 @@ p {
 	margin-bottom: 0;
 }
 
+.item{
+	border-color: rgb(242,243,243);
+}
+
 .slider {
   height: 100%;
 }
@@ -57,7 +61,7 @@ p {
 	background: rgba(0,0,0,0.6); 
 	position:absolute;
 	bottom: 0;
-	padding: 8px 0 5px 10px; 
+	padding-left: 10px; 
 	/*width: 100%; */
 	height: auto; 
 	font-size: 18px;
@@ -100,7 +104,7 @@ p {
 	color: black;
 	/*padding-top: 5px;*/
 	border-top: 0;
-	border-bottom: 1px solid rgb(230,231,232);
+	border-bottom: 1px solid rgb(242,243,243);
 	/*border-left: 1px solid rgb(230,231,232);
 	border-right: 1px solid rgb(230,231,232);
 	border-bottom-right-radius: 5px;
@@ -108,7 +112,7 @@ p {
 }
 
 .mangan-detail-keterangan {
-	background-color: rgb(230, 231, 232);
+	background-color: rgb(242, 243, 243);
 	color: orangered;
 	font-size: 16px;
 	padding: 5px;
@@ -239,12 +243,12 @@ p {
 
 .card .item:first-child {
 	/*// border: 5px solid rgb(230, 231, 232);*/
-	border-top: 1px solid rgb(230, 231, 232);
+	border-top: 1px solid rgb(242,243,243);
 }
 
 .card .item:last-child {
 	/*// border: 5px solid rgb(230, 231, 232);*/
-	border-bottom: 1px solid rgb(230, 231, 232);
+	border-bottom: 1px solid rgb(242,243,243);
 
 }
 
@@ -286,7 +290,7 @@ p {
 	padding: 15px;
 	/*border-left: 1px solid rgb(230,231,232);
 	border-right: 1px solid rgb(230,231,232);*/
-	border-bottom: 1px solid rgb(230,231,232);
+	border-bottom: 1px solid rgb(242,243,243);
 }
 
 
@@ -298,9 +302,9 @@ p {
 	width: 100%;
 	line-height: 1.5;
 	/*height: auto;*/
-	padding: 10px 10px 10px 15px;
+	padding: 5px 10px 0px 15px;
 	/*padding-left: 15px; */
-	border-bottom: 1px solid rgb(230,231,232);
+	border-bottom: 1px solid rgb(242,243,243);
 	// margin-bottom: 10px;
 	// border-radius: 5px;
 	// border: 2px solid orange;
@@ -341,17 +345,17 @@ p {
 .mangan-spacer {
 	height: 5px;
 	width: auto;
-	background-color: rgb(230,231,232);
+	background-color: rgb(242,243,243);
 }
 
 .mangan-line{
-	border-bottom: 1px solid rgb(230,231,232);
+	border-bottom: 1px solid rgb(242,243,243);
 	width: 100%;
 }
 .mangan-kontak {
 	padding-bottom: 0;
-	border-top:1px solid rgb(230,231,232);
-	border-bottom:1px solid rgb(230,231,232);
+	border-top:1px solid rgb(242,243,243);
+	border-bottom:1px solid rgb(242,243,243);
 }
 
 .kontak-header {
@@ -376,7 +380,6 @@ p {
 
 .mangan-kontak-icon {
 	padding-right: 5px;
-	font-size: 14px;
 	color: #4d544d;
 }
 
@@ -394,8 +397,8 @@ p {
 }
 
 .mangan-button-menumakanan{
-	background:rgb(230,231,232);
-	border:solid rgb(230,231,232); 
+	background:rgb(242,243,243);
+	border:solid rgb(242,243,243); 
 	border-radius: 20px;
 }
 
@@ -1157,6 +1160,7 @@ font-weight: 200;
     opacity: 1;
 }
 
-
-
+.item-icon-left .icon, .item-icon-right .icon{
+	font-size: 25px;
+}
 

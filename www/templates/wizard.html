@@ -2,106 +2,62 @@
   <ion-slide-box on-slide-changed="slideChanged(index)">
     <!-- first slide -->
     <ion-slide class="wizardSlide1">
-      <!-- <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;"> -->
-        <div class="top-wizard row">
-          <div class="app-copy col col-top">
-            <img ng-src="img/manganstd.png" width="20%">
-            <h2 style="color: white;">Hai Foodies!</h2>
-            <h4 style="color: white;"><span style="font-weight: bold; color: orangered">JELAJAHI </span> Kekayaan Kuliner Indonesia Bersama <span style="font-weight: bold; color: orangered">M</span><span style="font-weight: bold; color: rgb(1,177,178)">ANGAN</span></h4>
-          </div>
+      <div class="top-wizard row">
+        <div class="app-copy col col-top">
+          <img ng-src="img/manganstd.png" width="20%">
+          <h2 style="color: white;">Hai MangGaes!</h2>
+          <h4 style="color: white;"><span style="font-weight: bold; color: orangered">JELAJAHI </span> Kekayaan Kuliner Indonesia Bersama <span style="font-weight: bold; color: orangered">M</span><span style="font-weight: bold; color: rgb(1,177,178)">ANGAN</span></h4>
         </div>
-      <!--   <img ng-src="img/slide1.jpg" style="height: 100%; width: 100%; opacity: 0.8">
-      </div> -->
+      </div>
     </ion-slide>
 
     <!-- next slide -->
     <ion-slide class="wizardSlide2">
-      <!-- <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;"> -->
-        <div class="top-wizard row">
-          <div class="app-copy col col-top">
-            <img ng-src="img/manganstd.png" width="20%">
-            <h4 style="color: white;">Kunjungi Kuliner <span style="font-weight: bold; color: orangered">TERDEKAT</span> dari lokasimu</h4>
-          </div>
+      <div class="top-wizard row">
+        <div class="app-copy col col-top">
+          <img ng-src="img/manganstd.png" width="20%">
+          <h4 style="color: white;">Kunjungi Kuliner <span style="font-weight: bold; color: orangered">TERDEKAT</span> dari lokasimu</h4>
+        </div>
       </div>
     </ion-slide>
 
-     <ion-slide class="wizardSlide3">
-      <!-- <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;"> -->
-        <div class="top-wizard row">
-          <div class="app-copy col col-top">
-            <img ng-src="img/manganstd.png" width="20%">
-            <h4 style="color: white;"><span style="font-weight: bold; color: orangered">SIMPAN</span> Kuliner Favoritmu untuk Kamu Kunjungi Nanti</h4>
-          </div>
+    <ion-slide class="wizardSlide3">
+      <div class="top-wizard row">
+        <div class="app-copy col col-top">
+          <img ng-src="img/manganstd.png" width="20%">
+          <h4 style="color: white;"><span style="font-weight: bold; color: orangered">SIMPAN</span> Kuliner Favoritmu untuk Kamu Kunjungi Nanti</h4>
+        </div>
       </div>
     </ion-slide>
 
     <ion-slide class="wizardSlide4">
-      <!-- <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;"> -->
-        <div class="top-wizard row">
-          <div class="app-copy col col-top">
-            <img ng-src="img/manganstd.png" width="20%">
-            <h4 style="color: white;">Berikan<span style="font-weight: bold; color: orangered"> ULASAN & RATING</span> Setelah Mencoba Kuliner Favoritmu</h4>
-          </div>
+      <div class="top-wizard row">
+        <div class="app-copy col col-top">
+          <img ng-src="img/manganstd.png" width="20%">
+          <h4 style="color: white;">Berikan<span style="font-weight: bold; color: orangered"> ULASAN & RATING</span> Setelah Mencoba Kuliner Favoritmu</h4>
+        </div>
       </div>
     </ion-slide>
 
     <!-- 3rd slide -->
     <ion-slide class="login overlay">
-      <!-- <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;">
-        <div style="position: absolute; z-index: 9999; padding: 5px;"> -->
-          <div class="top-content row">
-            <div class="app-copy col col-top">
-              <img ng-src="img/manganstd.png" width="20%">
-              <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
-            </div>
-          </div>
-
-          <div class="bottom-content row" style="">
-            <div class="col">
-                <button class="google-sign-in button button-block" ng-click="googlelogin()" style="background-color: #DD4B39">
-                    <i class="ion-social-google" style="margin-right: 10px;"></i>Log in with Google
-                </button>
-                <button class="facebook-sign-in button button-block" ng-click="fblogin()">
-                    <i class="ion-social-facebook" style="margin-right: 10px;"></i>Log in with Facebook
-                </button>
-                <a ng-click="endWizard()" style="font-weight: bold; color: white;">
-                  Skip
-                </a>
-            </div>
-          </div>
-            <!-- <button class="button" ng-click="startApp()" ng-show="!slideIndex" style="color: white;">skip</button> -->
-        <!-- </div> -->
-        <!-- <img ng-src="img/slide2.jpg" style="height: 100%; width: 100%; opacity: 0.8"> -->
-      <!-- </div> -->
-    </ion-slide>
-
-    <!-- 4th slide : input form  -->
-    <!-- <ion-slide>
-     <div class="list mangan-menu" style="margin-bottom:0; padding:0; background-color: black;">
-        <div style="position: absolute; z-index: 9999; top: 60px; padding: 5px;">
+      <div class="top-content row">
+        <div class="app-copy col col-top">
           <img ng-src="img/manganstd.png" width="20%">
-          <p style="font-size: 16px; color: white;"><span style="font-size: 18px; font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, berkomentar dan memberikan ulasan untuk kamu bagikan kepada orang lain</p>
-
-
-          <div class="list card">
-            <label class="item item-input">
-              <input type="text" placeholder="Birthday">
-            </label>
-            <label class="item item-input item-select">
-              <div class="input-label" style="width: 0;">Gender</div>
-              <select>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Birthday">
-            </label>
-          </div>
+          <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
         </div>
-          <img ng-src="img/slide2.jpg" style="height: 100%; width: 100%; opacity: 0.8">
       </div>
-    </ion-slide> -->
 
+      <div class="bottom-content row">
+        <div class="col col-bottom" style="margin-bottom: 30px;">
+          <button class="facebook-sign-in button button-block" ng-click="fblogin()">
+            <i class="ion-social-facebook" style="margin-right: 10px;"></i>Log in with Facebook
+          </button>
+          <a ng-click="endWizard()" style="font-weight: bold; color: white;">
+            Skip
+          </a>
+        </div>
+      </div>
+    </ion-slide>
   </ion-slide-box>
 </ion-view>

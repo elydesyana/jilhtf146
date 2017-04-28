@@ -17,6 +17,7 @@
         <p>Ups, Sepertinya Belum Ada Kuliner Disini</p>
         <center><button class="button button-oren button-small button-outline" style="width: 50%; display: block; margin: 10px auto;" ng-click="rekomendasikan()" ion-ripple>REKOMENDASIKAN</button></center>
     </div>
+    <div class="item item-text-wrap mangan-menu" style="margin:0; border:0; font-size:12px; " ng-show="restorans">Ditemukan {{restorans.length}} Kuliner</div>
     
         <div class="list card mangan-restorans" ng-repeat="restoran in restorans | orderObjectBy: 'tglInput' :true" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'" style="padding:0;" ion-ripple>
             <div class="mangan-list-header" ion-ripple>

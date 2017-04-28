@@ -5,13 +5,22 @@
             <div id="mangan-peta" data-tap-disabled="false" style="height: 100%;" ion-ripple></div>
         </div>
 
-        <div ng-show="nodata" class="mangan-nodata">
+        <div class="list" ng-show="currentLocation" style="margin-bottom:0;">
+            <div class="item item-text-wrap mangan-menu" style="border:0; background-color: rgb(1,177,178);">
+            <p style="color: white;"><i class="icon ion-ios-location" style="color: white; padding-right:5px"></i>Lokasi saat ini : {{currentLocation}}</p>
+            </div>
+        </div>
+
+        <div class="mangan-nodata" ng-show="nodata == false">
             <center><i class="ion-sad-outline"></i></center>
             <p style="margin-bottom: 10px;">Ups, belum ada kuliner terdekat di lokasi kamu</p>
             <center><button class="button button-oren button-small button-outline" style="width: 50%; display: block; margin: 10px auto;" ng-click="jelajahi()" ion-ripple>JELAJAHI</button></center>
         </div>
 
-        <div class="list card" ng-repeat="restoran in restoranList | orderObjectBy: 'jarak' :false track by $index" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'" style="padding:0;" ng-click="openRestoran(restoran.index)" ion-ripple>
+        <div class="item item-text-wrap mangan-menu" style="margin:0; border:0; font-size:12px;" ng-show="getFoundCount(restoranList)">Ditemukan {{getFoundCount(restoranList)}} Kuliner Terdekat
+        </div>
+
+        <div class="list card" ng-repeat="restoran in restoranList | orderObjectBy: 'jarak' :false track by $index" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'" style="padding:0; margin-top: 5px;" ng-click="openRestoran(restoran.index)" ion-ripple>
             <div class="row item mangan-menu item-text-wrap" ng-show="restoran.keteranganBuka" ion-ripple>
 	            <div class="col col-25" ion-ripple>
                     <div ng-show="restoran.jarak < 500" style="text-align:center;"><p style="font-size: 20px; color: rgb(1,177,178)"20px;">{{restoran.jarak | number:0}} </p></div>

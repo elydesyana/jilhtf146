@@ -15,6 +15,9 @@ angular.module('app.routes', ['ionicUIRouter'])
         templateUrl: 'templates/jelajah.html',
         controller: 'jelajahCtrl'
       }
+    },
+    params: {
+      changeCity: null
     }
   })
     
@@ -483,8 +486,5 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   });
-
-
   $urlRouterProvider.otherwise('/page1/page2');
-
 });

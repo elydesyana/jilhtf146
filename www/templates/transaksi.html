@@ -6,8 +6,8 @@
             spinner = "ripple" >
         </ion-refresher>
         <div class="mangan-nodata" ng-hide="transactions.length > 0">
-            <center><i class="ion-ios-nutrition"></i></center>
-            <p>Anda belum melakukan transaksi</p>
+            <center><i class="ion-bag"></i></center>
+            <p>Kamu Belum Melakukan Transaksi</p>
         </div>
         
         <div class="list card" style="padding:0;" ng-hide="transactions.length == 0">
@@ -20,7 +20,7 @@
                 <h3 style="color: #4d544d;">Status: <span class="kapital" style="">{{transaction.status}}</span></h3>
                 <h3 style="color: #4d544d;">Kurir: <span class="kapital" style="">{{transaction.kurir}}</span></h3>
                 <h3 style="color: #4d544d;">Total Bayar: <span class="kapital" style="">{{transaction.totalHarga}}</span></h3>
-                <i class="icon ion-ios-arrow-forward" style="color: rgb(1,177,178); opacity: 0.5; "></i>
+                <i class="icon mangan-kontak-icon ion-ios-arrow-right" style=""></i>
             </div>
         </div>
     </ion-content>

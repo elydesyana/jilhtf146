@@ -21,9 +21,11 @@
         </div>
 
         <div class="list card mangan-restorans" ng-repeat="restoran in restorans | orderObjectBy: 'tglInput' :true track by $index" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'" style="padding:0;" >
-<!--             <a class="" ng-controller="adsController" ng-show="$index%adsCounter == 0 && $index!=0">
+
+            <!-- <div ng-controller="adsController" ng-show="$index%adsCounter == 0 && $index!=0" style="margin-bottom: 5px; padding: 0;">
                 <img image-lazy-src="{{showRowAds($index%5 == 0 && $index!=0)}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50">
-            </a> -->
+            </div> -->
+
             <div class="mangan-list-header" ion-ripple>
                 <div class="row mangan-nama-resto" style="z-index: 9999;">
                     <span class="col" style="padding: 0;">{{restoran.namaResto}}</span>

@@ -6,6 +6,7 @@
     <title></title>
 
     <link href="lib/ion-ripple/ion-ripple.css" rel="stylesheet">
+    <link href="lib/ion-gallery/dist/ion-gallery.css" rel="stylesheet">
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="lib/ionic-advanced-carousel/dist/advanced-carousel.min.css" rel="stylesheet" />
@@ -24,12 +25,11 @@
 
   </head>
   <!-- <body ng-app="app" animation="slide-left-right-ios7"> -->
-  <body ng-app="app" ng-controller="main">
+  <body ng-app="app">
     <div>
       <ion-nav-bar class="bar-balanced">
           <ion-nav-back-button ion-ripple></ion-nav-back-button>
           <ion-nav-title></ion-nav-title>
-          <!-- <ion-nav-buttons side="right"><button class="mangan-tombol-aksi" ui-sref="tabsController.promo" ion-ripple><i class="ion-android-notifications" style="color: white; font-size: 25px;"><span ng-show="badge" class="badge badge-assertive" style="font-size: 10px; top: 6%; right: 6%; position: fixed;"></span></i></button></ion-nav-buttons> -->
       </ion-nav-bar>
       <ion-nav-view></ion-nav-view>
     </div>
@@ -54,6 +54,7 @@
     <script src="lib/ion-ripple/ion-ripple.min.js"></script>
     <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.min.js"></script>
     <script src="lib/ionic-native/dist/ionic.native.min.js"></script>
+    <script src="lib/ion-gallery/dist/ion-gallery.min.js"></script>
     
     <!-- ours -->
     <script src="js/app.js"></script>
@@ -64,8 +65,5 @@
 
     <!-- carousel -->
     <script src="lib/ionic-advanced-carousel/dist/advanced-carousel.min.js"></script>
-
-
-
   </body>
 </html>

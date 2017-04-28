@@ -31,7 +31,7 @@
                 </div>
             </div>
             <!-- Informasi Pendukung -->
-            <div class="mangan-keterangan-buka" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" style="border: 0;">
+            <div class="mangan-keterangan-buka" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" style="border: 0; padding-bottom: 10px;">
                 <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" style="text-align: center ;">
                     <i class="mangan-kontak-icon icon ion-calendar"></i>
                         Buka {{restoran.keteranganBuka}}
@@ -46,7 +46,7 @@
                 </span></p></a>
             </div>
             <!-- Tombol aksi, share, love, write review -->
-            <div class="row" style="border-top: 1px solid rgb(230,231,232);">
+            <div class="row" style="border-top: 1px solid rgb(242,243,243);">
                 <span class="col col-20" style="padding:0;"></span>
                 <span class="col col-25" style="padding:0;" ion-ripple>
                     <button class="mangan-tombol-aksi" ng-click="shareRestoran(restoran.index)">
@@ -55,17 +55,17 @@
                 </span>
                 <span ng-if="checkSavedRestoran(restoran.index) == false" class="col col-25" style="padding:0;" ion-ripple>
                     <button class="mangan-tombol-aksi" ng-click="saveRestoran(restoran.index)">
-                        <i class="mangan-icon icon icon ion-android-favorite-outline"></i>
+                        <i class="mangan-icon icon ion-android-favorite-outline"></i>
                     </button>
                 </span>
                 <span ng-if="checkSavedRestoran(restoran.index) == true" class="col col-25" style="padding:0;" ion-ripple>
                     <button class="mangan-tombol-aksi" ng-click="saveRestoran(restoran.index)">
-                        <i class="mangan-icon icon icon ion-android-favorite" style="color:#c85054;"></i>
+                        <i class="mangan-icon icon ion-android-favorite" style="color:#c85054;"></i>
                     </button>
                 </span>
                 <span class="col col-25" style="padding:0;" ion-ripple>
                     <button class="mangan-tombol-aksi" ng-click="ulasanPengguna(true)">
-                        <i class="mangan-icon icon icon ion-compose"></i>
+                        <i class="mangan-icon icon ion-compose"></i>
                     </button>
                 </span>
             </div>
@@ -76,7 +76,7 @@
                 <!-- <div class="item item-divider" style="border: 0;">
                     Ulasan
                 </div> -->
-                <div class="item item-avatar" style="border:0; border-bottom: 1px solid rgb(230,231,232); padding-bottom:0px;">
+                <div class="item item-avatar" style="border:0; border-bottom: 1px solid rgb(242,243,243); padding-bottom:0px;">
                     <img class="mangan-ulasan-resto" src="{{restoran.reviewer.foto}}">
                     <h2 style="color: #4d544d;">Diulas oleh {{ restoran.reviewer.nama }}</h2>
                     <p style="color: rgb(1,177,178);">Host Kuliner MANGAN</p>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="item mangan-menu item-icon-right" style="border:0;" ng-click="showFacility()" ion-ripple>
+                <div class="item mangan-menu item-icon-right" style="border-bottom:0; border-top: 1px solid rgb(242,243,243);" ng-click="showFacility()" ion-ripple>
                 <div class="row" style="" ng-show="restoran.wifi || restoran.restoroom || restoran.ac || restoran.halal">
                     <span class="col" style="padding:0; text-align: center;" ng-show="restoran.halal">
                         <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDM0MCAzNDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM0MCAzNDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPGc+Cgk8cGF0aCBkPSJNMzM3LjA3MiwxNjIuOTI5bC00My45MzUtNDMuOTM0VjU2Ljg2M2MwLTUuNTIyLTQuNDc3LTEwLTEwLTEwaC02Mi4xMzNMMTc3LjA3MiwyLjkyOUMxNzUuMTk3LDEuMDU0LDE3Mi42NTMsMCwxNzAsMCAgIHMtNS4xOTYsMS4wNTQtNy4wNzEsMi45MjlsLTQzLjkzMyw0My45MzVINTYuODYyYy01LjUyMiwwLTEwLDQuNDc4LTEwLDEwdjYyLjEzMkwyLjkyOSwxNjIuOTI5ICAgYy0zLjkwNSwzLjkwNS0zLjkwNSwxMC4yMzcsMCwxNC4xNDNsNDMuOTMzLDQzLjkzNHY2Mi4xMzJjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGg2Mi4xMzVsNDMuOTMzLDQzLjkzNSAgIGMxLjg3NSwxLjg3NSw0LjQxOSwyLjkyOSw3LjA3MSwyLjkyOXM1LjE5Ni0xLjA1NCw3LjA3MS0yLjkyOWw0My45MzMtNDMuOTM1aDYyLjEzM2M1LjUyMywwLDEwLTQuNDc4LDEwLTEwdi02Mi4xMzJsNDMuOTM1LTQzLjkzNCAgIGMxLjg3NS0xLjg3NiwyLjkyOS00LjQxOSwyLjkyOS03LjA3MVMzMzguOTQ3LDE2NC44MDUsMzM3LjA3MiwxNjIuOTI5eiBNMjc2LjA2NiwyMDkuNzkxYy0xLjg3NSwxLjg3Ni0yLjkyOSw0LjQxOS0yLjkyOSw3LjA3MSAgIHY1Ni4yNzRoLTU2LjI3NWMtMi42NTIsMC01LjE5NiwxLjA1NC03LjA3MSwyLjkyOUwxNzAsMzE1Ljg1OGwtMzkuNzktMzkuNzkyYy0xLjg3NS0xLjg3NS00LjQxOS0yLjkyOS03LjA3MS0yLjkyOUg2Ni44NjJ2LTU2LjI3NCAgIGMwLTIuNjUyLTEuMDU0LTUuMTk1LTIuOTI5LTcuMDcxTDI0LjE0MiwxNzBsMzkuNzkxLTM5Ljc5MWMxLjg3NS0xLjg3NiwyLjkyOS00LjQxOSwyLjkyOS03LjA3MVY2Ni44NjNoNTYuMjc3ICAgYzIuNjUyLDAsNS4xOTYtMS4wNTQsNy4wNzEtMi45MjlMMTcwLDI0LjE0M2wzOS43OSwzOS43OTJjMS44NzUsMS44NzUsNC40MTksMi45MjksNy4wNzEsMi45MjloNTYuMjc1djU2LjI3NCAgIGMwLDIuNjUyLDEuMDU0LDUuMTk1LDIuOTI5LDcuMDcxTDMxNS44NTgsMTcwTDI3Ni4wNjYsMjA5Ljc5MXoiIGZpbGw9IiMwMWIxYjIiLz4KCTxwYXRoIGQ9Ik0xNDQuODMsMTE1LjczNGMwLjMyMi0wLjAxOSwwLjYxMy0wLjE5MiwwLjc4NS0wLjQ2NGMwLjE3Mi0wLjI3MSwwLjIwMy0wLjYwOSwwLjA4Mi0wLjkwN2wtNi40MTYtMTUuOTY2ICAgYy0wLjExNS0wLjI4OC0wLjM1Ny0wLjUwNi0wLjY1OC0wLjU5Yy0wLjMwMS0wLjA4NS0wLjYxOS0wLjAyNC0wLjg2OSwwLjE2MmMtMC45OTIsMC43NDQtMi4xMjEsMS40NjMtMy4zMTYsMi4yMjUgICBjLTIuNTM5LDEuNjE2LTUuMTY0LDMuMjg3LTYuODk4LDUuNDY2Yy0wLjI0MiwwLjMwNC0wLjI4NywwLjcyLTAuMTEzLDEuMDY3YzUuNDEsMTAuOTMsMy4zNDQsMjguMDYyLDEuNjg0LDQxLjgzICAgYy0wLjM4NSwzLjE5Ny0wLjc0OCw2LjIxNy0wLjk5NCw4Ljk0N2MtMC44NzcsOS43NjEtOC44OTYsMTQuMTMtMTYuNDU1LDE0LjEzYy01LjQ3MSwwLTEwLjIzOC0yLjMyNS0xMi40MzktNi4wNjkgICBjLTIuMzU1LTQuMDA1LTEuODA3LTkuMzQ4LDEuNTg2LTE1LjQ0OWMwLjE5My0wLjM0NiwwLjE2NC0wLjc3My0wLjA3Ni0xLjA4OWMtMC4yMTMtMC4yODItMC41NDEtMC40NDQtMC45LTAuNDQ0ICAgYy0yLjMzMiwwLTExLjg3MywxMy44ODUtMTIuMzY5LDI0LjI4Yy0wLjI2OCw1LjYxOCwxLjkzLDEyLjU1NSwxMy45MTgsMTMuNjk5YzEuMDYzLDAuMTAyLDIuMTg2LDAuMTUzLDMuMzM4LDAuMTUzICAgYzExLjYxOSwwLDMwLjU5NC01LjYzMiwzMi4wMzUtMjAuNzQyYzAuMjExLTIuMjE1LDAuMzIyLTUuODA5LDAuNDUzLTkuOTcxQzEzNy42MSwxNDMuMDU3LDEzOC40NTEsMTE2LjExOCwxNDQuODMsMTE1LjczNHoiIGZpbGw9IiMwMWIxYjIiLz4KCTxwYXRoIGQ9Ik0yNTkuNDU3LDE1OS4yMDJjLTUuMzE2LTAuNjYzLTEwLjAwNC0yLjg1Ny0xMy45NTUtNi41NGMtMS41NjgtMS4zOS0zLjE2Ni0yLjg3NS00LjcxMy00LjMxMyAgIGMtNC4zNzktNC4wNy04LjkwOC04LjI3OS0xMy45MjYtMTEuNDc0Yy0xLjEzMS0wLjcyLTIuMzk4LTEuMDg1LTMuNzcxLTEuMDg1Yy02LjkwMiwwLTE0LjE4OCw4LjkxOC0xNC45MzIsMTQuMzA5ICAgYy0wLjM1MiwyLjU1NiwwLjY5Nyw0LjM3MywyLjg4MSw0Ljk4OGMwLjQsMC4xMSwwLjgzLTAuMDM1LDEuMDc4LTAuMzcxYzIuMTk1LTIuOTksNC4zMDktNC40NDQsNi40NTktNC40NDQgICBjMywwLDYuMTY2LDIuNzg4LDkuNTIsNS43NDFjMS4zOTMsMS4yMjUsMi44MTYsMi40NzksNC4zMjIsMy42MzRjLTUuMTc0LDAuNjMtMTAuMDUzLDAuOTYyLTE0LjIzNCwwLjk2MiAgIGMtOCwwLTE3LjY0NS0xLjE5Ny0xOC4xNTItNi44OTZjLTAuOTM2LTEwLjQ4LDAuOTMyLTIxLjYzNSwyLjczNC0zMi40MjNjMC45NTEtNS42ODMsMS45MzQtMTEuNTYsMi40NzMtMTcuMTkgICBjMC4wMzUtMC4zNzctMC4xNDUtMC43NDItMC40NjUtMC45NDNjLTAuMzIyLTAuMi0wLjcyOS0wLjIwMS0xLjA1My0wLjAwNmMtMTAuMTA1LDYuMTYyLTEzLjYzMywxNS4zNjMtMTcuMzY3LDI1LjEwNCAgIGMtMi41MjUsNi41OS01LjEyOSwxMy4zODQtOS45MjIsMTkuODY0Yy0yLjc3Ny0xOS41MDMtMTAuMTk1LTM0LjMzOC0yMi42MzEtNDUuMjk5Yy0wLjI2Ni0wLjIzNC0wLjYzOS0wLjMxMi0wLjk3My0wLjE5OSAgIGMtMC4zMzYsMC4xMDktMC41OSwwLjM5MS0wLjY2NiwwLjczNmMtMC4zOTMsMS43OTMtMC44NzMsMy41ODItMS4zNCw1LjMxMWMtMi4zOTMsOC44NzUtNC42NTIsMTcuMjU5LDUuODE4LDIzLjU2NCAgIGMwLjI5MywwLjE3OCwwLjY1OCwwLjE5MSwwLjk2NywwLjAzN2MwLjMwNy0wLjE1NSwwLjUxMi0wLjQ1NywwLjU0NS0wLjhsMC4xMTMtMS4yYzUuOTk2LDguNjg5LDkuMzExLDE2LjQ2NiwxMC45MDYsMjUuNDkyICAgYy0yLjc3OSwyLjQzLTYuODUyLDQuNTc2LTEwLjc5NSw2LjY1M2MtNC45NTksMi42MTItMTAuMDg0LDUuMzEyLTEyLjg0Miw4LjY5NGMtMC4zMTEsMC4zODEtMC4yOTcsMC45MzIsMC4wMzEsMS4yOTkgICBjMy43Niw0LjIwNSw3Ljg0Niw2LjMzOCwxMi4xNDMsNi4zMzhjMTQuOTEyLDAsMjguMjU4LTI1LjMyLDM0LjM1Mi0zOC45MjljLTAuMDI5LDAuMTg5LTAuMDU5LDAuMzc4LTAuMDg4LDAuNTY1ICAgYy0yLjI4OSwxNC43MzItNC42NTYsMjkuOTY1LDEzLjQ2NywzNC43MzJjMC4wNjgsMC4wMTksMC4xMzksMC4wMjksMC4yMTEsMC4wMzJjMS42NDEsMC4wNywzLjQ0NSwwLjEwNiw1LjM2NSwwLjEwNmgwLjAwMiAgIGM3LjI3OSwwLDQzLjgzLTAuNzA5LDQ5LjI0Ni0xNC42OTljMC4xMTEtMC4yODcsMC4wODQtMC42MDktMC4wNzQtMC44NzNDMjYwLjAzMywxNTkuNDE3LDI1OS43NjIsMTU5LjI0LDI1OS40NTcsMTU5LjIwMnoiIGZpbGw9IiMwMWIxYjIiLz4KCTxwb2x5Z29uIHBvaW50cz0iMTI3Ljg4NywyMDcuMDk0IDExOC43NjIsMjA3LjA5NCAxMTguNzYyLDE5NC41NTQgMTEyLjI1MiwxOTQuNTU0IDExMi4yNTIsMjI1LjkwMyAxMTguNzYyLDIyNS45MDMgICAgMTE4Ljc2MiwyMTIuNzIxIDEyNy44ODcsMjEyLjcyMSAxMjcuODg3LDIyNS45MDMgMTM0LjM5NywyMjUuOTAzIDEzNC4zOTcsMTk0LjU1NCAxMjcuODg3LDE5NC41NTQgICIgZmlsbD0iIzAxYjFiMiIvPgoJPHBhdGggZD0iTTE0NS4wNTMsMTk0LjQ3NGwtNy44MzgsMzEuNDNoNi45OTJsMS40ODgtNi43NTJoNy42NzZsMS41MjcsNi43NTJoNi45NTNsLTcuODM2LTMxLjQzSDE0NS4wNTN6IE0xNDYuOTQyLDIxMy41MjUgICBsMi41NzItMTEuNTM1bDIuNTcyLDExLjUzNUgxNDYuOTQyeiIgZmlsbD0iIzAxYjFiMiIvPgoJPHBvbHlnb24gcG9pbnRzPSIxNzEuMTgsMTk0LjU1NCAxNjQuNjcsMTk0LjU1NCAxNjQuNjcsMjI1LjkwMyAxODIuNzU2LDIyNS45MDMgMTgyLjc1NiwyMjAuMjc3IDE3MS4xOCwyMjAuMjc3ICAiIGZpbGw9IiMwMWIxYjIiLz4KCTxwYXRoIGQ9Ik0xOTEuNzYyLDE5NC40NzRsLTcuODM4LDMxLjQzaDYuOTk0bDEuNDg2LTYuNzUyaDcuNjc4bDEuNTI3LDYuNzUyaDYuOTUzbC03LjgzOC0zMS40M0gxOTEuNzYyeiBNMTkzLjY1MSwyMTMuNTI1ICAgbDIuNTcyLTExLjUzNWwyLjU3MiwxMS41MzVIMTkzLjY1MXoiIGZpbGw9IiMwMWIxYjIiLz4KCTxwb2x5Z29uIHBvaW50cz0iMjE3Ljg5MSwxOTQuNTU0IDIxMS4zNzksMTk0LjU1NCAyMTEuMzc5LDIyNS45MDMgMjI5LjQ2NSwyMjUuOTAzIDIyOS40NjUsMjIwLjI3NyAyMTcuODkxLDIyMC4yNzcgICIgZmlsbD0iIzAxYjFiMiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /><br><p style="color: #4d544d;">Halal</p>
@@ -102,7 +102,7 @@
                     </span>
                     
                     <!-- <span class="col" style="padding:0; text-align: center;" ion-ripple> -->
-                        <i class="icon mangan-kontak-icon ion-ios-arrow-forward" style="color: rgb(1,177,178); opacity: 0.5;" ng-show="restoran.facility"></i>
+                        <i class="icon mangan-kontak-icon ion-ios-arrow-right" style="" ng-show="restoran.fasilitas"></i>
                     <!-- </span> -->
 
                    </div>
@@ -113,12 +113,12 @@
                 <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="ulasanPengguna()" ion-ripple>
                     <i class="mangan-kontak-icon icon ion-ios-chatbubble-outline"></i>
                     <h2 style="margin-left: 10px;">Ulasan dari Pengguna</h2>
-                    <i class="icon mangan-kontak-icon ion-ios-arrow-forward" style="color: rgb(1,177,178); opacity: 0.5; "></i>
+                    <i class="icon mangan-kontak-icon ion-ios-arrow-right" style=""></i>
                 </div>
                 <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="openMenuBook(restoran.index, restoran.delivery)" ion-ripple>
                     <i class="mangan-kontak-icon icon ion-ios-book-outline"></i>
                     <h2 style="margin-left: 10px;">Buku Menu</h2>
-                    <i class="icon mangan-kontak-icon ion-ios-arrow-forward" style="color: rgb(1,177,178); opacity: 0.5; "></i>
+                    <i class="icon mangan-kontak-icon ion-ios-arrow-right" style=""></i>
                 </div>
 
                 <!-- spacer Menu yang diulas -->
@@ -138,12 +138,12 @@
                         <span ng-show="menu.tag" class="mangan-tag-menumakanan" style="color: rgb(1, 178, 177)">{{menu.tag}}</span>
 
                         <span class="mangan-menu-review" ng-show="menu.review && menu.review != 'null'">
-                            <i class="icon angan-kontak-icon ion-ios-arrow-forward" style="color: rgb(1,177,178); opacity: 0.5; "></i>
+                            <i class="icon mangan-kontak-icon ion-ios-arrow-right" style=""></i>
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     </ion-content>
-    <button class="button icon-right ion-chevron-right button-full button-oren" ng-click="pesan()" ng-show="loadFlag" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>DELIVERY ORDER</button>
+    <button class="button icon-right ion-ios-arrow-right button-full button-oren" ng-click="pesan()" ng-show="loadFlag" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>DELIVERY ORDER</button>
 </ion-view>

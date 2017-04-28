@@ -58,6 +58,9 @@ want fast?
 	`cordova plugin add ionic-plugin-deeplinks --variable URL_SCHEME=myapp --variable DEEPLINK_SCHEME=https --variable DEEPLINK_HOST=example.com`
 	this plugin require ionic-native. Learn more at https://github.com/driftyco/ionic-plugin-deeplinks
 
+* ionic-advanced-carousell
+	`bower install ionic-advanced-carousel`
+
 # REMOVED PLUGIN
 
 * cordova-plugin-google-analytics 0.7.1 "Google Universal Analytics Plugin"

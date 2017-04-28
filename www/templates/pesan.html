@@ -8,7 +8,7 @@
         <div class="list" style="position: relative;">
 
             <!-- <ion-item class="mangan-menu item-thumbnail-left assertive" style="border: 5px solid rgb(230,231,232);" ng-repeat="menu in menus" ng-click="openMenu( {{ $index }} )"> -->
-            <div class="item mangan-menu item-thumbnail-left assertive item-text-wrap" ng-repeat="menu in menus" style="" ng-show="(menu.harga % 1) == 0">
+            <div class="item mangan-menu item-thumbnail-left assertive item-text-wrap" ng-repeat="menu in menus" style="border:0;" ng-show="(menu.harga % 1) == 0">
                 <img image-lazy-src="{{ menu.gambar }}" class="mangan-image-1_1" image-lazy-distance-from-bottom-to-load="50">
                     <h3 style="color: #4d544d;">{{menu.namaMenu}}</h3>
                     <!-- <h3>{{menu.harga | currency:'Rp ':2}}</h3> -->
@@ -43,5 +43,5 @@
         </div> -->
     </ion-content>
 
-        <button class="button button-full button-oren icon-right ion-chevron-right" ng-click="invoice()" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;text-align: center; box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>LANJUTKAN</button>
+        <button class="button button-full button-oren icon-right ion-ios-arrow-right" ng-click="invoice()" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;text-align: center; box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>LANJUTKAN</button>
 </ion-view>

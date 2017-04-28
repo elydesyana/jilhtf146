@@ -9734,6 +9734,9 @@ a.button {
 p {
   margin-bottom: 0; }
 
+.item {
+  border-color: #f2f3f3; }
+
 .slider {
   height: 100%; }
 
@@ -9750,7 +9753,7 @@ p {
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
-  padding: 8px 0 5px 10px;
+  padding-left: 10px;
   /*width: 100%; */
   height: auto;
   font-size: 18px;
@@ -9788,14 +9791,14 @@ p {
   color: black;
   /*padding-top: 5px;*/
   border-top: 0;
-  border-bottom: 1px solid #e6e7e8;
+  border-bottom: 1px solid #f2f3f3;
   /*border-left: 1px solid rgb(230,231,232);
 	border-right: 1px solid rgb(230,231,232);
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;*/ }
 
 .mangan-detail-keterangan {
-  background-color: #e6e7e8;
+  background-color: #f2f3f3;
   color: orangered;
   font-size: 16px;
   padding: 5px;
@@ -9907,11 +9910,11 @@ p {
 }*/
 .card .item:first-child {
   /*// border: 5px solid rgb(230, 231, 232);*/
-  border-top: 1px solid #e6e7e8; }
+  border-top: 1px solid #f2f3f3; }
 
 .card .item:last-child {
   /*// border: 5px solid rgb(230, 231, 232);*/
-  border-bottom: 1px solid #e6e7e8; }
+  border-bottom: 1px solid #f2f3f3; }
 
 .mangan-menu-selengkapnya {
   width: 100%;
@@ -9944,7 +9947,7 @@ p {
   padding: 15px;
   /*border-left: 1px solid rgb(230,231,232);
 	border-right: 1px solid rgb(230,231,232);*/
-  border-bottom: 1px solid #e6e7e8; }
+  border-bottom: 1px solid #f2f3f3; }
 
 .mangan-keterangan-buka {
   color: #4d544d;
@@ -9954,9 +9957,9 @@ p {
   width: 100%;
   line-height: 1.5;
   /*height: auto;*/
-  padding: 10px 10px 10px 15px;
+  padding: 5px 10px 0px 15px;
   /*padding-left: 15px; */
-  border-bottom: 1px solid #e6e7e8; }
+  border-bottom: 1px solid #f2f3f3; }
 
 .mangan-keterangan-buka > i {
   color: #4d544d; }
@@ -9980,16 +9983,16 @@ p {
 .mangan-spacer {
   height: 5px;
   width: auto;
-  background-color: #e6e7e8; }
+  background-color: #f2f3f3; }
 
 .mangan-line {
-  border-bottom: 1px solid #e6e7e8;
+  border-bottom: 1px solid #f2f3f3;
   width: 100%; }
 
 .mangan-kontak {
   padding-bottom: 0;
-  border-top: 1px solid #e6e7e8;
-  border-bottom: 1px solid #e6e7e8; }
+  border-top: 1px solid #f2f3f3;
+  border-bottom: 1px solid #f2f3f3; }
 
 .kontak-header {
   background-color: #01b2b1;
@@ -10009,7 +10012,6 @@ p {
 
 .mangan-kontak-icon {
   padding-right: 5px;
-  font-size: 14px;
   color: #4d544d; }
 
 .mangan-restorans-icon {
@@ -10024,8 +10026,8 @@ p {
   color: #4d544d; }
 
 .mangan-button-menumakanan {
-  background: #e6e7e8;
-  border: solid #e6e7e8;
+  background: #f2f3f3;
+  border: solid #f2f3f3;
   border-radius: 20px; }
 
 .mangan-label-menumakanan {
@@ -10609,3 +10611,6 @@ input[type="checkbox"][readonly] {
 
 .a-carousel li.active .carousel-item.demo-3 img {
   opacity: 1; }
+
+.item-icon-left .icon, .item-icon-right .icon {
+  font-size: 25px; }

@@ -5,14 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'aCarousel'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'aCarousel', 'ion-gallery'])
 
-.constant('config', {
-  analytics: 'UA-82447017-1',
-  version: 100018
-})
-
-.run(function($ionicPlatform, config, $ionicPopup, Services, $localStorage, $timeout, $cordovaDeeplinks, $state, Analytics, $ionicHistory) {
+.run(function($ionicPlatform, $ionicPopup, Services, $localStorage, $timeout, $cordovaDeeplinks, $state, Analytics, $ionicHistory) {
   $ionicPlatform.ready(function() {
     // listen to deeplinks
     $cordovaDeeplinks.route({
@@ -25,13 +20,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       $timeout(function() {
         $state.go('tabsController.restoran', {index: match.$args.restoranId});
       }, 100);
-      // $timeout(function() {
-      //   $state.go(match.$route.parent, match.$args);
-
-      //   $timeout(function(match) {
-      //     $state.go(match.$route.target, match.$args);
-      //   }, 800);
-      // }, 100);
     }, function(nomatch) {
       console.log('nomatch : '+JSON.stringify(nomatch));
     });
@@ -46,13 +34,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    // $cordovaGoogleAnalytics.debugMode();
-    // if(typeof analytics !== undefined) {
-    //   analytics.startTrackerWithId('UA-XXXXXXXX-X');
-    // } else {
-    //   console.log("Google Analytics Unavailable");
-    // }
-
+    
     window.FirebasePlugin.getToken(function(token) {
       $localStorage.token = token;
       console.log('device token : '+token);
@@ -151,11 +133,19 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   }, 100);
 })
 
-.config(function($ionicConfigProvider) {
+.config(function($ionicConfigProvider, ionGalleryConfigProvider) {
 
     // $ionicConfigProvider.tabs.position('bottom'); // other values: top
     $ionicConfigProvider.navBar.alignTitle('center');
     $ionicConfigProvider.scrolling.jsScrolling(false);
+    ionGalleryConfigProvider.setGalleryConfig({
+                          action_label: 'X',
+                          template_gallery: 'templates/gallery.html',
+                          template_slider: 'templates/slider.html',
+                          toggle: false,
+                          row_size: 2,
+                          fixed_row_size: true
+                        });
 })
 
 // http://justinklemm.com/angularjs-filter-ordering-objects-ngrepeat/

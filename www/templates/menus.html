@@ -1,4 +1,4 @@
-<ion-view title="Menu" id="page4">
+<ion-view title="Buku Menu" id="page4">
     <ion-content lazy-scroll class="has-header has-footer" overflow-scroll="false">
         <ion-refresher
             pulling-text="Lepas untuk memperbarui"
@@ -7,7 +7,7 @@
         </ion-refresher>
 
         <div class="list" style="position: relative;">
-            <div class="item item-thumbnail-left mangan-menu assertive item-text-wrap" style="" ng-repeat="menu in menus">
+            <div class="item item-thumbnail-left mangan-menu assertive item-text-wrap" style="border:0;" ng-repeat="menu in menus">
                 <img image-lazy-src="{{ menu.gambar }}" class="mangan-image-1_1" image-lazy-distance-from-bottom-to-load="50">
                 <h3 style="color: #4d544d;">{{menu.namaMenu}}</h3>
                 <h3 ng-show="(menu.harga % 1) == 0">{{menu.harga | currency:'Rp ':2}}</h3>
@@ -16,5 +16,5 @@
             </div> 
         </div>
     </ion-content>
-        <button class="button icon-right ion-chevron-right button-full button-oren" ng-click="pesan()" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>DELIVERY ORDER</button>
+        <button class="button icon-right ion-ios-arrow-right button-full button-oren" ng-click="pesan()" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple>DELIVERY ORDER</button>
 </ion-view>
