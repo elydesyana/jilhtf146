@@ -1,8 +1,14 @@
 angular.module('app.controllers', [])
 
-.controller('mainCtrl', function($scope, $stateParams, $localStorage, Analytics) {
+.controller('mainCtrl', function($scope, $stateParams, $localStorage, $ionicPopover, Analytics) {
 	$localStorage.badge = 0;
 	$scope.badge = $localStorage.badge;
+
+	$ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope,
+	}).then(function(popover) {
+    $scope.popover = popover;
+  	});
 })
 
 .controller('restoransCtrl', function($scope, $stateParams, Services, $ionicLoading, $cordovaToast, $ionicTabsDelegate, $cordovaSocialSharing, $timeout, Analytics, $state, $localStorage, $ionicSlideBoxDelegate) {
@@ -1491,6 +1497,8 @@ angular.module('app.controllers', [])
     });
 
     $scope.$on('$ionicView.enter', function() {
+    	var forwardView = $ionicHistory.forwardView();
+    	console.log(JSON.stringify(forwardView));
 		if ($stateParams.changeCity) {
 			$scope.getRecomendation();
 		}

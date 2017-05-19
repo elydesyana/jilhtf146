@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget android-versionCode="104048" id="com.manganindonesia.mangan" version="1.4.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Mangan</name>
-  <description>
-    Aplikasi Destinasi, Rekomendasi dan Informasi Wisata Kuliner Indonesia.
+  <description>&#xD;
+    Aplikasi Destinasi, Rekomendasi dan Informasi Wisata Kuliner Indonesia.&#xD;
   </description>
-  <author email="contact@mobilepangan.com" href="http://mobilepangan.com/">
-    Mangan Indonesia
+  <author email="contact@mobilepangan.com" href="http://mobilepangan.com/">&#xD;
+    Mangan Indonesia&#xD;
   </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -72,10 +72,10 @@
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320"/>
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
-  <plugin name="cordova-plugin-firebase" spec="~0.1.18"/>
   <plugin name="ionic-plugin-deeplinks" source="npm">
     <param name="URL_SCHEME" value="mangan"/>
     <param name="DEEPLINK_SCHEME" value="https"/>
     <param name="DEEPLINK_HOST" value="mobilepangan.com"/>
   </plugin>
+  <plugin name="cordova-plugin-firebase" spec="~0.1.18"/>
 </widget>
