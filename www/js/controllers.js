@@ -4958,6 +4958,7 @@ angular.module('app.controllers', [])
 
 .controller('rekomendasiCtrl', function($scope, $state, $stateParams, Services, $http, $ionicPopup, Analytics, $localStorage){
 	$scope.data = [];
+	$scope.data.jenis = "Restoran/Cafe";
 
 	$scope.$on('$ionicView.enter', function() {
 		// trackView
@@ -5306,6 +5307,13 @@ angular.module('app.controllers', [])
 			return;
 		}
 	});
+
+	$scope.next = function() {
+		$ionicSlideBoxDelegate.next();
+  	};
+  	$scope.previous = function() {
+  		$ionicSlideBoxDelegate.previous();
+  	};
 
 	firebase.auth().signOut().then(function() {
 		Analytics.logEventArr([

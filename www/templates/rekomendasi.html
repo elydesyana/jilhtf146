@@ -1,45 +1,69 @@
 <ion-view title="Rekomendasi" id="rekomendasi">
     <ion-content lazy-scroll padding="true" class="has-header">
-        <!-- <ion-refresher
-            on-refresh="getMenus()"
-            spinner = "ripple" >
-        </ion-refresher> -->
-
-        <div class="list card" style="padding:0;"> 
-            <div class="item item-divider kontak-header" style="border:0;">
-                REKOMENDASIKAN
+        <div class="list card"> 
+            <ion-item class="item-text-wrap" style="border: 0;">Berikan Rekomendasi Kuliner</ion-item>
+             <div class="row item mangan-item-clear" style="">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-home"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label">Nama Kuliner</span>
+                        <input type="text" placeholder="Nama Kuliner" ng-model="data.namaResto" required>
+                    </label>
+                </div>
             </div>
-            <div class="item item-text-wrap mangan-menu" style="border:0;">
-                <label class="item-input mangan-menu">
-                    <i class="mangan-invoice-icon icon ion-android-restaurant"></i>
-                    <input type="text" placeholder="Nama Kuliner" ng-model="data.namaResto" required>
-                </label>
-                <label class="item-input mangan-menu">
-                    <i class="mangan-invoice-icon icon ion-ios-location"></i>
-                    <input type="text" placeholder="Alamat Kuliner" ng-model="data.alamat" required>
-                </label>
-                <label class="item-input item-select mangan-menu" required>
-                    <i class="mangan-invoice-icon icon ion-coffee"></i>
-                    <div class="input-label" style="">Kategori</div>
-                    <select ng-model="data.jenis">
-                      <option value="Restoran/Cafe">Restoran/Cafe</option>
-                      <option value="Warung Makan">Warung Makan</option>
-                      <option value="Street Food">Street Food (Jajanan Pinggir Jalan)</option>
-                      <option value="Outlet">Food Outlet (Makanan yang Dijual di Food Court)</option>
-                      <option value="HIK">Wedangan/Hik</option>
-                    </select>
-                </label>
-                <label class="item-input mangan-menu">
-                    <i class="mangan-invoice-icon icon ion-android-call"></i>
-                    <input type="number" placeholder="Kontak anda" ng-model="data.kontak" required>
-                </label>
-                <label class="item-input mangan-menu">
-                    <i class="mangan-invoice-icon icon ion-compose"></i>
-                    <input type="text" placeholder="Deskripsi Kuliner" ng-model="data.alasan" required>
-                </label>
+            <div class="row item mangan-item-clear" style="">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-location"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Alamat Kuliner</span>
+                        <input type="text" placeholder="Alamat Kuliner" ng-model="data.alamat" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row item mangan-item-clear" style="">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-cube"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-select item-text-wrap">
+                        <span class="input-label">Kategori</span>
+                        <select ng-model="data.jenis">
+                          <option value="Restoran/Cafe">Restoran/Cafe</option>
+                          <option value="Warung Makan">Warung Makan</option>
+                          <option value="Street Food">Street Food (Jajanan Pinggir Jalan)</option>
+                          <option value="Outlet">Food Outlet (Makanan yang Dijual di Food Court)</option>
+                          <option value="HIK">Wedangan/Hik</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="row item mangan-item-clear" style="">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-call"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label">Telepon Anda</span>
+                        <input type="text" placeholder="Telepon Anda" ng-model="data.kontak" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-quote"></i>
+                </div>
+                <div class="col" style="margin-bottom: 10px;">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Deskripsi Kuliner</span>
+                        <textarea placeholder="Deskripsi Kuliner" rows="3" style="border-bottom: 1px solid #ccc" ng-model="data.alasan" required></textarea>
+                      </label>
+                </div>
             </div>
         </div>
-            <button class="button button-block button-outline button-oren" ng-click="rekomendasikan()" ion-ripple>REKOMENDASIKAN</button>
-
+            <button class="button button-block button-oren" ng-click="rekomendasikan()" ion-ripple>REKOMENDASIKAN</button>
     </ion-content>
 </ion-view>

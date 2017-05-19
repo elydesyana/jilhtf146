@@ -1,36 +1,38 @@
 <ion-view hide-nav-bar="true" id="dataUser-page" class="wizardRegistration overlay">
     <ion-content>
-        <div class="list mangan-menu" style="text-align: center; margin-bottom:0; padding:0; background-color: black;">
+        <div class="list">
             <div style="position: absolute; z-index: 9999; top: 60px;">
+              <div class="mangan-registration">
                   <img src="img/manganstd.png" width="20%">
-                  <!-- <h2 style="color: white;"></h2> -->
                   <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERITAHU KAMI </span> Sedikit Tentang Kamu.</h4>
                   <p class="app-tagline" style="color: white;">Agar Kami Dapat Memberikan Informasi Kuliner dan Promo Menarik dengan Tepat. </p>
+              </div>
 
                   <!-- form -->
-                  <div class="list card" style="margin-top: 50px;">
-                    <div class="item item-text-wrap mangan-menu" style="">
-                        <!-- date picker -->
-                        <label class="item-input mangan-menu">
-                            <span class="input-label" style="width: 0;">Birthday</span>
-                            <input type="date" ng-model="user.dateOfBirth">
-                        </label>
-                        <label class="item-input mangan-menu">
-                            <span class="input-label" style="width: 0;">Telepon</span>
-                            <input type="number" ng-model="user.phone" >
-                        </label>
-                        <label class="item-input item-select mangan-menu">
-                            <div class="input-label" style="width: 0;">Gender</div>
-                            <select ng-model="user.gender" required="true">
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
-                            </select>
-                        </label>
-                    </div>
-                  </div>
-                  <div class="mangan-bottom">
-                    <button class="button button-block button-oren" ng-click="complete()" ion-ripple>Simpan</button> 
+              <div class="list card" style="margin-top: 30px;">
+                <div class="item item-text-wrap">
+                    <!-- date picker -->
+                    <label class="item-input">
+                        <span class="input-label">Birthday</span>
+                        <input type="date" ng-model="user.dateOfBirth">
+                    </label>
+                    <label class="item-input">
+                        <span class="input-label">Telepon</span>
+                        <input type="number" placeholder="Nomor Telepon" ng-model="user.phone" >
+                    </label>
+                    <label class="item-input item-select">
+                        <div class="input-label" style="width: 0;">Gender</div>
+                        <select ng-model="user.gender" required="true">
+                          <option value="male" ng-selected="true">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                    </label>
                 </div>
+              </div>
+              <div class="item" style="background-color: transparent; border:0;">
+                <button class="button button-block button-oren" ng-click="complete()" ion-ripple>Simpan</button> 
+              </div>
+              
             </div>
         </div>
     </ion-content>

@@ -5654,7 +5654,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   z-index: 2;
   display: block;
   margin: -1px;
-  padding: 10px;
+  padding: 16px;
   border-width: 1px;
   border-style: solid;
   font-size: 16px; }
@@ -5691,12 +5691,12 @@ ion-tabs.tabs-color-active-dark .tab-item {
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    top: 10px;
-    right: 20px; }
+    top: 16px;
+    right: 32px; }
   .item.item-button-right .badge {
-    right: 55px; }
+    right: 67px; }
   .item.item-divider .badge {
-    top: 5px; }
+    top: 8px; }
   .item .badge + .badge {
     margin-right: 5px; }
   .item.item-light {
@@ -5947,7 +5947,7 @@ button.item.item-complex {
 .item-radio .item-content {
   position: relative;
   z-index: 2;
-  padding: 10px 29px 10px 10px;
+  padding: 16px 49px 16px 16px;
   border: none;
   background-color: #fff; }
 
@@ -6120,24 +6120,24 @@ a.item-content {
   font-size: 28px; }
 
 .item-icon-left {
-  padding-left: 34px; }
+  padding-left: 54px; }
   .item-icon-left .icon {
-    left: 7px; }
+    left: 11px; }
 
 .item-complex.item-icon-left {
   padding-left: 0; }
   .item-complex.item-icon-left .item-content {
-    padding-left: 34px; }
+    padding-left: 54px; }
 
 .item-icon-right {
-  padding-right: 34px; }
+  padding-right: 54px; }
   .item-icon-right .icon {
-    right: 7px; }
+    right: 11px; }
 
 .item-complex.item-icon-right {
   padding-right: 0; }
   .item-complex.item-icon-right .item-content {
-    padding-right: 34px; }
+    padding-right: 54px; }
 
 .item-icon-left.item-icon-right .icon:first-child {
   right: auto; }
@@ -6152,10 +6152,10 @@ a.item-content {
   font-size: 16px; }
 
 .item-icon-left .icon-accessory {
-  left: 2px; }
+  left: 3px; }
 
 .item-icon-right .icon-accessory {
-  right: 2px; }
+  right: 3px; }
 
 /**
  * Item Button
@@ -6163,7 +6163,7 @@ a.item-content {
  * An item button is a child button inside an .item (not the entire .item)
  */
 .item-button-left {
-  padding-left: 45px; }
+  padding-left: 72px; }
 
 .item-button-left > .button,
 .item-button-left .item-content > .button {
@@ -6179,8 +6179,8 @@ a.item-content {
   -moz-align-items: center;
   align-items: center;
   position: absolute;
-  top: 5px;
-  left: 7px;
+  top: 8px;
+  left: 11px;
   min-width: 34px;
   min-height: 34px;
   font-size: 18px;
@@ -6201,7 +6201,7 @@ a.item-content {
 .item-button-right,
 a.item.item-button-right,
 button.item.item-button-right {
-  padding-right: 50px; }
+  padding-right: 80px; }
 
 .item-button-right > .button,
 .item-button-right .item-content > .button,
@@ -6219,8 +6219,8 @@ button.item.item-button-right {
   -moz-align-items: center;
   align-items: center;
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 8px;
+  right: 16px;
   min-width: 34px;
   min-height: 34px;
   font-size: 18px;
@@ -6247,8 +6247,8 @@ button.item.item-button-right {
 .item-avatar .item-content,
 .item-avatar-left,
 .item-avatar-left .item-content {
-  padding-left: 60px;
-  min-height: 60px; }
+  padding-left: 72px;
+  min-height: 72px; }
   .item-avatar > img:first-child,
   .item-avatar .item-image,
   .item-avatar .item-content > img:first-child,
@@ -6258,8 +6258,8 @@ button.item.item-button-right {
   .item-avatar-left .item-content > img:first-child,
   .item-avatar-left .item-content .item-image {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 16px;
+    left: 16px;
     max-width: 40px;
     max-height: 40px;
     width: 100%;
@@ -6268,15 +6268,15 @@ button.item.item-button-right {
 
 .item-avatar-right,
 .item-avatar-right .item-content {
-  padding-right: 60px;
-  min-height: 60px; }
+  padding-right: 72px;
+  min-height: 72px; }
   .item-avatar-right > img:first-child,
   .item-avatar-right .item-image,
   .item-avatar-right .item-content > img:first-child,
   .item-avatar-right .item-content .item-image {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 16px;
+    right: 16px;
     max-width: 40px;
     max-height: 40px;
     width: 100%;
@@ -6285,8 +6285,8 @@ button.item.item-button-right {
 
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
-  padding-top: 5px;
-  padding-left: 100px;
+  padding-top: 8px;
+  padding-left: 106px;
   min-height: 100px; }
   .item-thumbnail-left > img:first-child,
   .item-thumbnail-left .item-image,
@@ -6308,8 +6308,8 @@ button.item.item-button-right {
 
 .item-thumbnail-right,
 .item-thumbnail-right .item-content {
-  padding-top: 5px;
-  padding-right: 100px;
+  padding-top: 8px;
+  padding-right: 106px;
   min-height: 100px; }
   .item-thumbnail-right > img:first-child,
   .item-thumbnail-right .item-image,
@@ -6337,16 +6337,16 @@ button.item.item-button-right {
 
 .item-body {
   overflow: auto;
-  padding: 10px;
+  padding: 16px;
   text-overflow: inherit;
   white-space: normal; }
   .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 16px;
+    margin-bottom: 16px; }
 
 .item-divider {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   min-height: 30px;
   background-color: #f5f5f5;
   color: #222;
@@ -7570,7 +7570,7 @@ textarea {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 6.66667px; }
+  padding: 10.66667px; }
 
 .item-input-wrapper {
   display: -webkit-box;
@@ -7603,7 +7603,7 @@ textarea {
   line-height: 18px; }
 
 .item-input-wrapper ~ .button {
-  margin-left: 6.66667px; }
+  margin-left: 10.66667px; }
 
 .input-label {
   display: table;
@@ -7983,21 +7983,21 @@ input:checked + .checkbox-icon:after {
   opacity: 1; }
 
 .item-checkbox {
-  padding-left: 48px; }
+  padding-left: 60px; }
   .item-checkbox.active {
     box-shadow: none; }
 
 .item-checkbox .checkbox {
   position: absolute;
   top: 50%;
-  right: 5px;
-  left: 5px;
+  right: 8px;
+  left: 8px;
   z-index: 3;
   margin-top: -21px; }
 
 .item-checkbox.item-checkbox-right {
-  padding-right: 48px;
-  padding-left: 10px; }
+  padding-right: 60px;
+  padding-left: 16px; }
 
 .item-checkbox-right .checkbox input,
 .item-checkbox-right .checkbox-icon {
@@ -8118,15 +8118,15 @@ input:checked + .checkbox-icon:after {
 
 .item-toggle,
 .item-toggle.item-complex .item-content {
-  padding-right: 81px; }
+  padding-right: 99px; }
 
 .item-toggle.item-complex {
   padding-right: 0; }
 
 .item-toggle .toggle {
   position: absolute;
-  top: 7px;
-  right: 10px;
+  top: 10px;
+  right: 16px;
   z-index: 3; }
 
 .toggle input:disabled + .track {
@@ -8221,7 +8221,7 @@ input:checked + .checkbox-icon:after {
 
 .item-radio .item-content {
   /* give some room to the right for the checkmark icon */
-  padding-right: 40px; }
+  padding-right: 64px; }
 
 .item-radio .radio-icon {
   /* checkmark icon will be hidden by default */
@@ -8230,7 +8230,7 @@ input:checked + .checkbox-icon:after {
   right: 0;
   z-index: 3;
   visibility: hidden;
-  padding: 8px;
+  padding: 14px;
   height: 100%;
   font-size: 24px; }
 
@@ -8429,7 +8429,7 @@ input:checked + .checkbox-icon:after {
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 0 30px 0 10px;
+    padding: 0 48px 0 16px;
     max-width: 65%;
     border: none;
     background: #fff;
@@ -8447,7 +8447,7 @@ input:checked + .checkbox-icon:after {
   .item-select:after {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 16px;
     margin-top: -3px;
     width: 0;
     height: 0;
@@ -8529,7 +8529,7 @@ progress {
   min-height: 47px;
   border-width: 1px;
   border-style: solid;
-  border-radius: 0px;
+  border-radius: 4px;
   vertical-align: top;
   text-align: center;
   text-overflow: ellipsis;
@@ -8797,10 +8797,10 @@ progress {
 
 .button-small {
   padding: 2px 4px 1px;
-  min-width: 30px;
-  min-height: 32px;
+  min-width: 28px;
+  min-height: 30px;
   font-size: 12px;
-  line-height: 28px; }
+  line-height: 26px; }
   .button-small .icon:before, .button-small.icon:before, .button-small.icon-left:before, .button-small.icon-right:before {
     font-size: 16px;
     line-height: 19px;
@@ -8953,12 +8953,12 @@ a.button {
   .button-bar > .button .icon:before {
     line-height: 44px; }
   .button-bar > .button:first-child {
-    border-radius: 0px 0px 0px 0px; }
+    border-radius: 4px 0px 0px 4px; }
   .button-bar > .button:last-child {
     border-right-width: 1px;
-    border-radius: 0px 0px 0px 0px; }
+    border-radius: 0px 4px 4px 0px; }
   .button-bar > .button:only-child {
-    border-radius: 0px; }
+    border-radius: 4px; }
 
 .button-bar > .button-small:before,
 .button-bar > .button-small .icon:before {
@@ -9748,44 +9748,34 @@ p {
   display: flex;
   flex-direction: row; }
 
-.mangan-nama-resto {
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 0;
-  padding-left: 10px;
-  /*width: 100%; */
-  height: auto;
-  font-size: 18px;
-  line-height: 1.5; }
-
-.mangan-nama-restoran {
-  color: #4d544d;
-  background-color: #f5f5f5;
-  padding: 8px 0 5px 10px;
+.mangan-restoran-name {
+  background-color: #f8f8f8;
+  border: 0;
+  padding: 10px;
   width: 100%;
   height: auto;
   font-size: 18px;
-  line-height: 1.5;
-  font-weight: bold; }
+  text-align: center; }
 
 .mangan-list-header {
   position: relative;
   width: auto; }
+  .mangan-list-header .mangan-nama-resto {
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 10px;
+    z-index: 9999;
+    height: auto;
+    font-size: 18px;
+    line-height: 1.5; }
 
 .slider-pager .slider-pager-page {
-  color: #008d8e;
-  opacity: 0.3; }
-
-.mangan-selengkapnya {
-  width: 100%;
-  height: auto;
-  /*border-right: 1px solid rgb(230,231,232);
-	border-left: 1px solid rgb(230,231,232);
-	border-bottom: 1px solid rgb(230,231,232);
-	border-top: 0;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;*/ }
+  color: #01b2b1;
+  font-size: 10px;
+  width: 10px; }
 
 .mangan-detail-review {
   color: black;
@@ -9815,9 +9805,7 @@ p {
   min-height: 200px;
   margin: 0;
   padding: 0;
-  display: block;
-  /*border-top-right-radius: 5px;
-	border-top-left-radius: 5px;*/ }
+  display: block; }
 
 .mangan-image-review {
   width: 100%;
@@ -9829,6 +9817,7 @@ p {
 .mangan-image-jelajah {
   background: url("../img/minipreload.jpg");
   background-position: center;
+  background-size: cover;
   width: 100%;
   min-height: 105px; }
 
@@ -9900,22 +9889,6 @@ p {
   display: inline-block;
   padding: 2px; }
 
-.item > p {
-  color: #01b2b1; }
-
-/*.card .item{
-	// border: 2.5px solid rgb(230, 231, 232);
-	border-left: 1px solid #e6e7e8;
-	border-right: 1px solid #e6e7e8;
-}*/
-.card .item:first-child {
-  /*// border: 5px solid rgb(230, 231, 232);*/
-  border-top: 1px solid #f2f3f3; }
-
-.card .item:last-child {
-  /*// border: 5px solid rgb(230, 231, 232);*/
-  border-bottom: 1px solid #f2f3f3; }
-
 .mangan-menu-selengkapnya {
   width: 100%;
   margin-top: 10px;
@@ -9928,15 +9901,8 @@ p {
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.list {
-  margin-bottom: 10px;
-  border-bottom: white; }
-
 .card {
   margin-top: 0; }
-
-.list:last-child.card {
-  margin-bottom: 10px; }
 
 .mangan-rating-nilai, .mangan-rating-icon {
   color: yellow;
@@ -9944,50 +9910,25 @@ p {
   text-align: right; }
 
 .mangan-keterangan {
-  padding: 15px;
-  /*border-left: 1px solid rgb(230,231,232);
-	border-right: 1px solid rgb(230,231,232);*/
-  border-bottom: 1px solid #f2f3f3; }
+  padding: 15px; }
+  .mangan-keterangan p {
+    line-height: 1.5;
+    font-weight: 400; }
 
-.mangan-keterangan-buka {
+.mangan-open-hour {
+  line-height: 1.5;
+  margin-left: 5px; }
+
+.mangan-icon-col {
   color: #4d544d;
-  /*font-weight: bold;*/
-  font-size: 14px;
-  /*font-weight: normal;*/
-  width: 100%;
-  line-height: 1.5;
-  /*height: auto;*/
-  padding: 5px 10px 0px 15px;
-  /*padding-left: 15px; */
-  border-bottom: 1px solid #f2f3f3; }
+  display: flex;
+  font-size: 24px; }
 
-.mangan-keterangan-buka > i {
-  color: #4d544d; }
+.mangan-button-icon {
+  margin-right: 8px; }
 
-.mangan-keterangan-teks {
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 300; }
-
-.mangan-tombol-aksi {
-  background: none;
-  border: none; }
-
-.mangan-icon {
-  font-size: 25px;
-  color: #01b1b2; }
-
-.mangan-menu-list {
-  margin-bottom: 0; }
-
-.mangan-spacer {
-  height: 5px;
-  width: auto;
-  background-color: #f2f3f3; }
-
-.mangan-line {
-  border-bottom: 1px solid #f2f3f3;
-  width: 100%; }
+.mangan-button-red {
+  color: #c85054; }
 
 .mangan-kontak {
   padding-bottom: 0;
@@ -10010,13 +9951,8 @@ p {
 .mangan-kontak > a {
   text-decoration: none; }
 
-.mangan-kontak-icon {
+.mangan-right-icon {
   padding-right: 5px;
-  color: #4d544d; }
-
-.mangan-restorans-icon {
-  padding-right: 5px;
-  font-size: 22px;
   color: #4d544d; }
 
 .mangan-invoice-icon {
@@ -10048,61 +9984,29 @@ p {
   border-radius: 4px;
   padding: 2px; }
 
-.mangan-menu > img {
+.mangan-text img {
   margin-top: -5px; }
 
-.mangan-menu span {
-  color: black;
-  font-weight: 300; }
-
-.mangan-menu > h2 {
-  padding-top: 5px; }
-
-.mangan-menu > h3 {
+.mangan-text h2 {
+  font-size: 24px;
+  padding-top: 5px;
   color: #01b2b1; }
 
-.mangan-menu > h5 {
-  color: #78715f; }
+.mangan-text h4 {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 16px; }
 
-.mangan-menu p {
-  /*color: #78715f;*/
-  color: black;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.5; }
+.mangan-text h5 {
+  color: #ccc; }
 
-.mangan-jelajah-teks {
-  color: black;
-  font-weight: 300;
-  font-size: 14px; }
-
-.mangan-menu select {
-  /*color: #78715f;*/
-  /*color: black;
-	font-weight: 300;
-	font-size: 14px;*/ }
-
-.mangan-menu .input-label {
-  /*color: #78715f;*/
-  /*color: black;
-	font-weight: 300;*/
-  font-size: 14px; }
-
-.mangan-menu > h3 > a {
+.mangan-text > h3 > a {
   text-decoration: none; }
 
-.mangan-kategori {
-  font-size: 12px;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 10px;
-  padding: 0 5px;
-  width: 93.5%;
-  height: auto; }
-
-.jelajah-tile {
+.mangan-jelajah-tile {
   position: relative; }
+  .mangan-jelajah-tile a {
+    text-decoration: none; }
 
 .mangan-review-title {
   display: inline-block;
@@ -10208,7 +10112,16 @@ p {
 .mangan-nodata {
   width: 100%;
   height: auto;
-  padding: 10px 10px; }
+  padding: 10px 10px;
+  text-align: center; }
+  .mangan-nodata i {
+    font-size: 30px;
+    text-align: center;
+    color: #4d544d; }
+  .mangan-nodata p {
+    font-weight: 300; }
+  .mangan-nodata button {
+    text-align: center; }
 
 .mangan-nodata p {
   align-items: center;
@@ -10244,7 +10157,9 @@ p {
   display: flex;
   display: flexbox;
   display: box;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  text-align: left; }
 
 .tabs-top.tabs-striped .tab-item.tab-item-active, .tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated {
   margin-top: 0px;
@@ -10274,7 +10189,7 @@ p {
   margin-top: 3px; }
 
 .button-oren {
-  background-color: #ff6a32;
+  background-color: #ff7846;
   border-color: transparent;
   color: #fff;
   /*overflow: hidden;
@@ -10286,25 +10201,25 @@ p {
   text-decoration: none; }
 
 .button.button-oren.active, .button.button-oren.activated {
-  background-color: #ff6a32; }
+  background-color: #ff7846; }
 
 .button.button-oren.button-clear {
   border-color: transparent;
   background: none;
   box-shadow: none;
-  color: #ff6a32; }
+  color: #ff7846; }
 
 .button.button-oren.button-icon {
   border-color: transparent;
   background: none; }
 
 .button.button-oren.button-outline {
-  border-color: #ff6a32;
+  border-color: #ff7846;
   background: transparent;
-  color: #ff6a32; }
+  color: #ff7846; }
 
 .button.button-oren.button-outline.active, .button.button-oren.button-outline.activated {
-  background-color: #ff6a32;
+  background-color: #ff7846;
   box-shadow: none;
   color: #fff; }
 
@@ -10519,18 +10434,10 @@ p {
       border-color: #dc4330; }
 
 .mangan-bottom {
-  text-align: center;
-  padding: 0 10px;
-  border-top-right-radius: 0;
-  border-top: 0; }
-
-.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; }
-
-.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0; }
+  text-align: center; }
+  .mangan-bottom p {
+    padding: 10px;
+    border-bottom: 1px solid #f2f3f3; }
 
 input[disabled],
 select[disabled],
@@ -10591,7 +10498,7 @@ input[type="checkbox"][readonly] {
   height: 100%;
   display: block;
   z-index: -999;
-  background-color: rgba(0, 0, 0, 0.3); }
+  background-color: rgba(0, 0, 0, 0.8); }
 
 .profile {
   background: url("../img/profile1.jpg");
@@ -10614,3 +10521,89 @@ input[type="checkbox"][readonly] {
 
 .item-icon-left .icon, .item-icon-right .icon {
   font-size: 25px; }
+
+.mangan-top-notify {
+  border: 0;
+  background-color: #ff7846; }
+  .mangan-top-notify p {
+    color: white; }
+  .mangan-top-notify i {
+    color: white; }
+
+.mangan-input-search {
+  margin: 10px; }
+  .mangan-input-search label {
+    padding: 0;
+    border-radius: 5px; }
+  .mangan-input-search div {
+    min-height: 37px;
+    min-width: 37px;
+    background-color: #f2f3f3;
+    text-align: center;
+    margin-right: 10px; }
+  .mangan-input-search i {
+    line-height: 40px; }
+
+.mangan-divider {
+  border-top: 1px solid #f2f3f3; }
+
+.mangan-item-divider {
+  border: 0;
+  min-height: 0;
+  box-shadow: inset 0 0 3px rgba(136, 136, 136, 0.3); }
+
+.mangan-greeting-card {
+  border: none;
+  margin: 10px 15px 0 15px; }
+  .mangan-greeting-card p {
+    font-size: 14px; }
+
+.mangan-slider-ads {
+  width: 100%;
+  padding: 0;
+  height: 170px;
+  margin-bottom: 0px; }
+  .mangan-slider-ads img {
+    width: 100%;
+    display: block; }
+
+.mangan-item-clear {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+.mangan-icon-left {
+  display: flex;
+  margin: 20px;
+  font-size: 20px; }
+
+.mangan-image-category {
+  height: 60px; }
+  .mangan-image-category img {
+    background: url("../img/minipreload.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%; }
+  .mangan-image-category h3 {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 8px;
+    right: 8px; }
+
+.mangan-registration {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0; }
+
+#mangan-button-rekomendasi {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0; }
+
+#mangan-button-daftar {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0; }

@@ -1,14 +1,23 @@
 <ion-view id="wizard-page" hide-nav-bar="true">
+  <div class="bar bar-footer" style="background-color: transparent; background-image:none;">
+      <button class="button button-clear button-balanced" ng-click="previous()" ng-show="slideIndex > 0">Previous</button>
+      <button class="button button-clear button-balanced pull-right" ng-click="next()" ng-show="slideIndex != 4">Next</button>
+      <button class="button button-clear button-balanced pull-right" ng-click="endWizard()" ng-show="slideIndex == 4">Skip</button>
+  </div>
+
   <ion-slide-box on-slide-changed="slideChanged(index)">
     <!-- first slide -->
     <ion-slide class="wizardSlide1">
       <div class="top-wizard row">
         <div class="app-copy col col-top">
           <img ng-src="img/manganstd.png" width="20%">
-          <h2 style="color: white;">Hai MangGaes!</h2>
+          <h3 style="color: white; margin-top:0;">Hai MangGaes!</h3>
           <h4 style="color: white;"><span style="font-weight: bold; color: orangered">JELAJAHI </span> Kekayaan Kuliner Indonesia Bersama <span style="font-weight: bold; color: orangered">M</span><span style="font-weight: bold; color: rgb(1,177,178)">ANGAN</span></h4>
         </div>
       </div>
+      <!-- <div class="bottom-wizard">
+        <button class="button button-clear button-balanced button-small">Next</button>
+      </div> -->
     </ion-slide>
 
     <!-- next slide -->
@@ -53,11 +62,12 @@
           <button class="facebook-sign-in button button-block" ng-click="fblogin()">
             <i class="ion-social-facebook" style="margin-right: 10px;"></i>Log in with Facebook
           </button>
-          <a ng-click="endWizard()" style="font-weight: bold; color: white;">
+          <!-- <a ng-click="endWizard()" style="font-weight: bold; color: white;">
             Skip
-          </a>
+          </a> -->
         </div>
       </div>
     </ion-slide>
   </ion-slide-box>
+
 </ion-view>
