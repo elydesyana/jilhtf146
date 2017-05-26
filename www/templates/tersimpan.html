@@ -1,6 +1,5 @@
 <ion-view id="page3">
     <ion-nav-title>{{category}}</ion-nav-title>
-
     <ion-content lazy-scroll class="has-header" overflow-scroll="false">
         <ion-refresher
             pulling-text="Lepas untuk memperbarui"
@@ -9,68 +8,70 @@
         </ion-refresher>
 
         <div class="list" ng-show="dataUser">
-            <div class="item item-thumbnail-left mangan-menu" style="border:0; margin-top: 20px;">
-                <img ng-src="{{dataUser.photoUrl}}" width="30%" height="auto" style="margin-bottom: 5px; border-radius: 50%;">
+            <div class="item item-thumbnail-left" style="border:0; margin-top: 20px;">
+                <img ng-src="{{dataUser.photoUrl}}" width="30%" height="auto" style="border-radius: 50%;">
                 <h2 style="margin-top: 10px;">{{dataUser.name}}</h2>
                 <p>{{dataUser.email}}</p>
             </div>
         </div>
 
-        <div style="border-top: 1px solid rgb(242,243,243);"></div>
+        <div class="mangan-divider"></div>
         <div class="list" ng-show="dataUser">
             <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="openProfile()" ion-ripple>
-                <i class="icon ion-person"></i>
-                <h2 style="margin-left: 10px;">Ubah Profil</h2>
-                <i class="icon mangan-kontak-icon ion-ios-arrow-right" style="o"></i>
+                <i class="icon ion-android-person"></i>
+                <h2>Ubah Profil</h2>
+                <i class="icon ion-ios-arrow-right"></i>
             </div>
-
              <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="openTransaksi()" ion-ripple>
                 <i class="icon ion-bag"></i>
-                <h2 style="margin-left: 10px;">Riwayat Transaksi</h2>
-                <i class="icon mangan-kontak-icon ion-ios-arrow-right" style=""></i>
-            </div>
-
-             <div class="item item-divider" style="border: 0; min-height:0; box-shadow: inset 0 0 3px rgba(136,136,136,0.3);"></div>
-        </div>
-        
-        <div ng-show="nodata && !notersimpan" class="mangan-nodata">
-            <center><i class="ion-sad-outline"></i></center>
-            <p style="margin-bottom: 10px;">Ups, Periksa jaringan internet Anda</p>
-            <center><button class="button button-oren button-small button-outline" style="width: 50%;" ng-click="getRestorans()" ion-ripple>MUAT ULANG</button></center>
-        </div>
-
-        <div ng-show="notersimpan" class="mangan-nodata">
-            <center><i class="ion-android-favorite" style="color:#c85054;"></i></center>
-            <p style="margin-bottom: 10px;">Ups, Sepertinya Kamu Belum Menyimpan Apapun</p>
-            <div class="row">
-                <button ng-click="jelajah()" class="button button-oren button-small button-outline" style="width: 50%; display: block; margin: auto;" ng-hide="!dataUser || dataUser == null" ion-ripple>JELAJAHI</button>
-                <div class="col col-50" style="position: relative;" ng-show="!dataUser || dataUser == null">
-                    <button ng-click="jelajah()" class="button button-oren button-small button-outline" style="width: 100%;" ion-ripple>JELAJAHI</button>
-                </div>
-                <div class="col col-50" style="position: relative;" ng-show="!dataUser || dataUser == null">
-                    <button class="button button-oren button-small"  style="width: 100%;" ng-click="login()" ion-ripple>LOGIN</button>
-                </div>
+                <h2>Riwayat Transaksi</h2>
+                <i class="icon ion-ios-arrow-right"></i>
             </div>
         </div>
+        <div class="item item-divider mangan-item-divider" ng-hide="notersimpan || !dataUser || dataUser == null"></div>
 
-        <div style="" ng-show="!restorans || restorans.length > 0">
-            <h4 style="background: white; padding-left: 10px; width: 100%; margin: 15px 0; color: rgb(1,177,178);">Kuliner Tersimpan ({{restorans.length}})</h4>
+        <div class="mangan-divider"></div>
+        <div class="mangan-nodata" ng-show="nodata && !notersimpan" style="margin-top: 10px;">
+            <i class="icon ion-android-wifi"></i>
+            <p>Ups, Periksa jaringan internet Anda</p>
+            <button class="button button-balanced button-clear icon ion-android-refresh" ng-click="getRestorans()" ion-ripple></button>
+        </div>
+   
+        <div class="mangan-nodata" ng-show="notersimpan" style="margin-top: 10px;">
+            <i class="icon ion-heart-broken"></i>
+            <p>Ups, Sepertinya kamu belum menyimpan apapun</p>
+            <div class="row list" style="padding-top: 10px;">
+                <div class="col item item-text-wrap" id="mangan-button-rekomendasi" ng-hide="!dataUser || dataUser == null">
+                    <button class="button button-small button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>
+                </div>
+                <div class="col item item-text-wrap" id="mangan-button-rekomendasi" ng-show="!dataUser || dataUser == null">
+                    <button class="button button-small button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>
+                </div>
+                <div class="col item item-text-wrap" id="mangan-button-daftar" ng-show="!dataUser || dataUser == null">
+                    <button class="button button-small  button-oren button-clear" style="width: 100%;" ng-click="login()" ion-ripple>LOGIN</button>
+                </div>
+            </div>
         </div>
 
-        <div class="row gallery">
+        <div class="item item-text-wrap" style="border: 0;" ng-show="!restorans || restorans.length > 0">
+            <p>{{restorans.length}} Kuliner Tersimpan</p>
+        </div>
+
+        <div class="row gallery" style="border:0;">
             <div class="jelajah-tile col col-33" style="position:relative; padding-bottom:0;" ng-repeat="restoran in restorans" ng-click="openRestoran(restoran.index)" ion-ripple>
                 <img ng-src="{{restoran.gambar[0]}}" class="mangan-image-jelajah" style="object-fit: cover; width: 100%;">
             </div>
         </div>
-        <div class="item item-text-wrap mangan-menu" style="border:0; margin-bottom: 10px; text-align: center; font-size: 14px;" ng-show="restorans.length > 0">Simpan lebih banyak untuk kamu kunjungi nanti</div>
-        <div class="item item-divider" style="border: 0; min-height:0; box-shadow: inset 0 0 3px rgba(136,136,136,0.3);" ng-show="restorans.length > 0"></div>
+        <div class="item item-text-wrap" style="border:0; border-bottom: 1px solid rgb(242,243,244); margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
+            <p>Simpan lebih banyak untuk kamu kunjungi nanti</p>
+        </div>
+        <!-- <div class="item mangan-divider" ng-show="restorans.length > 0"></div> -->
 
-
-        <div ng-hide="notersimpan || dataUser" class="mangan-nodata" style="">
-            <center><i class="ion-android-favorite" style="color:#c85054;"></i></center>
-            <p style="margin-bottom: 10px;">Kamu Belum Login. Login Sekarang Juga.</p>
+        <div class="mangan-nodata" ng-hide="notersimpan || dataUser">
+            <i class="icon ion-heart-broken"></i>
+            <p>Kamu Belum Login. Login Sekarang Juga.</p>
             <div class="row">
-                <button ng-show="!dataUser || dataUser == null" class="button button-oren button-small button-outline"  style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
+                <button ng-show="!dataUser || dataUser == null" class="button button-oren button-small button-clear"  style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
             </div>
         </div>
     </ion-content>

@@ -7,12 +7,12 @@
         </ion-refresher>
 
         <div class="list" style="position: relative;">
-            <div class="item item-thumbnail-left mangan-menu assertive item-text-wrap" style="border:0;" ng-repeat="menu in menus">
+            <div class="item item-thumbnail-left item-text-wrap" style="border:0;" ng-repeat="menu in menus">
                 <img image-lazy-src="{{ menu.gambar }}" class="mangan-image-1_1" image-lazy-distance-from-bottom-to-load="50">
-                <h3 style="color: #4d544d;">{{menu.namaMenu}}</h3>
-                <h3 ng-show="(menu.harga % 1) == 0">{{menu.harga | currency:'Rp ':2}}</h3>
-                <h3 ng-hide="(menu.harga % 1) == 0">{{menu.harga}}</h3>
-                <span ng-show="menu.tag" class="mangan-tag-menumakanan" style="color: rgb(1, 178, 177)">{{menu.tag}}</span>
+                <h3>{{menu.namaMenu}}</h3>
+                <p ng-show="(menu.harga % 1) == 0">{{menu.harga | currency:'Rp ':2}}</p>
+                <p ng-hide="(menu.harga % 1) == 0">{{menu.harga}}</p>
+                <span ng-show="menu.tag" class="mangan-tag-menumakanan">{{menu.tag}}</span>
             </div> 
         </div>
     </ion-content>
