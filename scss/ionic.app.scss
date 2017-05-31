@@ -72,8 +72,7 @@ p {
 	border:0;
 	padding: 10px; 
 	width: 100%; 
-	height: auto; 
-	font-size: 18px;
+	height: auto;
 	text-align: center;
 }
 
@@ -98,17 +97,6 @@ p {
 	color: $tosca;
 	font-size: 10px;
 	width: 10px;
-}
-
-.mangan-detail-review {
-	color: black;
-	/*padding-top: 5px;*/
-	border-top: 0;
-	border-bottom: 1px solid $grey;
-	/*border-left: 1px solid rgb(230,231,232);
-	border-right: 1px solid rgb(230,231,232);
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;*/
 }
 
 .mangan-detail-keterangan {
@@ -173,19 +161,10 @@ p {
 	right: 0;
 }
 
-.mangan-ulasan-resto{
+.mangan-image-host{
 	background: url('../img/user.png');
 	background-position:center;
-	width: 50px;
-	height: 50px;
-	border-radius: 25px;
 	border: none;
-}
-
-.mangan-ulasan-menu{
-	width: 100%;
-	height: auto;
-	background-color:rgb(1,178,177);
 }
 
 .mangan-detail-review-col-1 {
@@ -263,16 +242,6 @@ p {
 	margin-top: 0;
 }
 
-// .list:last-child.card {
-// 	margin-bottom: 10px;
-// }
-
-.mangan-rating-nilai, .mangan-rating-icon {
-	color: yellow; 
-	font-size: 20px;
-	text-align: right;
-}
-
 .mangan-keterangan {
 	padding: 15px;
 	p{
@@ -290,7 +259,7 @@ p {
 .mangan-icon-col{
 	color: $icongrey;
 	display: flex;
-	font-size: 24px;
+	font-size: 20px;
 }
 
 .mangan-button-icon{
@@ -408,29 +377,11 @@ p {
     left: 5%;
 }
 
-.mangan-modal-menu {
-    width: 90%;
-    height: 80%;
-    top: 10%;
-    bottom: 10%;
-    right: 5%;
-    left: 5%;
-}
-
 .mangan-modal-menu-gambar {
 	width: 90%;
     height: 36%;
     top: 32%;
     bottom: 32%;
-    right: 5%;
-    left: 5%;
-}
-
-.mangan-modal-review {
-    width: 90%;
-    height: 63%;
-    top: 20%;
-    bottom: 25%;
     right: 5%;
     left: 5%;
 }
@@ -444,10 +395,6 @@ p {
 
 .active .modal-backdrop-bg {
     opacity: 0.5;
-}
-
-.mangan-tag-review {
-	float: right;
 }
 
 .mangan-menu-navigasi {
@@ -477,62 +424,15 @@ p {
 	font-size: 40px;
 }
 
-.mangan-rating {
-	padding-top: 10px;
-	/*background-color: rgb(230, 231, 232);*/
-}
-
-.mangan-ulasan {
-	padding: 10px;
-	/*background-color: rgb(230, 231, 232);*/
-	/*border-top: 1px solid white;*/
-}
-
-/*.mangan-ulasan > textarea, 
-.mangan-ulasan > input{
-	width: 100%;
-	border: 2px solid grey;
-	padding: 5px;
-	border-radius: 2px;
-}*/
-
-.mangan-review-button {
-	padding-top: 5px;
-}
-
 .mangan-nodata{
 	width: 100%;
 	height: auto;
 	padding: 10px 10px;
 	text-align: center;
 
-	i{font-size: 30px; text-align: center; color: $icongrey;}
+	i{font-size: 30px; text-align: center; color: $greybold;}
 	p{font-weight: 300;}
 	button{text-align: center;}
-}
-
-.mangan-nodata p{
-	// display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	text-align: center;
-  	color: rgba(0,0,0,0.7);
-  	margin:0;
-  	padding-top: 5px;
-}
-
-.mangan-nodata i{
-	// display: flex;
- //  	align-items: center;
- //  	justify-content: center;
- //  	text-align: center;
- 	display: block;
- 	margin-left: auto;
- 	margin-right: auto;
- 	width: auto;
-  	color:rgba(0,0,0,0.3);
-	font-size: 40px;
-//  padding-top : 5px;
 }
 
 .gallery-container {
@@ -566,17 +466,6 @@ p {
 
 .tabs-striped.tabs-balanced .tabs {
 	border-bottom: 0;
-}
-
-.button-small {
-    overflow: hidden;
-    white-space: nowrap;
-    border-radius: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-	//-webkit-box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);//
-	//-moz-box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);//
-	//box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);//
 }
 
 .mangan-button-jumlah{
@@ -642,12 +531,6 @@ p {
 
 .loading-container .loading {
 	background-color: rgba(0,0,0,0) !important;
-}
-
-.mangan-keterangan-buka-info {
-	color: white;
-	float: right;
-	font-size: 16px;
 }
 
 .mangan-card{
@@ -1024,16 +907,18 @@ font-weight: 200;
   height:100%;
   display: block;
   z-index:-999;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.3);
 }
 
-.profile{
+.mangan-image-profil{
 	background: url('../img/profile1.jpg');
 	background-position:center;
 	background-size:cover;
-	border-top:0px;
-	border-left:0px;
-	border-right:0px;
+	border: 0;
+	img{
+		width:30%; height: auto; 
+		margin-top:20px; margin-bottom: 5px; border-radius: 50%;
+	}
 }
 
 .carousel-item.demo-3 .img-wrapper{
@@ -1078,7 +963,7 @@ font-weight: 200;
 .mangan-greeting-card{
 	border: none; 
 	margin:10px 15px 0 15px;
-	p{font-size: $mediumfont;}
+	// p{font-size: $mediumfont;}
 }
 
 .mangan-slider-ads{
@@ -1125,4 +1010,8 @@ font-weight: 200;
 
 #mangan-button-daftar{
 	border-top:0; border-right: 0; border-bottom:0;
+}
+
+#mangan-pickcity-jelajah{
+	margin-top: 5px;font-size: 14px;
 }

@@ -1,54 +1,51 @@
 <ion-view id="ulasanpengguna">
-    <ion-nav-title>{{namaResto}}</ion-nav-title>
-    <ion-content lazy-scroll padding="true" class="has-header">
+    <ion-nav-title>Ulasan Pengunjung</ion-nav-title>
+    <ion-content lazy-scroll class="has-header">
         <ion-refresher
             on-refresh="refreshRatingReview()"
             spinner = "ripple" >
         </ion-refresher>
 
-        <div class="list card">
-            <div class="item kontak-header" style="padding: 0; border:0;">
-                <div class="row">
-                    <span class="col col-70">ULASAN PENGGUNA</span>
-                    <i class="mangan-invoice-icon icon ion-compose" style="font-size:30px; color: white; padding-left:10px;" ng-click="openRating()" ion-ripple></i>
+        <div class="list" style="border:0;">
+            <div class="item item-text-wrap" style="border:0; text-align: center">
+                <h2 style="padding: 10px;">{{namaResto}}</h2>
+                    <div class="row" style="padding-bottom: 0;">
+                        <span class="col" style="padding:0;">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNBRjgwNjY7IiBjeD0iMTMiIGN5PSIxMy41IiByPSIzLjUiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0FGODA2NjsiIGN4PSIyOSIgY3k9IjEzLjUiIHI9IjMuNSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0zMiwzNWMtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTUuNTE0LTQuNDg2LTEwLTEwLTEwcy0xMCw0LjQ4Ni0xMCwxMGMwLDAuNTUyLTAuNDQ4LDEtMSwxICAgcy0xLTAuNDQ4LTEtMWMwLTYuNjE3LDUuMzgzLTEyLDEyLTEyczEyLDUuMzgzLDEyLDEyQzMzLDM0LjU1MiwzMi41NTIsMzUsMzIsMzV6Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" style="width:20px; height:20px;" /><br><p>{{jmlSad}} Sad</p></br>
+                        </span>
+                        <span class="col" style="padding:0;">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZCRDk3MTsiIGN4PSIyMSIgY3k9IjIxIiByPSIyMSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0yMSwzNmMtNi42MTcsMC0xMi01LjM4My0xMi0xMmMwLTAuNTUyLDAuNDQ4LTEsMS0xczEsMC40NDgsMSwxYzAsNS41MTQsNC40ODYsMTAsMTAsMTAgICBzMTAtNC40ODYsMTAtMTBjMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMUMzMywzMC42MTcsMjcuNjE3LDM2LDIxLDM2eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YyOUMxRjsiIGQ9Ik0xNiwxN2MtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTEuNjU0LTEuMzQ2LTMtMy0zcy0zLDEuMzQ2LTMsM2MwLDAuNTUyLTAuNDQ4LDEtMSwxcy0xLTAuNDQ4LTEtMSAgIGMwLTIuNzU3LDIuMjQzLTUsNS01czUsMi4yNDMsNSw1QzE3LDE2LjU1MiwxNi41NTIsMTcsMTYsMTd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjI5QzFGOyIgZD0iTTM0LDE3Yy0wLjU1MiwwLTEtMC40NDgtMS0xYzAtMS42NTQtMS4zNDYtMy0zLTNzLTMsMS4zNDYtMywzYzAsMC41NTItMC40NDgsMS0xLDFzLTEtMC40NDgtMS0xICAgYzAtMi43NTcsMi4yNDMtNSw1LTVzNSwyLjI0Myw1LDVDMzUsMTYuNTUyLDM0LjU1MiwxNywzNCwxN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" style="width:20px; height:20px;" /><br><p>{{jmlHappy}} Happy</p></br>
+                        </span>
+                        <span class="col" style="padding:0;">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjBDNDE5OyIgZD0iTTIxLDM2Yy02LjYxNywwLTEyLTUuMzgzLTEyLTEyYzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDFjMCw1LjUxNCw0LjQ4NiwxMCwxMCwxMCAgIHMxMC00LjQ4NiwxMC0xMGMwLTAuNTUzLDAuNDQ4LTEsMS0xczEsMC40NDcsMSwxQzMzLDMwLjYxNywyNy42MTcsMzYsMjEsMzZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTEyLjU0NSwxMC43MDJDMTIuOTgzLDkuNywxMy45ODIsOSwxNS4xNDYsOWMxLjU2NywwLDIuNjk1LDEuMjk0LDIuODM3LDIuODM3ICAgYzAsMCwwLjA3NywwLjM4My0wLjA5MiwxLjA3MmMtMC4yMjksMC45MzktMC43NjksMS43NzMtMS40OTYsMi40MDlsLTMuODUsMy4zMTdMOC43NiwxNS4zMTljLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5ICAgYy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkM3LjMxNCwxMC4yOTQsOC40NDIsOSwxMC4wMDksOUMxMS4xNzIsOSwxMi4xMDcsOS43LDEyLjU0NSwxMC43MDJ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTI5LjM5LDEwLjcwMkMyOS44MjgsOS43LDMwLjgyOCw5LDMxLjk5MSw5YzEuNTY3LDAsMi42OTUsMS4yOTQsMi44MzcsMi44MzcgICBjMCwwLDAuMDc3LDAuMzgzLTAuMDkyLDEuMDcyYy0wLjIyOSwwLjkzOS0wLjc2OSwxLjc3My0xLjQ5NiwyLjQwOWwtMy44NSwzLjMxN2wtMy43ODUtMy4zMTcgICBjLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5Yy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkMyNC4xNTksMTAuMjk0LDI1LjI4OCw5LDI2Ljg1NCw5ICAgQzI4LjAxOCw5LDI4Ljk1Miw5LjcsMjkuMzksMTAuNzAyeiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" style="width:20px; height:20px;" /><br><p>{{jmlFavorite}} Favorite</p></br>
+                        </span>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="item item-divider mangan-item-divider"></div>
 
-            <ion-list>
-                <ion-item class="item-text-wrap " style="border:0;">
-                    <div class="" style="background-color: white; color: #4d544d; font-size: 18px;">
-                        <span class="col" style="text-align: center; margin-bottom: 10px;">{{namaResto}}</span>
-                    </div>
-                    <div class="row">
-                        <span class="col" style="padding:0; text-align:center;">
-                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNBRjgwNjY7IiBjeD0iMTMiIGN5PSIxMy41IiByPSIzLjUiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0FGODA2NjsiIGN4PSIyOSIgY3k9IjEzLjUiIHI9IjMuNSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0zMiwzNWMtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTUuNTE0LTQuNDg2LTEwLTEwLTEwcy0xMCw0LjQ4Ni0xMCwxMGMwLDAuNTUyLTAuNDQ4LDEtMSwxICAgcy0xLTAuNDQ4LTEtMWMwLTYuNjE3LDUuMzgzLTEyLDEyLTEyczEyLDUuMzgzLDEyLDEyQzMzLDM0LjU1MiwzMi41NTIsMzUsMzIsMzV6Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" style="width:30px; height:30px;" /><br><p style="color:#ff6a32;">{{jmlSad}} Sad</p></br>
-                        </span>
-                        <span class="col" style="padding:0; text-align:center;">
-                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZCRDk3MTsiIGN4PSIyMSIgY3k9IjIxIiByPSIyMSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0yMSwzNmMtNi42MTcsMC0xMi01LjM4My0xMi0xMmMwLTAuNTUyLDAuNDQ4LTEsMS0xczEsMC40NDgsMSwxYzAsNS41MTQsNC40ODYsMTAsMTAsMTAgICBzMTAtNC40ODYsMTAtMTBjMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMUMzMywzMC42MTcsMjcuNjE3LDM2LDIxLDM2eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YyOUMxRjsiIGQ9Ik0xNiwxN2MtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTEuNjU0LTEuMzQ2LTMtMy0zcy0zLDEuMzQ2LTMsM2MwLDAuNTUyLTAuNDQ4LDEtMSwxcy0xLTAuNDQ4LTEtMSAgIGMwLTIuNzU3LDIuMjQzLTUsNS01czUsMi4yNDMsNSw1QzE3LDE2LjU1MiwxNi41NTIsMTcsMTYsMTd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjI5QzFGOyIgZD0iTTM0LDE3Yy0wLjU1MiwwLTEtMC40NDgtMS0xYzAtMS42NTQtMS4zNDYtMy0zLTNzLTMsMS4zNDYtMywzYzAsMC41NTItMC40NDgsMS0xLDFzLTEtMC40NDgtMS0xICAgYzAtMi43NTcsMi4yNDMtNSw1LTVzNSwyLjI0Myw1LDVDMzUsMTYuNTUyLDM0LjU1MiwxNywzNCwxN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" style="width:30px; height:30px;" /><br><p style="color:#ff6a32;">{{jmlHappy}} Happy</p></br>
-                        </span>
-                        <span class="col" style="padding:0; text-align:center;">
-                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjBDNDE5OyIgZD0iTTIxLDM2Yy02LjYxNywwLTEyLTUuMzgzLTEyLTEyYzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDFjMCw1LjUxNCw0LjQ4NiwxMCwxMCwxMCAgIHMxMC00LjQ4NiwxMC0xMGMwLTAuNTUzLDAuNDQ4LTEsMS0xczEsMC40NDcsMSwxQzMzLDMwLjYxNywyNy42MTcsMzYsMjEsMzZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTEyLjU0NSwxMC43MDJDMTIuOTgzLDkuNywxMy45ODIsOSwxNS4xNDYsOWMxLjU2NywwLDIuNjk1LDEuMjk0LDIuODM3LDIuODM3ICAgYzAsMCwwLjA3NywwLjM4My0wLjA5MiwxLjA3MmMtMC4yMjksMC45MzktMC43NjksMS43NzMtMS40OTYsMi40MDlsLTMuODUsMy4zMTdMOC43NiwxNS4zMTljLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5ICAgYy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkM3LjMxNCwxMC4yOTQsOC40NDIsOSwxMC4wMDksOUMxMS4xNzIsOSwxMi4xMDcsOS43LDEyLjU0NSwxMC43MDJ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTI5LjM5LDEwLjcwMkMyOS44MjgsOS43LDMwLjgyOCw5LDMxLjk5MSw5YzEuNTY3LDAsMi42OTUsMS4yOTQsMi44MzcsMi44MzcgICBjMCwwLDAuMDc3LDAuMzgzLTAuMDkyLDEuMDcyYy0wLjIyOSwwLjkzOS0wLjc2OSwxLjc3My0xLjQ5NiwyLjQwOWwtMy44NSwzLjMxN2wtMy43ODUtMy4zMTcgICBjLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5Yy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkMyNC4xNTksMTAuMjk0LDI1LjI4OCw5LDI2Ljg1NCw5ICAgQzI4LjAxOCw5LDI4Ljk1Miw5LjcsMjkuMzksMTAuNzAyeiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" style="width:30px; height:30px;" /><br><p style="color:#ff6a32;">{{jmlFavorite}} Favorite</p></br>
-                        </span>
-                    </div>
-                </ion-item>
+                <div class="item item-text-wrap" style="border:0;">
+                    <p>{{jmlReview}} Ulasan dari Pengunjung</p>
+                </div>
 
-                <ion-item class="item item-divider" style="border:0; background-color: rgb(242,243,243);">
-                    {{jmlReview}} Ulasan
-                </ion-item>
-
-                 <ion-item class="item item-text-wrap mangan-menu" style="border:0;" ng-hide="reviews || reviews.length > 0">
+                <div class="item item-text-wrap mangan-nodata" style="border:0;" ng-hide="reviews || reviews.length > 0">
+                    <i class="icon ion-heart-broken"></i>
                     <p style="text-align: center;">Belum Ada Ulasan Untuk Kuliner Ini. </br> Jadilah Pengulas Pertama!</p>
-                </ion-item>
+                </div>
 
-                <ion-item class="item item-avatar item-text-wrap mangan-menu" style="border: 0;" ng-repeat="review in reviews | orderObjectBy: 'tglReview' :true">
-                    <img class="mangan-ulasan-resto" src={{review.userPhotoUrl}} style="margin-top:6px;">
-                        <h2 style="color: rgb(1,177,178);">
-                            {{review.username}} <span ng-show="review.emoji">-</span> <span ng-show="review.emoji" class="kapital">{{review.emoji}}</span>
+                <div class="item item-avatar item-text-wrap" style="border: 0;" ng-repeat="review in reviews | orderObjectBy: 'tglReview' :true">
+                    <img class="mangan-image-host" src={{review.userPhotoUrl}} style="margin-top:6px;">
+                        <h2>{{review.username}} 
+                            <span ng-show="review.emoji">-</span>
+                            <span ng-show="review.emoji" class="kapital" style="color: rgb(1,177,178);">{{review.emoji}}</span>
                         </h2>
-                        <h3 style="color: #ff6a32;"">{{review.titleReview}}</p></h3>
-                        <p style="">{{review.review}}</p>
-                </ion-item>
-            </ion-list>
+                        <h3>{{review.titleReview}}</h3>
+                        <p>{{review.review}}</p>
+                </div>
         </div>
     </ion-content>
+    <ion-floating-button click="openRating()" has-footer="false" button-color="#ff7846" icon="ion-compose" icon-color="#fff">
+      <!-- Floating Button ios -->
+      <!-- <ion-floating-button click="openRating()" has-footer="true" button-color="#ff7846" icon="ion-compose" icon-color="#fff"> -->
+    </ion-floating-button>
 </ion-view>
