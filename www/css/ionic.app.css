@@ -10073,9 +10073,7 @@ p {
 .mangan-menu-navigasi {
   bottom: 0;
   width: 100%;
-  /*height: %;*/
   text-align: center;
-  /*padding: 8px;*/
   position: fixed;
   background-color: #01b2b1; }
 
@@ -10086,6 +10084,12 @@ p {
 #mangan-peta {
   height: 100%;
   width: 100%; }
+
+.mangan-location-terdekat .item {
+  border: 0;
+  background-color: #01b2b1; }
+  .mangan-location-terdekat .item p, .mangan-location-terdekat .item i {
+    color: white; }
 
 .ionic_ratings .icon {
   font-size: 40px; }
@@ -10580,7 +10584,6 @@ input[type="checkbox"][readonly] {
 .mangan-image-category {
   height: 60px; }
   .mangan-image-category img {
-    background: url("../img/minipreload.jpg");
     background-position: center;
     background-size: cover;
     width: 100%; }
