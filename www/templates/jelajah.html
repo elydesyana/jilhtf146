@@ -1,6 +1,6 @@
 <ion-view hide-back-button="true" id="page2">
 <ion-nav-title>
-    <button ng-show="locSettings == true" class="button button-small button-clear" ng-click="pickCity()" ion-ripple>Kamu Melihat : {{selectedCity}} <i class="ion-ios-arrow-down"></i></button>
+    <button ng-show="locSettings == true" class="button button-small button-clear" id="mangan-pickcity-jelajah" ng-click="pickCity()" ion-ripple>Kamu Melihat : {{selectedCity}} <i class="ion-ios-arrow-down"></i></button>
     <p ng-show="!locSettings || locSettings == false">Jelajah</p>
 </ion-nav-title>
     
@@ -31,8 +31,8 @@
                 <h2 ng-show="dataUser.name" style="">Hai {{dataUser.name}},</h2>
                 <p>Kamu lapar? Mau makan apa hari ini?</p>
                
-                <p ng-show="lokasiUser" style="color: orangered;"><i class="icon ion-ios-location" style="padding-right:5px"></i>{{lokasiUser}}</p>
-                <p ng-click="greeting()" ng-show="!lokasiUser" style="color: orangered;"><i class="icon ion-ios-location" style="padding-right:5px"></i>Lokasi tidak ditemukan</p>
+                <p ng-show="lokasiUser" style="color: orangered;"><i class="icon ion-location" style="padding-right:5px"></i>{{lokasiUser}}</p>
+                <p ng-click="greeting()" ng-show="!lokasiUser"><i class="icon ion-ios-location" style="padding-right:5px"></i>Lokasi tidak ditemukan</p>
             </div>
         </div>
     </div>
@@ -187,8 +187,8 @@
             </div>
         </div>
         <div class="item item-divider mangan-item-divider"></div>
-        <div class="item item-text-wrap">
-            <p style="text-align: center; border:0;">Berikan Rekomendasi atau Daftarkan Usaha Kulinermu</p>
+        <div class="item item-text-wrap" style="text-align: center;">
+            <p>Berikan Rekomendasi atau Daftarkan Usaha Kulinermu</p>
         </div>
         <div class="row list">
             <div class="col item item-text-wrap" id="mangan-button-rekomendasi">

@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { 
-  	"namespace": "android_app", 
-  	"package_name": "com.manganindonesia.mangan",
-  	"sha256_cert_fingerprints": 
-  		["E8:7E:19:2F:E8:22:0C:60:F6:2C:96:8F:36:71:C2:CA:C1:1E:BC:EC:42:AF:37:42:7D:C6:D4:4D:94:78:43:93"]
-  }
-}]

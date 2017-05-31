@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'aCarousel', 'ion-gallery'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'aCarousel', 'ion-gallery', 'ion-floating-menu'])
 
 .run(function($ionicPlatform, $ionicPopup, Services, $localStorage, $timeout, $cordovaDeeplinks, $state, Analytics, $ionicHistory) {
   $ionicPlatform.ready(function() {
