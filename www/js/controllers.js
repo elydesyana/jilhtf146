@@ -1772,7 +1772,7 @@ angular.module('app.controllers', [])
 			if(position) {
 				coords = position.coords;
 			}
-			$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyDcTH7G919_ydCKS_wvqoCkyH9lFMDvhgQ").success(function(result) {
+			$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY").success(function(result) {
 				$scope.lokasiUser = result.results[0].address_components[2].short_name+', '+result.results[0].address_components[3].short_name;
 			}).error(function(error) {
 				console.log('data error : '+error);
@@ -3016,7 +3016,7 @@ angular.module('app.controllers', [])
 
 	function showMap() {
 		var latlon = new google.maps.LatLng(coords.latitude, coords.longitude);
-		$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyDcTH7G919_ydCKS_wvqoCkyH9lFMDvhgQ").success(function(result) {
+		$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY").success(function(result) {
 			$scope.currentLocation = result.results[0].address_components[2].short_name+', '+result.results[0].address_components[3].short_name;
 			console.log($scope.currentLocation);
 		}).error(function(error) {
@@ -3124,7 +3124,7 @@ angular.module('app.controllers', [])
 	function getDistanceMatrix(oLat, oLong, dLat, dLong, keyResto) {
 		var url = 'https://maps.googleapis.com/maps/api/distancematrix/';
 		var type = 'json';
-		var key = 'AIzaSyDcTH7G919_ydCKS_wvqoCkyH9lFMDvhgQ';
+		var key = 'AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY';
 		$http.get(url+type+'?origins='+oLat+','+oLong+'&destinations='+dLat+','+dLong+'&key='+key).success(function(result) {
 			$scope.restoranList[keyResto].jarak = result.rows[0].elements[0].distance.value;
 		}).error(function(error) {
@@ -3839,9 +3839,11 @@ angular.module('app.controllers', [])
 		Services.getRestoranMenus($stateParams.index).then(function(menus) {
 			if(menus) {
 				loadFlag = true;
-				$scope.menus = menus;
-				for(var id in $scope.menus) {
-					$scope.menus[id].quantity = 0;
+				$scope.menus = [];
+				for(var id in menus) {
+					// $scope.menus[id].quantity = 0;
+					menus[id].quantity = 0;
+					$scope.menus.push(menus[id]);
 				}
 				$ionicLoading.hide();
 			} else {
@@ -4305,7 +4307,7 @@ angular.module('app.controllers', [])
 
 				infoWindow.open($scope.mapUser, userMarker);
 
-				$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyDcTH7G919_ydCKS_wvqoCkyH9lFMDvhgQ").success(function(result) {
+				$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+coords.latitude+","+coords.longitude+"&key=AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY").success(function(result) {
 					$scope.alamatUser = result.results[0].formatted_address;
 					$scope.transaksi.alamatUser = $scope.alamatUser;
 					infoWindow.setContent($scope.transaksi.alamatUser);
@@ -4549,7 +4551,7 @@ angular.module('app.controllers', [])
 	      duration: 2000
 	    });
 
-		$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyDcTH7G919_ydCKS_wvqoCkyH9lFMDvhgQ").success(function(result) {
+		$http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY").success(function(result) {
 			$scope.alamatUser = result.results[0].formatted_address;
 			$scope.transaksi.alamatUser = $scope.alamatUser;
 			console.log($scope.alamatUser);
@@ -5257,12 +5259,14 @@ angular.module('app.controllers', [])
 .controller('profilKurirCtrl', function($scope, $state, $stateParams, Services, Analytics, $localStorage){
 })
 
-.controller('kotaCtrl', function($scope, $state, $stateParams, Services, Analytics, $localStorage, $ionicHistory, $ionicLoading){
+.controller('kotaCtrl', function($scope, $state, $stateParams, Services, Analytics, $localStorage, $ionicHistory, $ionicLoading, $localStorage){
 	$scope.$on('$ionicView.enter', function() {
 		Analytics.logView('City');
 	});
 
 	$scope.pilihKota = function(kota) {
+		console.log($localStorage.location);
+		console.log(kota);
 		$ionicLoading.show({
 	      template: '<ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner>',
 	      duration: 3000
