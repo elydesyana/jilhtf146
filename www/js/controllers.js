@@ -4639,11 +4639,11 @@ angular.module('app.controllers', [])
 					var date = new Date();
 					var currentDate = date.getTime() ;
 					var lastDayTimestamp = currentDate - 604800000;
-					console.log("Current Date "+currentDate);
-					console.log("Date Transaksi "+transaksi.tgl);
-					if (transaksi.tgl >= lastDayTimestamp) {
-						console.log(transaksi.tgl);
-						$scope.transactions.push(transaksi);
+					if (transaksi) {
+						if (transaksi.tgl >= lastDayTimestamp) {
+							console.log(transaksi.tgl);
+							$scope.transactions.push(transaksi);
+						}
 					}
 				});
 			}
@@ -5266,7 +5266,9 @@ angular.module('app.controllers', [])
 
 	$scope.pilihKota = function(kota) {
 		console.log($localStorage.location);
+	    window.FirebasePlugin.unsubscribe($localStorage.location);
 		console.log(kota);
+	    window.FirebasePlugin.subscribe(kota);
 		$ionicLoading.show({
 	      template: '<ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner>',
 	      duration: 3000

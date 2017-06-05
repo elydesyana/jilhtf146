@@ -49,8 +49,6 @@ var slider = firebase.database().ref('slider');
 var promo = firebase.database().ref('promo');
 
 // ref data pesan antar
-var kurir = firebase.database().ref('kurir');
-var status = firebase.database().ref('status');
 var transaksi = firebase.database().ref('transaksi');
 var ongkir = firebase.database().ref('ongkir');
 var queue = firebase.database().ref('status').child('queue');
@@ -497,7 +495,7 @@ angular.module('app.services', [])
 	this.addTransaction = function(kurir, idTransaksi, dataTransaksi) {
 		var promise = $q.defer();
 
-		getRefKota('transaksi').child(kurir +'/'+ idTransaksi).set({
+		transaksi.child(kurir +'/'+ idTransaksi).set({
 			'indexUser' : dataTransaksi.indexUser,
 			'alamat' : dataTransaksi.alamat,
 			'alamatUser' : dataTransaksi.alamatUser,
@@ -541,7 +539,7 @@ angular.module('app.services', [])
 	this.addQueue = function(kurir, idTransaksi) {
 		var promise = $q.defer();
 
-		getRefKota('status/queue').child(kurir +'/'+ idTransaksi).set({
+		queue.child(kurir +'/'+ idTransaksi).set({
 			'indexTransaksi' : idTransaksi
 		}).then(function(result) {
 			promise.resolve(true);
@@ -573,7 +571,7 @@ angular.module('app.services', [])
 	// change to new ref by city
 	this.getTransaksiDetails = function(kurir, index) {
 		return promiseValue(
-			getRefKota('transaksi').child(kurir +'/'+ index)
+			transaksi.child(kurir +'/'+ index)
 		);
 	}
 
@@ -581,7 +579,7 @@ angular.module('app.services', [])
 	this.changeStatus = function(kurir, index) {
 		var promise = $q.defer();
 
-		getRefKota('transaksi').child(kurir +'/'+ index).update({
+		transaksi.child(kurir +'/'+ index).update({
 			'userCancel' : true,
 			'status' : "cancel",
 			'statusUserCancel' : firebase.database.ServerValue.TIMESTAMP
@@ -597,7 +595,7 @@ angular.module('app.services', [])
 	this.deleteQueue = function(kurir, index) {
 		var promise = $q.defer();
 
-		getRefKota('status/queue').child(kurir +'/'+ index).remove().then(function() {
+		queue.child(kurir +'/'+ index).remove().then(function() {
 			promise.resolve(true);
 		});
 
