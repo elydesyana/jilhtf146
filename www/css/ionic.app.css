@@ -9911,7 +9911,7 @@ p {
   border-top: 1px solid #f2f3f3;
   border-bottom: 1px solid #f2f3f3; }
 
-.kontak-header {
+.mangan-invoice-header {
   background-color: #01b2b1;
   padding: 10px;
   color: white;
@@ -10030,9 +10030,7 @@ p {
 .mangan-menu-navigasi {
   bottom: 0;
   width: 100%;
-  /*height: %;*/
   text-align: center;
-  /*padding: 8px;*/
   position: fixed;
   background-color: #01b2b1; }
 
@@ -10043,6 +10041,12 @@ p {
 #mangan-peta {
   height: 100%;
   width: 100%; }
+
+.mangan-location-terdekat .item {
+  border: 0;
+  background-color: #01b2b1; }
+  .mangan-location-terdekat .item p, .mangan-location-terdekat .item i {
+    color: white; }
 
 .ionic_ratings .icon {
   font-size: 40px; }
@@ -10057,7 +10061,8 @@ p {
     text-align: center;
     color: #ccc; }
   .mangan-nodata p {
-    font-weight: 300; }
+    font-weight: 300;
+    padding-top: 10px; }
   .mangan-nodata button {
     text-align: center; }
 
@@ -10092,16 +10097,18 @@ p {
   border-bottom: 0; }
 
 .mangan-button-jumlah {
-  padding: 2px 4px 1px;
+  padding: 2px 6px;
   min-width: 20px;
   min-height: 22px;
-  font-size: 12px;
   line-height: 18px; }
 
 .mangan-button-jumlah .icon:before, .mangan-button-jumlah.icon:before, .mangan-button-jumlah.icon-left:before, .mangan-button-jumlah.icon-right:before {
+  font-size: 12px;
+  line-height: 18px; }
+
+.mangan-input-quantity {
   font-size: 16px;
-  line-height: 19px;
-  margin-top: 3px; }
+  padding: 5px 10px; }
 
 .button-oren {
   background-color: #ff7846;
@@ -10174,162 +10181,102 @@ p {
   text-transform: uppercase; }
 
 .wizardSlide1 {
-  background: url("../img/slide2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/slide2.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); }
-  .wizardSlide1 .top-wizard {
-    height: 66%; }
-    .wizardSlide1 .top-wizard .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .wizardSlide1 .top-wizard .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .wizardSlide1 .top-wizard .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
-  .wizardSlide1 .bottom-wizard {
-    height: 34%; }
+  background-size: cover; }
+  .wizardSlide1 .app-copy {
+    text-align: center;
+    padding-top: 13vh; }
+  .wizardSlide1 .app-tagline {
+    margin-top: 8px;
+    text-align: center; }
+    .wizardSlide1 .app-tagline h3, .wizardSlide1 .app-tagline h4 {
+      color: white; }
 
 .wizardSlide2 {
-  background: url("../img/slide3.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/slide3.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); }
-  .wizardSlide2 .top-wizard {
-    height: 66%; }
-    .wizardSlide2 .top-wizard .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .wizardSlide2 .top-wizard .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .wizardSlide2 .top-wizard .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
-  .wizardSlide2 .bottom-wizard {
-    height: 34%; }
+  background-size: cover; }
+  .wizardSlide2 .app-copy {
+    text-align: center;
+    padding-top: 13vh; }
+  .wizardSlide2 .app-tagline {
+    margin-top: 8px;
+    text-align: center; }
+    .wizardSlide2 .app-tagline h3, .wizardSlide2 .app-tagline h4 {
+      color: white; }
 
 .wizardSlide3 {
-  background: url("../img/slide6.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/slide6.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); }
-  .wizardSlide3 .top-wizard {
-    height: 66%; }
-    .wizardSlide3 .top-wizard .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .wizardSlide3 .top-wizard .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .wizardSlide3 .top-wizard .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
-  .wizardSlide3 .bottom-wizard {
-    height: 34%; }
+  background-size: cover; }
+  .wizardSlide3 .app-copy {
+    text-align: center;
+    padding-top: 13vh; }
+  .wizardSlide3 .app-tagline {
+    margin-top: 8px;
+    text-align: center; }
+    .wizardSlide3 .app-tagline h3, .wizardSlide3 .app-tagline h4 {
+      color: white; }
 
 .wizardSlide4 {
-  background: url("../img/slide4.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/slide4.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); }
-  .wizardSlide4 .top-wizard {
-    height: 66%; }
-    .wizardSlide4 .top-wizard .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .wizardSlide4 .top-wizard .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .wizardSlide4 .top-wizard .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
-  .wizardSlide4 .bottom-wizard {
-    height: 34%; }
+  background-size: 100%; }
+  .wizardSlide4 .app-copy {
+    text-align: center;
+    padding-top: 13vh; }
+  .wizardSlide4 .app-tagline {
+    margin-top: 8px;
+    text-align: center; }
+    .wizardSlide4 .app-tagline h3, .wizardSlide4 .app-tagline h4 {
+      color: white; }
 
 .wizardRegistration {
-  background: url("../img/slide8.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/slide8.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); }
-  .wizardRegistration .top-wizard {
-    height: 66%; }
-    .wizardRegistration .top-wizard .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .wizardRegistration .top-wizard .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .wizardRegistration .top-wizard .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
-  .wizardRegistration .bottom-wizard {
-    height: 34%; }
+  background-size: cover; }
+  .wizardRegistration .app-copy {
+    text-align: center;
+    padding-top: 10vh; }
+  .wizardRegistration .app-tagline {
+    margin-top: 0px;
+    padding-left: 15px; }
+    .wizardRegistration .app-tagline h4 {
+      color: white;
+      font-weight: 400; }
+    .wizardRegistration .app-tagline p {
+      color: white; }
+  .wizardRegistration .bottom-content {
+    margin-top: 20px; }
+
+.button-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px; }
 
 .login {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01b2b1+0,f28509+100 */
-  background: url("../img/login.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/login.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
-  /* IE6-9 */ }
-  .login .top-content {
-    height: 66%; }
-    .login .top-content .app-copy {
-      text-align: center;
-      padding-top: 13vh; }
-    .login .top-content .app-logo {
-      font-size: 40px;
-      font-family: sans-serif;
-      font-weight: 600;
-      color: #FFFFFF;
-      letter-spacing: 8px;
-      text-transform: uppercase; }
-    .login .top-content .app-tagline {
-      font-size: 16px;
-      margin-top: 0px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95); }
+  background-size: cover; }
+  .login .app-copy {
+    text-align: center;
+    padding-top: 13vh; }
+  .login .app-tagline {
+    margin-top: 0px;
+    text-align: center; }
+    .login .app-tagline h4 {
+      color: white; }
   .login .bottom-content {
-    height: 34%; }
+    padding-top: 35vh;
+    padding-left: 15px;
+    padding-right: 15px; }
     .login .bottom-content .facebook-sign-in {
       border-radius: 4px;
       font-weight: 500;
@@ -10461,6 +10408,10 @@ input[type="checkbox"][readonly] {
 .mangan-divider {
   border-top: 1px solid #f2f3f3; }
 
+.mangan-divider-topbottom {
+  border-top: 1px solid #f2f3f3;
+  border-bottom: 1px solid #f2f3f3; }
+
 .mangan-item-divider {
   border: 0;
   min-height: 0;
@@ -10492,7 +10443,6 @@ input[type="checkbox"][readonly] {
 .mangan-image-category {
   height: 60px; }
   .mangan-image-category img {
-    background: url("../img/minipreload.jpg");
     background-position: center;
     background-size: cover;
     width: 100%; }

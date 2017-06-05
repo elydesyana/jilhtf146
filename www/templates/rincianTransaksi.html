@@ -6,10 +6,10 @@
     </ion-refresher>
 
     <div class="list card" style="padding:0; position: relative;">
-        <div class="item item-divider kontak-header" style="border:0;">
-            PESANAN
-        </div>
-        <div class="item item-text-wrap mangan-menu" ng-repeat="menu in detailTransaksi.pesanan" style="border:0;">
+        <ion-item class="mangan-invoice-header" style="border:0;">
+                PESANAN
+        </ion-item>
+        <div class="item item-text-wrap" ng-repeat="menu in detailTransaksi.pesanan" style="border:0;">
             <div class="row">
                 <div class="col col-67"><h3>{{menu.namaMenu}}</h3></div>
                 <div class="col"><h3>Rp {{menu.harga}}</h3></div>
@@ -28,42 +28,87 @@
     </div>
 
     <div class="list card" style="padding:0; position: relative;">
-        <div class="item item-divider kontak-header" style="border:0;">
-            ALAMAT PENGIRIMAN
+        <ion-item class="mangan-invoice-header" style="border:0;">
+                ALAMAT PENGIIRIMAN
+        </ion-item>
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-person"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Penerima</span>
+                        <input type="text" ng-model="detailTransaksi.namaUser" readonly="true">
+                    </label>
+            </div>
         </div>
-        <div class="item item-text-wrap mangan-menu" style="border:0;">
-            <label class="item-input item-text-wrap mangan-menu">
-                <i class="mangan-invoice-icon icon ion-ios-person"></i>
-                <input type="text" readonly="true" style="" ng-model="detailTransaksi.namaUser">
-            </label>
-            <label class="item-input item-text-wrap mangan-menu">
-                <i class="mangan-invoice-icon icon ion-ios-location"></i>
-                <textarea readonly="true" rows="3" style="" ng-model="detailTransaksi.alamatUser"></textarea>
-            </label>
-            <label class="item-input item-text-wrap mangan-menu" ng-show="detailTransaksi.alamatUserDetail">
-                <i class="mangan-invoice-icon icon"></i>
-                <textarea readonly="true" style="" ng-model="detailTransaksi.alamatUserDetail"></textarea>
-            </label>
-            <label class="item-input item-text-wrap mangan-menu">
-                <i class="mangan-invoice-icon icon ion-android-call"></i>
-                <input type="text" readonly="true" style="" ng-model="detailTransaksi.noTelpUser">
-            </label>
-            <label class="item-input item-text-wrap mangan-menu" ng-show="detailTransaksi.lineUsername">
-                <i class="mangan-invoice-icon icon ion-ios-chatboxes"></i>
-                <input type="text" readonly="true" style="" ng-model="detailTransaksi.lineUsername">
-            </label>
-            <label class="item-input item-text-wrap mangan-menu">
-                <i class="mangan-invoice-icon icon ion-android-bicycle"></i>
-                <input type="text" readonly="true" style="" ng-model="detailTransaksi.kurir">
-            </label>
+
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                <i class="icon mangan-icon-left ion-location"></i>
+            </div>
+            <div class="col">
+                <label class="item-input item-stacked-label item-text-wrap">
+                    <span class="input-label" style="width:auto;">Alamat</span>
+                    <textarea type="text" rows="3" ng-model="detailTransaksi.alamatUser" readonly="true"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                <i class="icon mangan-icon-left ion-android-navigate"></i>
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label class="item-input item-stacked-label item-text-wrap">
+                    <span class="input-label" style="width:auto;">Detail Alamat</span>
+                    <textarea ng-model="detailTransaksi.alamatUserDetail" readonly="true"></textarea>
+                  </label>
+            </div>
+        </div>
+
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                <i class="icon mangan-icon-left ion-android-call"></i>
+            </div>
+            <div class="col">
+                <label class="item-input item-stacked-label item-text-wrap">
+                    <span class="input-label" style="width:auto;">Telepon</span>
+                    <input type="text" ng-model="detailTransaksi.noTelpUser" readonly="true">
+                </label>
+            </div>
+        </div>
+
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                <i class="icon mangan-icon-left ion-android-chat"></i>
+            </div>
+            <div class="col">
+                <label class="item-input item-stacked-label item-text-wrap">
+                    <span class="input-label" style="width:auto;">LINE ID</span>
+                    <input type="text" ng-model="detailTransaksi.lineUsername" readonly="true">
+                </label>
+            </div>
+        </div>
+
+        <div class="row item mangan-item-clear">
+            <div class="col col-10">
+                <i class="icon mangan-icon-left ion-cube"></i>
+            </div>
+            <div class="col">
+                <label class="item-input item-stacked-label item-text-wrap">
+                    <span class="input-label">Kurir</span>
+                    <input type="text" ng-model="detailTransaksi.kurir" readonly="true">      
+                </label>
+            </div>
         </div>
     </div>
 
     <div class="list card" style="padding:0; position: relative;">
-        <div class="item item-divider kontak-header" style="border:0;">
+         <ion-item class="mangan-invoice-header" style="border:0;">
             BIAYA
-        </div>
-        <div class="item item-text-wrap mangan-menu" style="border:0;">
+        </ion-item>
+        <div class="item item-text-wrap" style="border:0;">
             <div class="row">
                 <div class="col col-67"><h3>Total Pesanan</h3></div>
                 <div class="col"><h3>Rp {{detailTransaksi.jumlah}}</h3></div>
@@ -73,7 +118,7 @@
                 <div class="col"><h3>Rp {{detailTransaksi.feedelivery}}</h3></div>
             </div>
         </div>
-        <div class="item item-text-wrap mangan-menu" style="border-top: 1px solid rgb(242,243,243);">
+        <div class="item item-text-wrap" style="border-top: 1px solid rgb(242,243,243);">
             <div class="row">
                 <div class="col col-67"><h2 style="color:rgb(1,177,178);">TOTAL BAYAR</h2></div>
                 <div class="col"><h2 style="color:rgb(1,177,178);">Rp {{detailTransaksi.totalHarga}}</h2></div>
@@ -82,39 +127,37 @@
     </div>
 
     <div class="list card" style="padding:0; position: relative;">
-        <div class="item item-divider kontak-header" style="border:0;">
+        <ion-item class="mangan-invoice-header" style="border:0;">
             STATUS PESANAN
-        </div>
+        </ion-item>
 
-        <div class="item item-text-wrap mangan-menu" style="border: 0;">
-            <h3 style="color: #4d544d;">{{getTime(detailTransaksi.tgl)}}</h3>
-            <label class="item-input mangan-menu">
-                <i class="mangan-invoice-icon icon ion-clock"></i>
-                Dipesan pada : {{getDate(detailTransaksi.tgl)}}
-            </label>
-            <label class="item-input mangan-menu" ng-show="detailTransaksi.timeProcess">
-                <i class="mangan-invoice-icon icon ion-clock"></i>
-                Diproses kurir pada : {{getDate(detailTransaksi.timeProcess)}}
-            </label>
-            <label class="item-input mangan-menu" ng-show="detailTransaksi.statusUpdateTime && detailTransaksi.status == 'done'">
-                <i class="mangan-invoice-icon icon ion-clock"></i>
-                Selesai pada : {{getDate(detailTransaksi.statusUpdateTime)}}
-            </label>
+        <div class="item item-text-wrap" style="border: 0;">
+            <h3>{{getTime(detailTransaksi.tgl)}}</h3>
+            <div class="item item-icon-left item-text-wrap" style="border: 0;">
+                <i class="icon ion-android-person"></i>
+                <p>Dipesan pada <span class="item-note">{{getDate(detailTransaksi.tgl)}}</span></p>
+            </div>
+            <div class="item item-icon-left item-text-wrap" style="border: 0;" ng-show="detailTransaksi.timeProcess">
+                <i class="icon ion-android-bicycle"></i>
+                <p>Diproses kurir pada <span class="item-note">{{getDate(detailTransaksi.timeProcess)}}</span></p>
+            </div>
+            <div class="item item-icon-left item-text-wrap" style="border: 0;" ng-show="detailTransaksi.statusUpdateTime && detailTransaksi.status == 'done'">
+                <i class="icon ion-checkmark"></i>
+                <p>Selesai pada <span class="item-note">{{getDate(detailTransaksi.statusUpdateTime)}}</span></p>
+            </div>
         </div>
     </div>
 
     <div class="list card" style="padding:0; position: relative;" ng-hide='detailTransaksi.status == "queue" || detailTransaksi.status == "cancel"'>
-        <div class="item item-divider kontak-header" style="border:0;">
+        <ion-item class="mangan-invoice-header" style="border:0;">
             INFORMASI KURIR
-        </div>
+        </ion-item>
 
-        <div class="item item-avatar mangan-menu" style="">
+        <div class="item item-avatar">
             <img src="{{detailTransaksi.kurirPhotoUrl}}">
             <h3>{{detailTransaksi.namaKurir}}</h3>
             <p><span class="kapital">{{detailTransaksi.kurir}}</span></p>
-            <!-- <h3 ng-show='detailTransaksi.status == "done"'>Selesai diantarkan, terima kasih</h3> -->
         </div>
-
     </div>        
 </ion-content>
 
@@ -122,7 +165,7 @@
 
 <button class="button button-full button-oren" ng-show='detailTransaksi.status == "cancel"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-ios-information"> Pesanan Ini Telah Dibatalkan</button>
 
-<button class="button button-full button-oren" ng-click="call(detailTransaksi.kontakKurir)" ng-show='detailTransaksi.status == "process"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-android-call" style=""></i> Hubungi Kurir</button>
+<button class="button button-full button-oren" ng-click="call(detailTransaksi.kontakKurir)" ng-show='detailTransaksi.status == "process"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-android-call"></i> Hubungi Kurir</button>
 
-<button class="button button-full button-balanced" ng-show='detailTransaksi.status == "done"' ng-hide='detailTransaksi.status == "queue" || detailTransaksi.status == "cancel"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-ios-checkmark-outline" style=""></i> Pesanan Telah Diterima. Terima Kasih</button>
+<button class="button button-full button-balanced" ng-show='detailTransaksi.status == "done"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-checkmark"></i> Pesanan Telah Diterima. Terima Kasih</button>
 </ion-view>

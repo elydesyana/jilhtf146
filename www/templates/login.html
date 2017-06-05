@@ -1,20 +1,21 @@
-<ion-view hide-nav-bar="true" hide-back-button="true" id="login-page" cache-view="false" class="login overlay">
+<ion-view hide-nav-bar="true" hide-back-button="true" id="login-page" cache-view="false" class="login">
     <ion-content padding="false" scroll="false">
-      <div class="top-content row">
-            <div class="app-copy col col-top">
-                <img ng-src="img/manganstd.png" width="20%">
-                <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
+        <div>
+            <div class="app-copy">
+                <img src="img/manganstd.png" width="20%">
+                <div class="app-tagline">
+                    <h4><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
+                </div>
             </div>
-      </div>
-        <div class="bottom-content row">
-            <div class="col col-bottom" style="margin-bottom: 30px;">
-                <!-- <button class="google-sign-in button button-block" ng-click="googlelogin()" style="background-color: #DD4B39">
-                    <i class="ion-social-google" style="margin-right: 10px;"></i>Log in with Google
-                </button> -->
-                <button class="facebook-sign-in button button-block" ng-click="fblogin()">
-                    <i class="ion-social-facebook" style="margin-right: 10px;"></i>Log in with Facebook
-                </button>
-            </div>
+        </div>
+
+        <div class="bottom-content">
+            <!-- <button class="google-sign-in button button-block" ng-click="googlelogin()" style="background-color: #DD4B39">
+                <i class="ion-social-google" style="margin-right: 10px;"></i>Log in with Google
+            </button> -->
+            <button class="facebook-sign-in button button-icon-left button-block" ng-click="fblogin()">
+                <i class="ion-social-facebook"></i> Log in with Facebook
+            </button>
         </div>
     </ion-content>
 </ion-view>

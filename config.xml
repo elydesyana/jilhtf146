@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget android-versionCode="104048" id="com.manganindonesia.mangan" version="1.4.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Mangan</name>
-  <description>&#xD;&#xD;
-    Aplikasi Destinasi, Rekomendasi dan Informasi Wisata Kuliner Indonesia.&#xD;&#xD;
+  <description>&#xD;&#xD;&#xD;
+    Aplikasi Destinasi, Rekomendasi dan Informasi Wisata Kuliner Indonesia.&#xD;&#xD;&#xD;
   </description>
-  <author email="contact@mobilepangan.com" href="http://mobilepangan.com/">&#xD;&#xD;
-    Mangan Indonesia&#xD;&#xD;
+  <author email="contact@mobilepangan.com" href="http://mobilepangan.com/">&#xD;&#xD;&#xD;
+    Mangan Indonesia&#xD;&#xD;&#xD;
   </author>
   <content src="index.html"/>
   <access origin="*"/>

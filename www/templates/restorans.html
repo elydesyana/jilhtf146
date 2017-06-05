@@ -23,9 +23,9 @@
                 <div class="mangan-nama-resto">{{restoran.namaResto}}</div>
                 <div ng-click="openRestoran(restoran.index, true)"><img image-lazy-src="{{restoran.gambar[0]}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50"></div>
             </div>
-            <div class="row mangan-open-hour" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" ng-click="openRestoran(restoran.index)" >
-                <div class="col col-10"><i class="icon mangan-icon-col ion-android-alarm-clock"></i></div>
-                <div class="col"><p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'"><p>Buka {{restoran.keteranganBuka}}</p></div>
+            <div class="item item-icon-left mangan-open-hour" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" ng-click="openRestoran(restoran.index)">
+                <i class="icon mangan-icon-col ion-android-alarm-clock"></i>
+                <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'"><p>Buka {{restoran.keteranganBuka}}</p>
             </div>
             <div class="item item-text-wrap mangan-keterangan">
                 <p ng-bind-html="restoran.keteranganResto"></p>
@@ -40,12 +40,12 @@
                 </span>
                 <span class="col col-25" style="padding: 0;" ng-if="checkSavedRestoran(restoran.index) == false" ion-ripple>
                     <button class="button button-balanced button-clear" ng-click="saveRestoran(restoran.index)">
-                        <i class="icon icon ion-android-favorite-outline"></i>
+                        <i class="icon ion-android-favorite-outline"></i>
                     </button>
                 </span>
                 <span class="col col-25" style="padding: 0;" ng-if="checkSavedRestoran(restoran.index) == true" ion-ripple>
                    <button class="button button-light button-clear" ng-click="saveRestoran(restoran.index)">
-                        <i class="icon icon ion-android-favorite" style="color:#c85054;"></i>
+                        <i class="icon ion-android-favorite" style="color:#c85054;"></i>
                     </button>
                 </span>
                 <span class="col col-25" style="padding: 0;" ion-ripple>

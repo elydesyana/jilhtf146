@@ -10,27 +10,28 @@
         <div class="list" ng-show="dataUser">
             <div class="item item-thumbnail-left" style="border:0; margin-top: 20px;">
                 <img ng-src="{{dataUser.photoUrl}}" width="30%" height="auto" style="border-radius: 50%;">
-                <h2 style="margin-top: 10px;">{{dataUser.name}}</h2>
+                <h2 style="margin-top: 20px;">{{dataUser.name}}</h2>
                 <p>{{dataUser.email}}</p>
             </div>
         </div>
 
-        <div class="mangan-divider"></div>
+        <div class="mangan-divider-topbottom" >
         <div class="list" ng-show="dataUser">
-            <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="openProfile()" ion-ripple>
+            <div class="item item-icon-left item-icon-right" style="border:0;" ng-click="openProfile()" ion-ripple>
                 <i class="icon ion-android-person"></i>
                 <h2>Ubah Profil</h2>
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
-             <div class="item mangan-menu item-icon-left item-icon-right" style="border:0;" ng-click="openTransaksi()" ion-ripple>
+             <div class="item item-icon-left item-icon-right" style="border:0;" ng-click="openTransaksi()" ion-ripple>
                 <i class="icon ion-bag"></i>
                 <h2>Riwayat Transaksi</h2>
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
         </div>
+        </div>
+        
         <div class="item item-divider mangan-item-divider" ng-hide="notersimpan || !dataUser || dataUser == null"></div>
-
-        <div class="mangan-divider"></div>
+        
         <div class="mangan-nodata" ng-show="nodata && !notersimpan" style="margin-top: 10px;">
             <i class="icon ion-android-wifi"></i>
             <p>Ups, Periksa jaringan internet Anda</p>
@@ -62,7 +63,7 @@
                 <img ng-src="{{restoran.gambar[0]}}" class="mangan-image-jelajah" style="object-fit: cover; width: 100%;">
             </div>
         </div>
-        <div class="item item-text-wrap" style="border:0; border-bottom: 1px solid rgb(242,243,244); margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
+        <div class="item item-text-wrap" style="border:0; margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
             <p>Simpan lebih banyak untuk kamu kunjungi nanti</p>
         </div>
         <!-- <div class="item mangan-divider" ng-show="restorans.length > 0"></div> -->

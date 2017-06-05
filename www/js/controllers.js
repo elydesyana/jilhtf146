@@ -3289,11 +3289,17 @@ angular.module('app.controllers', [])
 	}
 
 	$scope.getPromos = function() {
-    	$scope.promos = null;
 	    Services.getPromos().then(function(promos) {
 	    	loadFlag = true;
 	    	if (promos) {
-		    	$scope.promos = promos;
+	    		$scope.promosObj = promos;
+		    	$scope.promos = [];
+	    		for(var p in promos){
+	    			if (promos[p]["index"]) {
+		    			$scope.promos.push(promos[p]);	    				
+	    			};
+	    		}
+		    	// $scope.promos = promos;
 		    	$ionicLoading.hide();
 	    	} else {
 	    		makeToast('Nantikan Promo Menarik', 1500, 'bottom');
@@ -3327,7 +3333,7 @@ angular.module('app.controllers', [])
 					index,
 					'Click'
 				]);
-		$scope.selectedPromo = $scope.promos[index];
+		$scope.selectedPromo = $scope.promosObj[index];
 		$scope.modal.show();
 	}
 
@@ -4679,6 +4685,10 @@ angular.module('app.controllers', [])
 		var minute = "0"+x.getMinutes();
 		var time = hours+'.'+minute.substr(-2);
 		return time;
+	}
+
+	$scope.openAll = function(){
+		$state.go('tabsController.restorans', {category: 'all', name: 'Semua Kuliner'});
 	}
 })
 

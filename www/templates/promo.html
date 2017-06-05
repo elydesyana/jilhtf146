@@ -5,40 +5,18 @@
             on-refresh="getPromos()"
             spinner = "ripple" >
         </ion-refresher>
-        <div class="mangan-nodata" ng-hide="promos || promos.length > 0">
-            <center><i class="ion-android-notifications-none"></i></center>
+        <div class="mangan-nodata" ng-hide="promos.length > 0">
+            <i class="ion-android-notifications-none"></i>
             <p>Tunggu Promo Menarik dari Kuliner Favoritmu</p>
         </div>
-<!--         <ion-list>
-            <ion-item class="item-thumbnail-left assertive item-text-wrap" ng-repeat="promo in promos | orderObjectBy: 'tglInput' :true track by promo.index" ng-click="openPromo(promo.indexResto)">
-                <img image-lazy-src="{{ promo.url }}" class="mangan-image-1_1" image-lazy-distance-from-bottom-to-load="50">
-                <h2>{{promo.resto}}</h2>
-                <h3>{{promo.keterangan}}</h3>
-                <h3>Valid Hingga:</h3>
-                <h3>{{promo.valid}}</h3>
-                <span class="mangan-menu-review">
-                    <i class="icon ion-ios-arrow-right" style="font-size: 40px; color: rgb(1,177,178); opacity: 0.5; "></i>
-                </span>
-            </ion-item>
-        </ion-list> -->
 
-
-
-        <div class="list card" ng-repeat="promo in promos | orderObjectBy: 'tglInput' :true track by promo.index" ng-show="promo.show" ng-click="openModal(promo.index)" style="padding:0;" ion-ripple>
+        <div class="list card" ng-repeat="promo in promos | orderObjectBy: 'tglInput' :true track by promo.index" ng-show="promo.show" ng-click="openModal(promo.index)" style="border:0" ion-ripple>
             <img class="mangan-image-4_3" src="{{promo.url}}">
-            <div class="item-body mangan-nama-restoran mangan-menu" style="background-color: white;">
-                <span style="padding: 0;"><i class="icon mangan-kontak-icon ion-ios-bell-outline"></i>{{promo.namaPromo}}</span>
-                <p style="margin-top: 0; margin-bottom:0;">{{promo.resto}}</p>
-                <p style="margin-top: 0; margin-bottom:0; color: orangered;">Valid hingga : {{promo.valid}}</p>
-            </div>
-           <!--  <img class="mangan-image-4_3" src="{{promo.url}}" ng-click="openPromo(promo.indexResto)">
-            <div class="item item-body mangan-menu" style="border: 1px solid rgb(230,231,232)">
-                <h2 style="font-weight: bold;">{{promo.namaPromo}}</h2>
-                <h2>{{promo.resto}}</h2>
-                <p>{{promo.keterangan}}</p>
+            <div class="item item-icon-left item-text-wrap" style="border-top:0;">
+                <i class="icon ion-android-notifications-none"></i>
+                {{promo.namaPromo}}
+                <p style="margin-top: 0;">{{promo.resto}}</p>
                 <p style="color: orangered;">Valid hingga : {{promo.valid}}</p>
-                
-            </div> -->
-        </div>
+            </div>
     </ion-content>
 </ion-view>
