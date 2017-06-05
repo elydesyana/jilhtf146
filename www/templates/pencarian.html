@@ -32,9 +32,9 @@
                 <div class="mangan-nama-resto">{{restoran.namaResto}}</div>
                 <div ng-click="openRestoran(restoran.index, true)"><img image-lazy-src="{{restoran.gambar[0]}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50"></div>
             </div>
-            <div class="row mangan-open-hour" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" ng-click="openRestoran(restoran.index)" >
-                <div class="col col-10"><i class="icon mangan-icon-col ion-android-alarm-clock"></i></div>
-                <div class="col"><p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'"><p>Buka {{restoran.keteranganBuka}}</p></div>
+            <div class="item item-icon-left item-text-wrap mangan-open-hour" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" ng-click="openRestoran(restoran.index)">
+                <i class="icon ion-android-alarm-clock"></i>
+                <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'"><p>Buka {{restoran.keteranganBuka}}</p>
             </div>
             <div class="item item-text-wrap mangan-keterangan">
                 <p ng-bind-html="restoran.keteranganResto"></p>

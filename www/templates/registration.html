@@ -1,40 +1,38 @@
-<ion-view hide-nav-bar="true" id="dataUser-page" class="wizardRegistration overlay">
-    <ion-content>
-        <div class="list">
-            <div style="position: absolute; z-index: 9999; top: 60px;">
-              <div class="mangan-registration">
-                  <img src="img/manganstd.png" width="20%">
-                  <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERITAHU KAMI </span> Sedikit Tentang Kamu.</h4>
-                  <p class="app-tagline" style="color: white;">Agar Kami Dapat Memberikan Informasi Kuliner dan Promo Menarik dengan Tepat. </p>
-              </div>
-
-                  <!-- form -->
-              <div class="list card" style="margin-top: 30px;">
-                <div class="item item-text-wrap">
-                    <!-- date picker -->
-                    <label class="item-input">
-                        <span class="input-label">Birthday</span>
-                        <input type="date" ng-model="user.dateOfBirth">
-                    </label>
-                    <label class="item-input">
-                        <span class="input-label">Telepon</span>
-                        <input type="number" placeholder="Nomor Telepon" ng-model="user.phone" >
-                    </label>
-                    <label class="item-input item-select">
-                        <div class="input-label" style="width: 0;">Gender</div>
-                        <select ng-model="user.gender" required="true">
-                          <option value="male" ng-selected="true">Male</option>
-                          <option value="female">Female</option>
-                        </select>
-                    </label>
-                </div>
-              </div>
-              <div class="item" style="background-color: transparent; border:0;">
-                <button class="button button-block button-oren" ng-click="complete()" ion-ripple>Simpan</button> 
-              </div>
-              
+<ion-view hide-nav-bar="true" id="dataUser-page" class="wizardRegistration">
+    <ion-content padding="false">
+      <div>
+        <div class="app-copy">
+            <img src="img/manganstd.png" width="20%">
+            <div class="app-tagline" style="text-align: center;">
+                <h4><span style="font-weight: bold; color: orangered">BERITAHU KAMI </span> Sedikit Tentang Kamu.</h4>
+                <p>Agar Kami Dapat Memberikan Informasi Kuliner dan Promo Menarik dengan Tepat.</p>
             </div>
         </div>
+      </div>
+      <div class="bottom-content">
+        <div class="list">
+            <label class="item item-input item-floating-label" style="border:0">
+                <span class="input-label" style="color: white;">Tanggal Lahir</span>
+                <input type="date" style="color: white" ng-model="user.dateOfBirth">
+                <div style="border-top: 1px solid rgba(255,255,255,0.3); margin-right: 15px;"></div>
+            </label>
+            <label class="item item-input item-select" style="border:0; background-color: transparent;">
+                <span class="input-label" style="color: white;">Gender</span>
+                <select ng-model="user.gender" required="true" style="color: white; background-color: transparent;">
+                  <option value="male" ng-selected="true">Male</option>
+                  <option value="female">Female</option>
+                </select>
+            </label>
+            <div style="border-top: 1px solid rgba(255,255,255,0.3); margin-left: 15px; margin-right: 15px;"></div>
+            <label class="item item-input item-floating-label" style="border:0">
+                <span class="input-label" style="color: white;">Nomor Telepon</span>
+                <input type="number" placeholder="Nomor Telepon" style="color: white" ng-model="user.phone" >
+                <div style="border-top: 1px solid rgba(255,255,255,0.3); margin-right: 15px;"></div>
+            </label>
+        </div>
+        <div class="button-bottom">
+          <button class="button button-block button-oren" ng-click="complete()" ion-ripple>Simpan</button>
+      </div>
     </ion-content>
 </ion-view>
 

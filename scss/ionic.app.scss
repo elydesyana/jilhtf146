@@ -276,7 +276,7 @@ p {
 	border-bottom:1px solid $grey;
 }
 
-.kontak-header {
+.mangan-invoice-header {
 	background-color: rgb(1, 178, 177);
 	padding: 10px;
 	color: white;
@@ -431,7 +431,7 @@ p {
 	text-align: center;
 
 	i{font-size: 30px; text-align: center; color: $greybold;}
-	p{font-weight: 300;}
+	p{font-weight: 300; padding-top: 10px;}
 	button{text-align: center;}
 }
 
@@ -469,16 +469,21 @@ p {
 }
 
 .mangan-button-jumlah{
-	padding: 2px 4px 1px;
+	padding: 2px 6px;
 	min-width: 20px;
 	min-height: 22px;
-	font-size: 12px;
-	line-height: 18px; 
+	line-height: 18px;
 }
+
 .mangan-button-jumlah .icon:before, .mangan-button-jumlah.icon:before, .mangan-button-jumlah.icon-left:before, .mangan-button-jumlah.icon-right:before {
-	    font-size: 16px;
-	    line-height: 19px;
-	    margin-top: 3px;
+	    font-size: 12px;
+	    line-height: 18px;
+	    // margin-top: 3px;
+}
+
+.mangan-input-quantity{
+	font-size: 16px;
+	padding: 5px 10px;
 }
 .button-oren {
     background-color:$orange;
@@ -557,258 +562,171 @@ p {
 }
 
 .wizardSlide1{
-	background: url('../img/slide2.jpg');
+	background: 
+		linear-gradient(
+			rgba(0,0,0, 0.2), 
+			rgba(0,0,0, 0.2)
+			),
+		url('../img/slide2.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
-	background-size:100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
+	background-size:cover;
 
-	.top-wizard
+	.app-copy
 	{
-    	height: 66%;
-    	.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
+		text-align: center;
+		padding-top: 13vh;
+	}
 
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
-    }
-
-    .bottom-wizard
+	.app-tagline
 	{
-		height: 34%;
+		margin-top: 8px;
+		text-align: center;
+		h3, h4{color: white;}
 	}
 }
 
 .wizardSlide2{
-	background: url('../img/slide3.jpg');
+	background: 
+		linear-gradient(
+			rgba(0,0,0, 0.2), 
+			rgba(0,0,0, 0.2)
+			),
+		url('../img/slide3.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
-	background-size:100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
+	background-size:cover;
 
-	.top-wizard
+	.app-copy
 	{
-    	height: 66%;
-    	.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
+		text-align: center;
+		padding-top: 13vh;
+	}
 
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
-    }
-
-    .bottom-wizard
+	.app-tagline
 	{
-		height: 34%;
+		margin-top: 8px;
+		text-align: center;
+		h3, h4{color: white;}
 	}
 }
 
 
 .wizardSlide3{
-	background: url('../img/slide6.jpg');
+	background: 
+		linear-gradient(
+			rgba(0,0,0, 0.2), 
+			rgba(0,0,0, 0.2)
+			),
+		url('../img/slide6.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
-	background-size:100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
+	background-size:cover;
 
-	.top-wizard
+	.app-copy
 	{
-    	height: 66%;
-    	.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
+		text-align: center;
+		padding-top: 13vh;
+	}
 
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
-    }
-
-    .bottom-wizard
+	.app-tagline
 	{
-		height: 34%;
+		margin-top: 8px;
+		text-align: center;
+		h3, h4{color: white;}
 	}
 }
 
 .wizardSlide4{
-	background: url('../img/slide4.jpg');
+	background: 
+		linear-gradient(
+			rgba(0,0,0, 0.2), 
+			rgba(0,0,0, 0.2)
+			),
+		url('../img/slide4.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
 	background-size:100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
 
-	.top-wizard
+	.app-copy
 	{
-    	height: 66%;
-    	.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
+		text-align: center;
+		padding-top: 13vh;
+	}
 
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
-    }
-
-    .bottom-wizard
+	.app-tagline
 	{
-		height: 34%;
+		margin-top: 8px;
+		text-align: center;
+		h3, h4{color: white;}
 	}
 }
 
 .wizardRegistration{
-	background: url('../img/slide8.jpg');
+	background: 
+		linear-gradient(
+			rgba(0,0,0, 0.3), 
+			rgba(0,0,0, 0.3)
+			),
+		url('../img/slide8.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
-	background-size:100%;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 );
-
-	.top-wizard
-	{
-    	height: 66%;
-    	.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
-
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
-    }
-
-    .bottom-wizard
-	{
-		height: 34%;
+	background-size: cover;
+	
+    .app-copy
+    {
+		text-align: center;
+		padding-top: 10vh;
 	}
+
+	.app-tagline
+	{
+		margin-top: 0px;
+		padding-left: 15px;
+		h4{color: white; font-weight: 400;}
+		p{color: white;}
+		
+	}
+
+    .bottom-content {margin-top: 20px;}
+}
+
+.button-bottom{
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px;
 }
 
 .login
 {
-	// background-color: $background-color;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01b2b1+0,f28509+100 */
-// background: #01b2b1; /* Old browsers */
-// background: -moz-linear-gradient(top,  #01b2b1 0%, #f28509 100%); /* FF3.6-15 */
-// background: -webkit-linear-gradient(top,  #01b2b1 0%,#f28509 100%); /* Chrome10-25,Safari5.1-6 */
-// background: linear-gradient(to bottom,  #01b2b1 0%,#f28509 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: 
+		linear-gradient(
+				rgba(0,0,0, 0.3), 
+				rgba(0,0,0, 0.3)
+				),
+		url('../img/login.jpg');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
 
-background: url('../img/login.jpg');
-background-position:center;
-background-repeat:no-repeat;
-background-size:100%;
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', endColorstr='#f28509',GradientType=0 ); /* IE6-9 */
-
-	.top-content
+	.app-copy
 	{
-    	height: 66%;
+		text-align: center;
+		padding-top: 13vh;
+	}
 
-		.app-copy
-		{
-			text-align: center;
-			padding-top: 13vh;
-		}
-
-		.app-logo
-		{
-			font-size: 40px;
-			font-family: sans-serif;
-			font-weight: 600;
-			color: $welcome-color;
-			letter-spacing: 8px;
-			text-transform: uppercase;
-		}
-
-		.app-tagline
-		{
-			font-size: 16px;
-			margin-top: 0px;
-			font-weight: 500;
-			color: rgba($welcome-color, 0.95);
-		}
+	.app-tagline
+	{
+		margin-top: 0px;
+		text-align: center;
+		h4{color: white;}
 	}
 
 	.bottom-content
 	{
-    	height: 34%;
+    	padding-top: 35vh;
+    	padding-left: 15px;
+    	padding-right: 15px;
 
 		.facebook-sign-in
 		{
@@ -832,20 +750,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b2b1', end
 
 .mangan-bottom {
 	text-align: center;
-	
     p{padding: 10px; border-bottom: 1px solid $grey;}
 }
 
-
-// .card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child{
-// 	border-bottom-right-radius: 0;
-// 	border-bottom-left-radius: 0;
-// }
-
-// .card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child{
-// 	border-top-right-radius: 0;
-// 	border-top-left-radius: 0;
-// }
 
 input[disabled],
 select[disabled],
@@ -956,6 +863,13 @@ font-weight: 200;
 	border-top: 1px solid $grey;
 }
 
+.mangan-divider-topbottom{
+	border-top: 1px solid $grey;
+	border-bottom: 1px solid $grey;
+
+}
+
+
 .mangan-item-divider{
 	border: 0; min-height:0; box-shadow: inset 0 0 3px rgba(136,136,136,0.3);
 }
@@ -1015,3 +929,5 @@ font-weight: 200;
 #mangan-pickcity-jelajah{
 	margin-top: 5px;font-size: 14px;
 }
+
+
