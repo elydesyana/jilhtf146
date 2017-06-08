@@ -1,40 +1,57 @@
-<!-- <div class="mangan-modal-container"> -->
-	<ion-modal-view class="">
-		<ion-header-bar class="bar bar-header bar-balanced">
-			<h1 class="title">Tulis Rating dan Ulasan</h1>
-			<button class="button button-primary" ng-click="modalRating.hide()"><span class="icon ion-close"></span></button>
-		</ion-header-bar>
 
-		<ion-content has-header="true" padding="true" overflow-scroll="false" class="has-footer">
-			<div class="item item-text-wrap mangan-rating" style="border:0;">
-				<div class="" style="background-color: white; color: #4d544d; font-size: 18px;">
-                    <span class="col" style="text-align: center; margin-bottom: 10px;">{{namaResto}}</span>
+<ion-modal-view class="">
+	<ion-header-bar class="bar bar-header bar-balanced">
+		<h1 class="title">Beri Rating dan Ulasan</h1>
+		<button class="button button-primary" ng-click="modalRating.hide()"><span class="icon ion-close"></span></button>
+	</ion-header-bar>
+
+	<ion-content has-header="true" padding="true" overflow-scroll="false">
+        <div class="list" style="border:0;">
+            <div class="item item-text-wrap" style="border:0; text-align: center">
+                <h2 style="padding: 10px;">{{namaResto}}</h2>
+                <div class="row" style="padding-bottom: 0;">
+                    <span class="col" style="padding:0;" ng-click="sadFeedbackCallback()" ion-ripple>
+                    	<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNBRjgwNjY7IiBjeD0iMTMiIGN5PSIxMy41IiByPSIzLjUiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0FGODA2NjsiIGN4PSIyOSIgY3k9IjEzLjUiIHI9IjMuNSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0zMiwzNWMtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTUuNTE0LTQuNDg2LTEwLTEwLTEwcy0xMCw0LjQ4Ni0xMCwxMGMwLDAuNTUyLTAuNDQ4LDEtMSwxICAgcy0xLTAuNDQ4LTEtMWMwLTYuNjE3LDUuMzgzLTEyLDEyLTEyczEyLDUuMzgzLDEyLDEyQzMzLDM0LjU1MiwzMi41NTIsMzUsMzIsMzV6Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" style="width:20px; height:20px;" /><br><p style="color:#cecece;" ng-hide="sadSelected">Sad</p><p style="color:#ff6a32;" ng-show="sadSelected">Sad</p></br>
+                    </span>
+                    <span class="col" style="padding:0;" ng-click="happyFeedbackCallback()" ion-ripple>
+                        <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZCRDk3MTsiIGN4PSIyMSIgY3k9IjIxIiByPSIyMSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0yMSwzNmMtNi42MTcsMC0xMi01LjM4My0xMi0xMmMwLTAuNTUyLDAuNDQ4LTEsMS0xczEsMC40NDgsMSwxYzAsNS41MTQsNC40ODYsMTAsMTAsMTAgICBzMTAtNC40ODYsMTAtMTBjMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMUMzMywzMC42MTcsMjcuNjE3LDM2LDIxLDM2eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YyOUMxRjsiIGQ9Ik0xNiwxN2MtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTEuNjU0LTEuMzQ2LTMtMy0zcy0zLDEuMzQ2LTMsM2MwLDAuNTUyLTAuNDQ4LDEtMSwxcy0xLTAuNDQ4LTEtMSAgIGMwLTIuNzU3LDIuMjQzLTUsNS01czUsMi4yNDMsNSw1QzE3LDE2LjU1MiwxNi41NTIsMTcsMTYsMTd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjI5QzFGOyIgZD0iTTM0LDE3Yy0wLjU1MiwwLTEtMC40NDgtMS0xYzAtMS42NTQtMS4zNDYtMy0zLTNzLTMsMS4zNDYtMywzYzAsMC41NTItMC40NDgsMS0xLDFzLTEtMC40NDgtMS0xICAgYzAtMi43NTcsMi4yNDMtNSw1LTVzNSwyLjI0Myw1LDVDMzUsMTYuNTUyLDM0LjU1MiwxNywzNCwxN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" style="width:20px; height:20px;"/><br><p style="color:#cecece;" ng-hide="happySelected">Happy</p><p style="color:#ff6a32;" ng-show="happySelected">Happy</p></br>
+                    </span>
+                    <span class="col" style="padding:0;" ng-click="favoriteFeedbackCallback()" ion-ripple>
+                        <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjBDNDE5OyIgZD0iTTIxLDM2Yy02LjYxNywwLTEyLTUuMzgzLTEyLTEyYzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDFjMCw1LjUxNCw0LjQ4NiwxMCwxMCwxMCAgIHMxMC00LjQ4NiwxMC0xMGMwLTAuNTUzLDAuNDQ4LTEsMS0xczEsMC40NDcsMSwxQzMzLDMwLjYxNywyNy42MTcsMzYsMjEsMzZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTEyLjU0NSwxMC43MDJDMTIuOTgzLDkuNywxMy45ODIsOSwxNS4xNDYsOWMxLjU2NywwLDIuNjk1LDEuMjk0LDIuODM3LDIuODM3ICAgYzAsMCwwLjA3NywwLjM4My0wLjA5MiwxLjA3MmMtMC4yMjksMC45MzktMC43NjksMS43NzMtMS40OTYsMi40MDlsLTMuODUsMy4zMTdMOC43NiwxNS4zMTljLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5ICAgYy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkM3LjMxNCwxMC4yOTQsOC40NDIsOSwxMC4wMDksOUMxMS4xNzIsOSwxMi4xMDcsOS43LDEyLjU0NSwxMC43MDJ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTI5LjM5LDEwLjcwMkMyOS44MjgsOS43LDMwLjgyOCw5LDMxLjk5MSw5YzEuNTY3LDAsMi42OTUsMS4yOTQsMi44MzcsMi44MzcgICBjMCwwLDAuMDc3LDAuMzgzLTAuMDkyLDEuMDcyYy0wLjIyOSwwLjkzOS0wLjc2OSwxLjc3My0xLjQ5NiwyLjQwOWwtMy44NSwzLjMxN2wtMy43ODUtMy4zMTcgICBjLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5Yy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkMyNC4xNTksMTAuMjk0LDI1LjI4OCw5LDI2Ljg1NCw5ICAgQzI4LjAxOCw5LDI4Ljk1Miw5LjcsMjkuMzksMTAuNzAyeiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" style="width:20px; height:20px;"/><br><p style="color:#cecece;" ng-hide="favoriteSelected">Favorite</p><p style="color:#ff6a32;" ng-show="favoriteSelected">Favorite</p></br>
+                    </span>
                 </div>
-				 <div class="row">
-                        <span class="col" style="padding:0; text-align:center;" ng-click="sadFeedbackCallback()" ion-ripple>
-                        	<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNBRjgwNjY7IiBjeD0iMTMiIGN5PSIxMy41IiByPSIzLjUiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0FGODA2NjsiIGN4PSIyOSIgY3k9IjEzLjUiIHI9IjMuNSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0zMiwzNWMtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTUuNTE0LTQuNDg2LTEwLTEwLTEwcy0xMCw0LjQ4Ni0xMCwxMGMwLDAuNTUyLTAuNDQ4LDEtMSwxICAgcy0xLTAuNDQ4LTEtMWMwLTYuNjE3LDUuMzgzLTEyLDEyLTEyczEyLDUuMzgzLDEyLDEyQzMzLDM0LjU1MiwzMi41NTIsMzUsMzIsMzV6Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" style="width:30px; height:30px;" /><br><p style="color:#cecece;" ng-hide="sadSelected">Sad</p><p style="color:#ff6a32;" ng-show="sadSelected">Sad</p></br>
-                        </span>
-                        <span class="col" style="padding:0; text-align:center;" ng-click="happyFeedbackCallback()" ion-ripple>
-                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZCRDk3MTsiIGN4PSIyMSIgY3k9IjIxIiByPSIyMSIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YwQzQxOTsiIGQ9Ik0yMSwzNmMtNi42MTcsMC0xMi01LjM4My0xMi0xMmMwLTAuNTUyLDAuNDQ4LTEsMS0xczEsMC40NDgsMSwxYzAsNS41MTQsNC40ODYsMTAsMTAsMTAgICBzMTAtNC40ODYsMTAtMTBjMC0wLjU1MiwwLjQ0OC0xLDEtMXMxLDAuNDQ4LDEsMUMzMywzMC42MTcsMjcuNjE3LDM2LDIxLDM2eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0YyOUMxRjsiIGQ9Ik0xNiwxN2MtMC41NTIsMC0xLTAuNDQ4LTEtMWMwLTEuNjU0LTEuMzQ2LTMtMy0zcy0zLDEuMzQ2LTMsM2MwLDAuNTUyLTAuNDQ4LDEtMSwxcy0xLTAuNDQ4LTEtMSAgIGMwLTIuNzU3LDIuMjQzLTUsNS01czUsMi4yNDMsNSw1QzE3LDE2LjU1MiwxNi41NTIsMTcsMTYsMTd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjI5QzFGOyIgZD0iTTM0LDE3Yy0wLjU1MiwwLTEtMC40NDgtMS0xYzAtMS42NTQtMS4zNDYtMy0zLTNzLTMsMS4zNDYtMywzYzAsMC41NTItMC40NDgsMS0xLDFzLTEtMC40NDgtMS0xICAgYzAtMi43NTcsMi4yNDMtNSw1LTVzNSwyLjI0Myw1LDVDMzUsMTYuNTUyLDM0LjU1MiwxNywzNCwxN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" style="width:30px; height:30px;"/><br><p style="color:#cecece;" ng-hide="happySelected">Happy</p><p style="color:#ff6a32;" ng-show="happySelected">Happy</p></br>
-                        </span>
-                        <span class="col" style="padding:0; text-align:center;" ng-click="favoriteFeedbackCallback()" ion-ripple>
-                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyIDQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MiA0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkJEOTcxOyIgY3g9IjIxIiBjeT0iMjEiIHI9IjIxIi8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRjBDNDE5OyIgZD0iTTIxLDM2Yy02LjYxNywwLTEyLTUuMzgzLTEyLTEyYzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDFjMCw1LjUxNCw0LjQ4NiwxMCwxMCwxMCAgIHMxMC00LjQ4NiwxMC0xMGMwLTAuNTUzLDAuNDQ4LTEsMS0xczEsMC40NDcsMSwxQzMzLDMwLjYxNywyNy42MTcsMzYsMjEsMzZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTEyLjU0NSwxMC43MDJDMTIuOTgzLDkuNywxMy45ODIsOSwxNS4xNDYsOWMxLjU2NywwLDIuNjk1LDEuMjk0LDIuODM3LDIuODM3ICAgYzAsMCwwLjA3NywwLjM4My0wLjA5MiwxLjA3MmMtMC4yMjksMC45MzktMC43NjksMS43NzMtMS40OTYsMi40MDlsLTMuODUsMy4zMTdMOC43NiwxNS4zMTljLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5ICAgYy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkM3LjMxNCwxMC4yOTQsOC40NDIsOSwxMC4wMDksOUMxMS4xNzIsOSwxMi4xMDcsOS43LDEyLjU0NSwxMC43MDJ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTY0QzNDOyIgZD0iTTI5LjM5LDEwLjcwMkMyOS44MjgsOS43LDMwLjgyOCw5LDMxLjk5MSw5YzEuNTY3LDAsMi42OTUsMS4yOTQsMi44MzcsMi44MzcgICBjMCwwLDAuMDc3LDAuMzgzLTAuMDkyLDEuMDcyYy0wLjIyOSwwLjkzOS0wLjc2OSwxLjc3My0xLjQ5NiwyLjQwOWwtMy44NSwzLjMxN2wtMy43ODUtMy4zMTcgICBjLTAuNzI3LTAuNjM2LTEuMjY3LTEuNDcxLTEuNDk2LTIuNDA5Yy0wLjE2OS0wLjY4OS0wLjA5Mi0xLjA3Mi0wLjA5Mi0xLjA3MkMyNC4xNTksMTAuMjk0LDI1LjI4OCw5LDI2Ljg1NCw5ICAgQzI4LjAxOCw5LDI4Ljk1Miw5LjcsMjkuMzksMTAuNzAyeiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" style="width:30px; height:30px;"/><br><p style="color:#cecece;" ng-hide="favoriteSelected">Favorite</p><p style="color:#ff6a32;" ng-show="favoriteSelected">Favorite</p></br>
-                        </span>
+		      </div>
+
+
+              <div class="list mangan-item-clear">
+                 <div class="row item mangan-item-clear">
+                    <div class="col col-10">
+                        <i class="icon mangan-icon-left ion-quote"></i>
                     </div>
-			</div>
+                    <div class="col">
+                        <label class="item-input item-stacked-label item-text-wrap">
+                            <span class="input-label" style="width:100%;">Judul Ulasan</span>
+                            <input type="text" placeholder="Ketik judul ulasan" ng-model="user.titleReview">
+                        </label>
+                    </div>
+                </div>
+                <div class="row item mangan-item-clear">
+                    <div class="col col-10">
+                        <i class="icon mangan-icon-left ion-compose"></i>
+                    </div>
+                    <div class="col" style="margin-bottom: 10px;">
+                        <label class="item-input item-stacked-label item-text-wrap">
+                            <span class="input-label" style="width:auto;">Ulasan</span>
+                            <textarea placeholder="Ketik Ulasan" rows="5" ng-model="user.review"></textarea>
+                          </label>
+                    </div>
+                </div>
+                <div class="item mangan-divider"></div>
+                <div class="item" style="border:0; padding-top: 0;">
+            	   <button class="button button-full button-oren" ng-click="saveRatingReview()" ion-ripple><i class="icon ion-checkmark"></i> Simpan</button>
+                </div>
+              </div>
+        </div>
+    </ion-content>
 
-			<div class="list item-text-wrap mangan-menu">
-				
-				<label class="item item-input item-stacked-label mangan-menu">
-        			<span class="input-label" style="color:rgb(1,177,178); font-weight: bold;">Judul Ulasan</span><input type="text" ng-model="user.titleReview">
-        		</label>
-        		<label class="item item-input item-stacked-label mangan-menu" style="border-bottom:0px;">
-        			<span class="input-label" style="color:rgb(1,177,178); font-weight: bold;">Ulasan</span><textarea rows="10" ng-model="user.review"></textarea>
-        		</label>
-        	</div>
-		</ion-content>
-
-		<button class="button button-full button-balanced" ng-click="saveRatingReview()" style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;" ion-ripple>Simpan
-		</button>
-	</ion-modal-view>
-<!-- </div> -->
+</ion-modal-view>

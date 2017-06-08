@@ -1,63 +1,78 @@
 <ion-view id="wizard-page" hide-nav-bar="true">
+  <div class="bar bar-footer" style="background-color: transparent; background-image:none;">
+      <button class="button button-clear button-balanced" ng-click="previous()" ng-show="slideIndex > 0">Previous</button>
+      <button class="button button-clear button-balanced pull-right" ng-click="next()" ng-show="slideIndex != 4">Next</button>
+      <button class="button button-clear button-balanced pull-right" ng-click="endWizard()" ng-show="slideIndex == 4">Skip</button>
+  </div>
+
   <ion-slide-box on-slide-changed="slideChanged(index)">
     <!-- first slide -->
     <ion-slide class="wizardSlide1">
-      <div class="top-wizard row">
-        <div class="app-copy col col-top">
+      <div>
+        <div class="app-copy">
           <img ng-src="img/manganstd.png" width="20%">
-          <h2 style="color: white;">Hai MangGaes!</h2>
-          <h4 style="color: white;"><span style="font-weight: bold; color: orangered">JELAJAHI </span> Kekayaan Kuliner Indonesia Bersama <span style="font-weight: bold; color: orangered">M</span><span style="font-weight: bold; color: rgb(1,177,178)">ANGAN</span></h4>
+        </div>
+        <div class="app-tagline">
+          <h3>Hai MangGaes!</h3>
+          <h4><span style="font-weight: bold; color: orangered">JELAJAHI </span> Kekayaan Kuliner Indonesia Bersama <span style="font-weight: bold; color: orangered">M</span><span style="font-weight: bold; color: rgb(1,177,178)">ANGAN</span></h4>
         </div>
       </div>
     </ion-slide>
 
     <!-- next slide -->
     <ion-slide class="wizardSlide2">
-      <div class="top-wizard row">
-        <div class="app-copy col col-top">
+      <div>
+        <div class="app-copy">
           <img ng-src="img/manganstd.png" width="20%">
-          <h4 style="color: white;">Kunjungi Kuliner <span style="font-weight: bold; color: orangered">TERDEKAT</span> dari lokasimu</h4>
+        </div>
+        <div class="app-tagline">
+          <h4>Kunjungi Kuliner <span style="font-weight: bold; color: orangered">TERDEKAT</span> dari lokasimu</h4>
         </div>
       </div>
     </ion-slide>
 
     <ion-slide class="wizardSlide3">
-      <div class="top-wizard row">
-        <div class="app-copy col col-top">
+      <div>
+        <div class="app-copy">
           <img ng-src="img/manganstd.png" width="20%">
-          <h4 style="color: white;"><span style="font-weight: bold; color: orangered">SIMPAN</span> Kuliner Favoritmu untuk Kamu Kunjungi Nanti</h4>
+        </div>
+        <div class="app-tagline">
+          <h4><span style="font-weight: bold; color: orangered">SIMPAN</span> Kuliner Favoritmu untuk Kamu Kunjungi Nanti</h4>
         </div>
       </div>
     </ion-slide>
 
     <ion-slide class="wizardSlide4">
-      <div class="top-wizard row">
-        <div class="app-copy col col-top">
+      <div>
+        <div class="app-copy">
           <img ng-src="img/manganstd.png" width="20%">
-          <h4 style="color: white;">Berikan<span style="font-weight: bold; color: orangered"> ULASAN & RATING</span> Setelah Mencoba Kuliner Favoritmu</h4>
+        </div>
+        <div class="app-tagline">
+          <h4>Berikan<span style="font-weight: bold; color: orangered"> ULASAN & RATING</span> Setelah Mencoba Kuliner Favoritmu</h4>
         </div>
       </div>
     </ion-slide>
 
     <!-- 3rd slide -->
-    <ion-slide class="login overlay">
-      <div class="top-content row">
-        <div class="app-copy col col-top">
-          <img ng-src="img/manganstd.png" width="20%">
-          <h4 class="app-tagline" style="color: white;"><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
+    <ion-slide class="login">
+      <div>
+        <div class="app-copy">
+            <img src="img/manganstd.png" width="20%">
+            <div class="app-tagline">
+                <h4><span style="font-weight: bold; color: orangered">BERGABUNG</span> untuk memesan, memberikan ulasan dan rating untuk kamu bagikan kepada orang lain</h4>
+            </div>
         </div>
       </div>
 
-      <div class="bottom-content row">
-        <div class="col col-bottom" style="margin-bottom: 30px;">
-          <button class="facebook-sign-in button button-block" ng-click="fblogin()">
-            <i class="ion-social-facebook" style="margin-right: 10px;"></i>Log in with Facebook
+      <div class="bottom-content">
+          <!-- <button class="google-sign-in button button-block" ng-click="googlelogin()" style="background-color: #DD4B39">
+              <i class="ion-social-google" style="margin-right: 10px;"></i>Log in with Google
+          </button> -->
+          <button class="facebook-sign-in button button-icon-left button-block" ng-click="fblogin()">
+              <i class="ion-social-facebook"></i> Log in with Facebook
           </button>
-          <a ng-click="endWizard()" style="font-weight: bold; color: white;">
-            Skip
-          </a>
-        </div>
       </div>
     </ion-slide>
   </ion-slide-box>
+
 </ion-view>

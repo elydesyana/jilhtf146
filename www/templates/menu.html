@@ -9,24 +9,18 @@
             <div class="list" ng-show="selectedMenu.review" ng-show="loadFlag">
                 <img ng-src="{{selectedMenu.reviewGambar}}" class="mangan-image-4_3">
                 <div class="item item-avatar" style="border: 0; padding-bottom:0px; background-color:rgb(1,177,178);">
-                    <img class="mangan-ulasan-resto" src="{{selectedMenu.reviewer.foto}}">
+                    <img class="mangan-image-host" src="{{selectedMenu.reviewer.foto}}">
                     <h2 style="color: white;">Diulas oleh {{ selectedMenu.reviewer.nama }}</h2>
                     <p style="color: white;">Host Kuliner MANGAN</p>
-                        <!-- <button class="mangan-tombol-aksi">
-                            <i class="icon ion-android-share-alt" style="color: white; font-size: 25px;"></i>
-                        </button> -->
-                    <!-- <p>Diulas pada 8 Agustus</p> -->
                 </div>
-                <div class="item mangan-menu" style="border:0;">
-                    <h2 style="font-size: 18px; color: #4d544d;">{{ selectedMenu.namaMenu }}</h2>
-                    <h3 ng-show="(selectedMenu.harga % 1) == 0" style="color: rgb(1,177,178);">{{ selectedMenu.harga | currency:'Rp ':2 }}</h3>
-                    <h3 ng-hide="(selectedMenu.harga % 1) == 0" style="color: rgb(1,177,178);">{{ selectedMenu.harga }}</h3>
-                    <span ng-show="selectedMenu.tag" class="mangan-tag-menumakanan" style="color: rgb(1,177,178);">{{ selectedMenu.tag }}</span>
+                <div class="item item-text-wrap" style="border:0;">
+                    <h3>{{ selectedMenu.namaMenu }}</h3>
+                    <p ng-show="(selectedMenu.harga % 1) == 0">{{ selectedMenu.harga | currency:'Rp ':2 }}</p>
+                    <p ng-hide="(selectedMenu.harga % 1) == 0">{{ selectedMenu.harga }}</p>
+                    <span ng-show="selectedMenu.tag" class="mangan-tag-menumakanan">{{ selectedMenu.tag }}</span>
                 </div>
-                <div class="mangan-keterangan-teks item-body" ng-bind-html="selectedMenu.review" style="">
-                        <!-- {{ selectedMenu.review }} -->
-                </div>
-
+                <div class="item item-body item-text-wrap" style="padding-top: 0;">
+                    <p>{{ selectedMenu.review }}</p>
                 </div>
             </div>
     </ion-content>

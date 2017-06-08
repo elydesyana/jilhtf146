@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget android-versionCode="104048" id="com.manganindonesia.mangan" version="1.4.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="104058" id="com.manganindonesia.mangan" version="1.4.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Mangan</name>
   <description>
     Aplikasi Destinasi, Rekomendasi dan Informasi Wisata Kuliner Indonesia.
@@ -72,10 +72,10 @@
     <icon src="resources/ios/icon/icon-small@3x.png" width="87" height="87"/>
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
-  <plugin name="cordova-plugin-firebase" spec="~0.1.18"/>
   <plugin name="ionic-plugin-deeplinks" source="npm">
     <param name="URL_SCHEME" value="mangan"/>
     <param name="DEEPLINK_SCHEME" value="https"/>
     <param name="DEEPLINK_HOST" value="mobilepangan.com"/>
   </plugin>
+  <plugin name="cordova-plugin-firebase" spec="~0.1.18"/>
 </widget>

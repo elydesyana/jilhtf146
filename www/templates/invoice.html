@@ -1,15 +1,11 @@
 <ion-view title="Invoice" id="invoice">
     <ion-content lazy-scroll padding="true" overflow-scroll="false" class="has-header has-footer">
-        <!-- <ion-refresher
-            on-refresh="getMenus()"
-            spinner = "ripple" >
-        </ion-refresher> -->
 
         <div class="list card" style="padding:0; position: relative;">
-        	<div class="item item-divider kontak-header" style="border:0;">
+        	<ion-item class="mangan-invoice-header" style="border:0;">
         		PESANAN
-        	</div>
-        	<div class="item item-text-wrap mangan-menu" style="border:0;" ng-repeat="menu in transaksi.pesanan">
+        	</ion-item>
+        	<div class="item item-text-wrap" style="border:0;" ng-repeat="menu in transaksi.pesanan">
         		<div class="row">
   					<div class="col col-67"><h3>{{menu.namaMenu}}</h3></div>
   					<div class="col"><h3>Rp {{menu.harga * menu.quantity}}</h3></div>
@@ -18,70 +14,109 @@
   					<div class="col">
   						<p>Jumlah : 
                             <span>
-                                <button class="button mangan-button-jumlah button-oren button-outline" ng-click="minQuantity($index, menu.quantity)"><i class="ion ion-minus" style=""></i></button>
-                                <span style="font-size: 16px;padding-left: 6px; padding-right: 6px;">{{menu.quantity}}</span>
-                                <button class="button mangan-button-jumlah button-oren button-outline" ng-click="addQuantity($index, menu.quantity)"><i class="ion ion-plus" style=""></i></button>
+                                <button class="button mangan-button-jumlah button-oren button-outline" ng-click="minQuantity($index, menu.quantity)"><i class="icon ion-minus"></i></button>
+                                <span class="mangan-input-quantity">{{menu.quantity}}</span>
+                                <button class="button mangan-button-jumlah button-oren button-outline" ng-click="addQuantity($index, menu.quantity)"><i class="icon ion-plus"></i></button>
                             </span>
                         </p>
   					</div>
 				</div>
-				<label class="item-input item-text-wrap mangan-menu" style="margin-top:-5px;">
-        			<i class="mangan-invoice-icon icon ion-compose" style="margin-right:5px;"></i>
-        			<input type="text" placeholder="Tambah Catatan" style="color:orangered;" ng-model="menu.note" ng-focus="tambahCatatan()">
+				<label class="item item-input item-text-wrap" style="border: 0; margin-top:-5px;">
+        			<i class="icon ion-compose" style="margin-left: -5px; padding-right: 5px;"></i>
+        			<input type="text" placeholder="Tambah Catatan" style="width: 100%; color:orangered;" ng-model="menu.note" ng-focus="tambahCatatan()">
         		</label>
         	</div>
-
-            <div class="item mangan-menu" style="margin:0; text-align: center; border-top: 1px solid rgb(242,243,243); border-bottom:0;">
-                    <a class="" style="text-decoration: none; color: rgb(1,177,178); font-size: 14px;" ng-click="addOrder()"><i class="icon ion-plus"></i> Tambah Pesanan</a>
+            <div class="item" style="margin: 0; padding: 0; border-top: 1px solid rgb(242,243,243)">
+                    <button class="button button-block button-small button-balanced button-clear" ng-click="addOrder()"><i class="icon ion-plus"></i> Tambah Pesanan</button>
             </div>
             </div>
         </div>
 
         <div class="list card" style="position: relative;">
-        	<div class="item item-divider kontak-header" style="border:0;">
-        		PENGIRIMAN
-        	</div>
-        	
-        	<div class="item item-text-wrap mangan-menu" style="border: 0;">
-        		<label class="item-input mangan-menu">
-        			<i class="mangan-invoice-icon icon ion-ios-person"></i>
-        			<input type="text" placeholder="Penerima" readonly="true" style="" ng-model="transaksi.namaUser">
-        		</label>
-        		<label class="item-input mangan-menu" style="">
-        			<i class="mangan-invoice-icon icon ion-ios-location"></i>
-                    <input type="text" placeholder="Pilih Lokasi Alamat" style="" ng-model="transaksi.alamatUser" ng-focus="pickLocation()" readonly>
-                    <!-- <i class="mangan-invoice-icon icon ion-android-locate" ng-click="pickLocation()"></i> -->
-        		</label>
-        		<!-- <label class="item-input mangan-menu">
-                    <button class="button button-clear button-oren button-small button-outline" style="margin-left: 18px;" ng-click="pickLocation()">Pilih Alamat Pengiriman</button>
-                </label> -->
-                <label class="item-input mangan-menu">
-                    <!-- <i class="mangan-invoice-icon icon ion-ios-location"></i> -->
-                    <input type="text" placeholder="Detail Alamat" style="margin-left: 18px;" ng-model="transaksi.alamatUserDetail" required>
-                </label>
-        		<label class="item-input mangan-menu">
-        			<i class="mangan-invoice-icon icon ion-android-call"></i>
-        			<input type="text" placeholder="Telepon" style="" ng-model="transaksi.noTelpUser" required>
-        		</label>
-                <label class="item-input mangan-menu">
-                    <i class="mangan-invoice-icon icon ion-ios-chatboxes"></i>
-                    <input type="text" placeholder="LINE Username" style="" ng-model="transaksi.lineUsername" required>
-                </label>
-        		<label class="item-input item-select item-text-wrap mangan-menu">
-				    <i class="mangan-invoice-icon icon ion-android-bicycle"></i>
-				    <div class="input-label">Kurir</div>
-				    <select ng-model="transaksi.kurir" ng-change="setFeeDelivery(transaksi.kurir)">
-                        <option ng-repeat="kurir in listKurir" value="{{kurir.index}}">{{kurir.nama}} (Mulai Rp {{kurir.ongkir}})</option>
-				    </select>
-				</label>
-			</div>
+        	<ion-item class="mangan-invoice-header" style="border:0;">
+                PENGIRIMAN
+            </ion-item>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-person"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Penerima</span>
+                        <input type="text" placeholder="Penerima" ng-model="transaksi.namaUser" readonly="true">
+                    </label>
+                </div>
+            </div>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-location" style="padding-top: 10px;"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Alamat</span>
+                        <textarea type="text" placeholder="Pilih Lokasi" rows="3" style="border-bottom: 1px solid #ccc" ng-model="transaksi.alamatUser" ng-focus="pickLocation()" readonly></textarea>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-navigate" style="padding-top: 10px;"></i>
+                </div>
+                <div class="col" style="margin-bottom: 10px;">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Detail Alamat</span>
+                        <textarea placeholder="Detail Alamat" rows="3" style="border-bottom: 1px solid #ccc" ng-model="transaksi.alamatUserDetail" required></textarea>
+                      </label>
+                </div>
+            </div>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-call"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">Telepon</span>
+                        <input type="text" placeholder="Telepon" ng-model="transaksi.noTelpUser" required>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-android-chat"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-stacked-label item-text-wrap">
+                        <span class="input-label" style="width:auto;">LINE ID</span>
+                        <input type="text" placeholder="LINE ID" ng-model="transaksi.lineUsername" required>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row item mangan-item-clear">
+                <div class="col col-10">
+                    <i class="icon mangan-icon-left ion-cube"></i>
+                </div>
+                <div class="col">
+                    <label class="item-input item-select item-text-wrap">
+                        <span class="input-label">Kurir</span>
+                        <select ng-model="transaksi.kurir" ng-change="setFeeDelivery(transaksi.kurir)">
+                            <option ng-repeat="kurir in listKurir" value="{{kurir.index}}">{{kurir.nama}} (Mulai Rp {{kurir.ongkir}})</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div class="list card" style="position: relative;">
-			<div class="item item-divider kontak-header" style="border:0;">
-        		BIAYA
-        	</div>
-        	<div class="item item-text-wrap mangan-menu" style="border:0;">
+			<ion-item class="mangan-invoice-header" style="border:0;">
+                BIAYA
+            </ion-item>
+        	<div class="item item-text-wrap" style="border:0;">
 	        	<div class="row">
 					<div class="col col-67"><h3>Sub Total</h3></div>
 					<div class="col"><h3>Rp {{transaksi.jumlah}}</h3></div>
@@ -90,14 +125,13 @@
 					<div class="col col-67"><h3>Ongkos Kirim</h3></div>
 					<div class="col"><h3>Rp {{transaksi.feedelivery}}</h3></div>
 				</div>
-                <div class="row">
-                    <div class="col"><h3>Keterangan Ongkos Kirim:</h3></div>
-                </div>
-                <div class="row">
-                    <div class="col"><p>{{kurirDetail.keterangan}}</p></div>
+                <div class="row item-text-wrap">
+                    <div class="col">
+                        <h3>Keterangan Ongkos Kirim : </h3><p>{{kurirDetail.keterangan}}</p>
+                    </div>
                 </div>
 			</div>
-			<div class="item item-text-wrap mangan-menu" style="border-top: 1px solid rgb(242,243,243); border-bottom:0;">
+			<div class="item item-text-wrap" style="border-top: 1px solid rgb(242,243,243);">
 				<div class="row">
 					<div class="col col-67"><h2 style="color:rgb(1,177,178);">TOTAL BAYAR</h2></div>
 					<div class="col"><h2 style="color:rgb(1,177,178);">Rp {{transaksi.totalHarga}}</h2></div>

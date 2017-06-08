@@ -1,47 +1,45 @@
-<!-- <div class="mangan-modal-container"> -->
-	<ion-modal-view class="" style="">
-		<ion-header-bar class="bar bar-header bar-balanced">
-			<h1 class="title">{{selectedPromo.namaPromo}}</h1>
-			<button class="button button-primary" ng-click="modal.hide()"><span class="icon ion-close"></span></button>
-		</ion-header-bar>
 
-		<ion-content lazy-scroll overflow-scroll="false" has-header="true" padding="true" class="has-footer">
-			<div style="position: relative;">
-				<img class="mangan-image-4_3" src="{{selectedPromo.url}}"> 
-	            <div class="item-body mangan-nama-restoran mangan-menu" style="background-color: white; border-bottom: 1px solid rgb(242,243,243);">
-	                <span style="padding: 0;"><i class="icon mangan-kontak-icon ion-ios-bell-outline"></i>
-	                	{{selectedPromo.namaPromo}}
-	                </spn>
-	                <p style="margin-top: 0; margin-bottom:0;">{{selectedPromo.resto}}</p>
-	                <p style="margin-top: 0; margin-bottom:0; color: orangered;">Valid hingga : {{selectedPromo.valid}}</p>
-	            </div>
-	            <div class="item-body mangan-menu" style="">
-	                <p>{{selectedPromo.keterangan}}</p>
-	            </div>
-	        </div>
-		</ion-content>
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-balanced">
+		<h1 class="title">{{selectedPromo.namaPromo}}</h1>
+		<button class="button button-primary" ng-click="modal.hide()"><span class="icon ion-close"></span></button>
+	</ion-header-bar>
 
-		<div style="height:auto; position:fixed; bottom:0px;left:0px;right:0px;"> 
-			<div class="item mangan-menu" style="border-top: 1px solid rgb(242,243,243);">
-	        	<div class="row" style="padding: 0;">
-                	<div style="padding:0;"></div>
-	                <div class="col" style="padding:0; text-align: center;" ion-ripple>
-	                    <button class="mangan-tombol-aksi" ng-click="sharePromo(selectedPromo)">
-	                        <i class="mangan-icon icon ion-android-share-alt"></i>
-	                    </button>
-	                </div>
-	                 <div class="col" style="padding:0; text-align: center;" ng-show="selectedPromo.extUrl" ion-ripple>
-	                    <button class="mangan-tombol-aksi" ng-click="gotoUrl(selectedPromo)">
-	                        <i class="mangan-icon icon ion-link"></i>
-	                    </button>
-	                </div>
-	                <div class="col" style="padding:0; text-align: center;" ng-show="selectedPromo.indexResto" ion-ripple>
-	                    <button class="mangan-tombol-aksi" ng-click="restoran(selectedPromo)">
-	                        <i class="mangan-icon icon icon ion-ios-arrow-right"></i>
-	                    </button>
-	                </div>
-	            </div>
-	        </div>
-    	</div>
-	</ion-modal-view>
-<!-- </div> -->
+	<ion-content lazy-scroll overflow-scroll="false" has-header="true" padding="true" class="has-footer">
+		<div class="list" style="position: relative; border: 0;">
+			<img class="mangan-image-4_3" src="{{selectedPromo.url}}"> 
+			<div class="item item-icon-left item-text-wrap" style="border-top:0;">
+                <i class="icon ion-android-notifications-none"></i>
+                {{selectedPromo.namaPromo}}
+                <p style="margin-top: 0;">{{selectedPromo.resto}}</p>
+                <p style="color: orangered;">Valid hingga : {{selectedPromo.valid}}</p>
+            </div>
+            <div class="item item-body item-text-wrap" style="border-bottom:0;">
+                <p style="margin-top:0;">{{selectedPromo.keterangan}}</p>
+            </div>
+        </div>
+	</ion-content>
+
+	<div style="height:auto; position:fixed; bottom:0px;left:0px;right:0px;"> 
+		<div class="item mangan-item-clear" style="border-top: 1px solid rgb(242,243,243)">
+    	<div class="row" style="padding: 0;">
+        	<div style="padding:0;"></div>
+            <div class="col" style="text-align: center;" ion-ripple>
+                <button class="button button-balanced button-clear" ng-click="sharePromo(selectedPromo)">
+                    <i class="icon ion-android-share-alt"></i>
+                </button>
+            </div>
+             <div class="col" style="text-align: center;" ng-show="selectedPromo.extUrl" ion-ripple>
+                <button class="button button-balanced button-clear" ng-click="gotoUrl(selectedPromo)">
+                    <i class="icon ion-link"></i>
+                </button>
+            </div>
+            <div class="col" style="text-align: center;" ng-show="selectedPromo.indexResto" ion-ripple>
+                <button class="button button-balanced button-clear" ng-click="restoran(selectedPromo)">
+                    <i class="icon ion-ios-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</ion-modal-view>

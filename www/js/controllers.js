@@ -1,8 +1,14 @@
 angular.module('app.controllers', [])
 
-.controller('mainCtrl', function($scope, $stateParams, $localStorage, Analytics) {
+.controller('mainCtrl', function($scope, $stateParams, $localStorage, $ionicPopover, Analytics) {
 	$localStorage.badge = 0;
 	$scope.badge = $localStorage.badge;
+
+	$ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope,
+	}).then(function(popover) {
+    $scope.popover = popover;
+  	});
 })
 
 .controller('restoransCtrl', function($scope, $stateParams, Services, $ionicLoading, $cordovaToast, $ionicTabsDelegate, $cordovaSocialSharing, $timeout, Analytics, $state, $localStorage, $ionicSlideBoxDelegate) {
@@ -1491,6 +1497,8 @@ angular.module('app.controllers', [])
     });
 
     $scope.$on('$ionicView.enter', function() {
+    	var forwardView = $ionicHistory.forwardView();
+    	console.log(JSON.stringify(forwardView));
 		if ($stateParams.changeCity) {
 			$scope.getRecomendation();
 		}
@@ -1498,6 +1506,7 @@ angular.module('app.controllers', [])
 		$scope.user = {};
 		$scope.queue = [];
 		$scope.process = [];
+		$ionicSlideBoxDelegate.update();
 
 		// trackView
     	Analytics.logView('Jelajah');
@@ -1897,6 +1906,7 @@ angular.module('app.controllers', [])
 
 	// fetch recomendation on jelajah
 	$scope.getRecomendation = function() {
+		$ionicSlideBoxDelegate.update();
 		$scope.slideRestorans = [];
 		$scope.showRecomendation = false;
 		Services.getRecomendations().then(function(restorans) {
@@ -2159,6 +2169,20 @@ angular.module('app.controllers', [])
 					'Tombol Rekomendasi Restoran'
 				]);
 		$state.go('tabsController.rekomendasi');
+		return false;
+	}
+
+	$scope.daftar = function(){
+		// trackEvent
+		Analytics.logEvent('Pencarian', 'Tombol Daftar Restoran');
+		// trackUser Event
+		Analytics.logUserArr([
+					$localStorage.indexUser? $localStorage.indexUser : $localStorage.token,
+					'trackEvent',
+					'Pencarian',
+					'Tombol Daftar Restoran'
+				]);
+		$state.go('tabsController.daftar');
 		return false;
 	}
 
@@ -3048,6 +3072,7 @@ angular.module('app.controllers', [])
 				icon: '',
 				position: latlon
 			});
+			google.maps.event.trigger($scope.map, 'resize');
 			addMarkers();
 		});
 	}
@@ -3202,18 +3227,18 @@ angular.module('app.controllers', [])
 		$state.go('tabsController.restoran', {index: index});
 	}
 
-	$scope.jelajahi = function() {
+	$scope.rekomendasikan = function(){
 		// trackEvent
-		Analytics.logEvent('Terdekat', 'Tombol Jelajahi');
+		Analytics.logEvent('Terdekat', 'Tombol Rekomendasikan');
 
 		// trackUser Event
 		Analytics.logUserArr([
 					$localStorage.indexUser? $localStorage.indexUser : $localStorage.token,
 					'trackEvent',
 					'Terdekat',
-					'Tombol Jelajahi'
+					'Tombol Rekomendasikan'
 				]);
-		$state.go('tabsController.restorans', {category: 'all', 'name': 'Terbaru'});
+		$state.go('tabsController.rekomendasi');
 	}
 
 	$scope.getFoundCount = function(restoranList) {
@@ -3281,11 +3306,17 @@ angular.module('app.controllers', [])
 	}
 
 	$scope.getPromos = function() {
-    	$scope.promos = null;
 	    Services.getPromos().then(function(promos) {
 	    	loadFlag = true;
 	    	if (promos) {
-		    	$scope.promos = promos;
+	    		$scope.promosObj = promos;
+		    	$scope.promos = [];
+	    		for(var p in promos){
+	    			if (promos[p]["index"]) {
+		    			$scope.promos.push(promos[p]);	    				
+	    			};
+	    		}
+		    	// $scope.promos = promos;
 		    	$ionicLoading.hide();
 	    	} else {
 	    		makeToast('Nantikan Promo Menarik', 1500, 'bottom');
@@ -3319,7 +3350,7 @@ angular.module('app.controllers', [])
 					index,
 					'Click'
 				]);
-		$scope.selectedPromo = $scope.promos[index];
+		$scope.selectedPromo = $scope.promosObj[index];
 		$scope.modal.show();
 	}
 
@@ -4253,6 +4284,11 @@ angular.module('app.controllers', [])
 				infowindow.open($scope.map, marker);
 			});
 
+			// wait till map loaded
+			google.maps.event.addListener($scope.map, 'idle', function() {
+				google.maps.event.trigger($scope.map, 'resize');
+			});
+
 			google.maps.event.addListener(autocomplete, 'place_changed', function() {
 				// trackEvent
 				Analytics.logEvent('Invoice', 'Lokasi', 'Cari Lokasi');
@@ -4674,6 +4710,10 @@ angular.module('app.controllers', [])
 		var time = hours+'.'+minute.substr(-2);
 		return time;
 	}
+
+	$scope.openAll = function(){
+		$state.go('tabsController.restorans', {category: 'all', name: 'Semua Kuliner'});
+	}
 })
 
 .controller('ulasanPenggunaCtrl', function($scope, $state, $stateParams, $ionicLoading, $ionicModal, $timeout, Services, Analytics, $localStorage) {
@@ -4952,6 +4992,7 @@ angular.module('app.controllers', [])
 
 .controller('rekomendasiCtrl', function($scope, $state, $stateParams, Services, $http, $ionicPopup, Analytics, $localStorage){
 	$scope.data = [];
+	$scope.data.jenis = "Restoran/Cafe";
 
 	$scope.$on('$ionicView.enter', function() {
 		// trackView
@@ -5304,6 +5345,13 @@ angular.module('app.controllers', [])
 			return;
 		}
 	});
+
+	$scope.next = function() {
+		$ionicSlideBoxDelegate.next();
+  	};
+  	$scope.previous = function() {
+  		$ionicSlideBoxDelegate.previous();
+  	};
 
 	firebase.auth().signOut().then(function() {
 		Analytics.logEventArr([
