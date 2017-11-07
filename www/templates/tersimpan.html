@@ -7,30 +7,24 @@
             spinner = "ripple" >
         </ion-refresher>
 
-        <div class="list" ng-show="dataUser">
-            <div class="item item-thumbnail-left" style="border:0; margin-top: 20px;">
+        <div class="list" ng-show="dataUser" style="padding-bottom: 20px; border-bottom: 1px solid #f5f5f5;">
+            <div class="item item-thumbnail-left item-icon-right" ng-click="openProfile()" style="border:0; margin-top: 20px;">
                 <img ng-src="{{dataUser.photoUrl}}" width="30%" height="auto" style="border-radius: 50%;">
                 <h2 style="margin-top: 20px;">{{dataUser.name}}</h2>
                 <p>{{dataUser.email}}</p>
+                <i class="icon ion-ios-arrow-forward" style="font-size: 20px; padding-left: 5px;"></i>                
             </div>
         </div>
 
-        <div class="mangan-divider-topbottom" >
-        <div class="list" ng-show="dataUser">
-            <div class="item item-icon-left item-icon-right" style="border:0;" ng-click="openProfile()" ion-ripple>
-                <i class="icon ion-android-person"></i>
-                <h2>Ubah Profil</h2>
-                <i class="icon ion-ios-arrow-right"></i>
+        <!-- <div class="mangan-divider-topbottom">
+            <div class="list" ng-show="dataUser">
+                <div class="item item-icon-left item-icon-right" style="border:0;" ng-click="openProfile()" ion-ripple>
+                    <i class="icon ion-android-person"></i>
+                    <h2>Ubah Profil</h2>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </div>
             </div>
-             <div class="item item-icon-left item-icon-right" style="border:0;" ng-click="openTransaksi()" ion-ripple>
-                <i class="icon ion-bag"></i>
-                <h2>Riwayat Transaksi</h2>
-                <i class="icon ion-ios-arrow-right"></i>
-            </div>
-        </div>
-        </div>
-        
-        <div class="item item-divider mangan-item-divider" ng-hide="notersimpan || !dataUser || dataUser == null"></div>
+        </div> -->
         
         <div class="mangan-nodata" ng-show="nodata && !notersimpan" style="margin-top: 10px;">
             <i class="icon ion-android-wifi"></i>
@@ -40,10 +34,10 @@
    
         <div class="mangan-nodata" ng-show="notersimpan" style="margin-top: 10px;">
             <i class="icon ion-heart-broken"></i>
-            <p>Ups, Sepertinya kamu belum menyimpan apapun</p>
+            <p>Ups, sepertinya kamu belum menyimpan apapun</p>
             <div class="row list" style="padding-top: 10px;">
                 <div class="col item item-text-wrap" id="mangan-button-rekomendasi" ng-hide="!dataUser || dataUser == null">
-                    <button class="button button-small button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>
+                    <button class="button button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>
                 </div>
                 <div class="col item item-text-wrap" id="mangan-button-rekomendasi" ng-show="!dataUser || dataUser == null">
                     <button class="button button-small button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>
@@ -55,24 +49,47 @@
         </div>
 
         <div class="item item-text-wrap" style="border: 0;" ng-show="!restorans || restorans.length > 0">
-            <p>{{restorans.length}} Kuliner Tersimpan</p>
+            <img width="12" height="12" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDMxLjk3MiA0MzEuOTcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MzEuOTcyIDQzMS45NzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzkzLjE0NiwxNC4yNzljLTMuNzEzLTUuMzMzLTguNzEzLTkuMjMzLTE0Ljk4OS0xMS43MDdjLTMuOTk3LTEuNzExLTguMTg2LTIuNTY4LTEyLjU2NS0yLjU2OFYwSDY2LjM3OCAgIGMtNC4zNzcsMC04LjU2MiwwLjg1Ny0xMi41NiwyLjU2OGMtNi4yOCwyLjQ3Mi0xMS4yNzgsNi4zNzctMTQuOTg5LDExLjcwN2MtMy43MSw1LjMzLTUuNTY4LDExLjIyOC01LjU2OCwxNy43MDF2MzY4LjAxOSAgIGMwLDYuNDc1LDEuODU4LDEyLjM3MSw1LjU2OCwxNy43MDZjMy43MTEsNS4zMjksOC43MDksOS4yMzMsMTQuOTg5LDExLjcwNGMzLjk5NCwxLjcxMSw4LjE4MywyLjU2NiwxMi41NiwyLjU2NiAgIGM4Ljk0OSwwLDE2Ljg0NC0zLjE0MiwyMy42OTgtOS40MThsMTI1LjkxLTEyMS4wNjJsMTI1LjkxLDEyMS4wNjVjNi42NjMsNi4wODEsMTQuNTYyLDkuMTI3LDIzLjY5NSw5LjEyNyAgIGM0Ljc2LDAsOC45NDgtMC43NTYsMTIuNTY1LTIuMjc5YzYuMjc2LTIuNDcxLDExLjI3Ni02LjM3NSwxNC45ODktMTEuNzExYzMuNzEtNS4zMjgsNS41NjQtMTEuMjI1LDUuNTY0LTE3LjY5OVYzMS45OCAgIEMzOTguNzEsMjUuNTA3LDM5Ni44NTIsMTkuNjA5LDM5My4xNDYsMTQuMjc5eiIgZmlsbD0iI2ZmNzg0NiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+            <span style="padding-left: 5px;">{{restorans.length}} Wishlist yang akan Kamu kunjungi</span>
         </div>
 
-        <div class="row gallery" style="border:0;">
+        <div class="row gallery"> 
+            <div class="mangan-jelajah-tile col col-50" style="position:relative; padding-bottom:0;" ng-repeat="restoran in restorans" ng-click="openRestoran(restoran.index)" ion-ripple>
+                <img ng-src="{{restoran.gambar[0]}}" class="mangan-image-jelajah" style="object-fit: cover; width: 100%; border-radius: 10px;">                
+                <div class="row" style="padding: 0;">
+                    <div class="col col-75" style="padding: 0;">
+                        <span style="color: black;">{{restoran.namaResto}}</span>
+                    </div>
+                    <div class="col col-25" style="padding: 0;">
+                        <span style="float: right;">
+                            <span style="color: #c85054; font-size: 12px">
+                                <i class="icon ion-android-favorite" style="margin-right: 4px;"></i>
+                                <span>4.9</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" style="padding: 10px 0; color: black;">
+                    Buka {{restoran.keteranganBuka}}
+                </p> -->
+            </div>
+        </div>
+
+        <!-- <div class="row gallery" style="border:0;">
             <div class="jelajah-tile col col-33" style="position:relative; padding-bottom:0;" ng-repeat="restoran in restorans" ng-click="openRestoran(restoran.index)" ion-ripple>
                 <img ng-src="{{restoran.gambar[0]}}" class="mangan-image-jelajah" style="object-fit: cover; width: 100%;">
             </div>
-        </div>
+        </div> -->
         <div class="item item-text-wrap" style="border:0; margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
             <p>Simpan lebih banyak untuk kamu kunjungi nanti</p>
+            <button class="button button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>            
         </div>
-        <!-- <div class="item mangan-divider" ng-show="restorans.length > 0"></div> -->
 
         <div class="mangan-nodata" ng-hide="notersimpan || dataUser">
             <i class="icon ion-heart-broken"></i>
             <p>Kamu Belum Login. Login Sekarang Juga.</p>
             <div class="row">
-                <button ng-show="!dataUser || dataUser == null" class="button button-oren button-small button-clear"  style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
+                <button ng-show="!dataUser || dataUser == null" class="button button-oren button-clear"  style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
             </div>
         </div>
     </ion-content>

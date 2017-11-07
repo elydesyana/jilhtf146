@@ -1,11 +1,11 @@
 // Initialize Firebase
 // mangan
-// var config = {
-// 	apiKey: "AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY",
-// 	authDomain: "project-1449647215698534337.firebaseapp.com",
-// 	databaseURL: "https://project-1449647215698534337.firebaseio.com",
-// 	storageBucket: "project-1449647215698534337.appspot.com"
-// };
+var config = {
+	apiKey: "AIzaSyCQz7kgKgqjOo6ptPdvEGJLxOCBKUPZEoY",
+	authDomain: "project-1449647215698534337.firebaseapp.com",
+	databaseURL: "https://project-1449647215698534337.firebaseio.com",
+	storageBucket: "project-1449647215698534337.appspot.com"
+};
 
 // ryou
 // var config = {
@@ -16,13 +16,13 @@
 // };
 
 // hamzah ManganBak
-var config = {
-    apiKey: "AIzaSyB1U7icSEQX4ZTCdsRHxDUFieD-r7sDFKA",
-    authDomain: "manganbak.firebaseapp.com",
-    databaseURL: "https://manganbak.firebaseio.com",
-    storageBucket: "manganbak.appspot.com",
-    messagingSenderId: "374536724800"
-};
+// var config = {
+//     apiKey: "AIzaSyB1U7icSEQX4ZTCdsRHxDUFieD-r7sDFKA",
+//     authDomain: "manganbak.firebaseapp.com",
+//     databaseURL: "https://manganbak.firebaseio.com",
+//     storageBucket: "manganbak.appspot.com",
+//     messagingSenderId: "374536724800"
+// };
 
 firebase.initializeApp(config);
 

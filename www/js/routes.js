@@ -485,6 +485,51 @@ angular.module('app.routes', ['ionicUIRouter'])
         controller: 'transaksiCtrl'
       }
     }
+  })
+
+  .state('tabsController.klaim', {
+    url: '/klaim',
+    views: {
+      'tab1':{
+        templateUrl:'templates/klaim.html',
+        controller:'klaimCtrl'
+      },
+      'tab2':{
+        templateUrl:'templates/klaim.html',
+        controller:'klaimCtrl'
+      },
+      'tab3': {
+        templateUrl: 'templates/klaim.html',
+        controller: 'klaimCtrl'
+      },
+      'tab4': {
+        templateUrl: 'templates/klaim.html',
+        controller: 'klaimCtrl'
+      }
+    }
+  })
+  
+  .state('tabsController.lapor', {
+    url: '/lapor',
+    views: {
+      'tab1':{
+        templateUrl:'templates/lapor.html',
+        controller:'laporCtrl'
+      },
+      'tab2':{
+        templateUrl:'templates/lapor.html',
+        controller:'laporCtrl'
+      },
+      'tab3': {
+        templateUrl: 'templates/lapor.html',
+        controller: 'laporCtrl'
+      },
+      'tab4': {
+        templateUrl: 'templates/lapor.html',
+        controller: 'laporCtrl'
+      }
+    }
   });
+  
   $urlRouterProvider.otherwise('/page1/page2');
 });

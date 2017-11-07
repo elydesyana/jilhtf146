@@ -9751,10 +9751,9 @@ p {
 .mangan-restoran-name {
   background-color: #f8f8f8;
   border: 0;
-  padding: 10px;
+  line-height: 1.5;
   width: 100%;
-  height: auto;
-  text-align: center; }
+  height: auto; }
 
 .mangan-list-header {
   position: relative;
@@ -9893,7 +9892,7 @@ p {
 
 .mangan-open-hour {
   line-height: 1.5;
-  margin-left: 5px; }
+  border: 0; }
 
 .mangan-icon-col {
   color: #4d544d;
@@ -9953,12 +9952,10 @@ p {
   padding: 2px 7px; }
 
 .mangan-tag-menumakanan {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 12px;
   color: #01b2b1;
-  border: 1px solid #01b2b1;
-  border-radius: 4px;
-  padding: 2px; }
+  text-transform: uppercase; }
 
 .mangan-text img {
   margin-top: -5px; }
@@ -9980,7 +9977,8 @@ p {
   text-decoration: none; }
 
 .mangan-jelajah-tile {
-  position: relative; }
+  position: relative;
+  margin-bottom: 24px; }
   .mangan-jelajah-tile a {
     text-decoration: none; }
 
@@ -10392,18 +10390,19 @@ input[type="checkbox"][readonly] {
     color: white; }
 
 .mangan-input-search {
-  margin: 10px; }
+  margin: 15px 20px 0px 20px; }
+  .mangan-input-search input {
+    margin-left: 40px; }
   .mangan-input-search label {
-    padding: 0;
-    border-radius: 5px; }
-  .mangan-input-search div {
-    min-height: 37px;
-    min-width: 37px;
-    background-color: #f2f3f3;
-    text-align: center;
-    margin-right: 10px; }
+    padding: 2px;
+    border-radius: 100px;
+    border-color: #cecccc; }
   .mangan-input-search i {
+    color: #01b2b1;
     line-height: 40px; }
+  .mangan-input-search .item-icon-left .icon {
+    left: 5px;
+    font-size: 18px; }
 
 .mangan-divider {
   border-top: 1px solid #f2f3f3; }
@@ -10472,4 +10471,21 @@ input[type="checkbox"][readonly] {
 
 #mangan-pickcity-jelajah {
   margin-top: 5px;
-  font-size: 14px; }
+  font-size: 16px; }
+
+.item-thumbnail-right > img:first-child {
+  top: 15px;
+  right: 25px;
+  max-width: 55px;
+  max-height: 55px; }
+
+.swiper-pagination-bullet {
+  background: #01b2b1; }
+
+.mangan-align-center {
+  border: 0;
+  text-align: center;
+  padding: 20px; }
+
+.input-label {
+  width: auto; }

@@ -1,61 +1,36 @@
 <ion-view title="Daftar Kuliner" id="daftar">
     <ion-content lazy-scroll padding="true" class="has-header">
-        <div class="list card"> 
-            <ion-item class="item-text-wrap" style="border: 0;">Daftarkan Usaha Kulinermu</ion-item>
-             <div class="row item mangan-item-clear">
-                <div class="col col-10">
-                    <i class="icon mangan-icon-left ion-android-home"></i>
-                </div>
-                <div class="col">
-                    <label class="item-input item-stacked-label item-text-wrap">
-                        <span class="input-label" style="width:auto;">Nama Usaha Kuliner</span>
-                        <input type="text" placeholder="Nama Usaha Kuliner" ng-model="data.namaResto" required>
-                    </label>
-                </div>
+        <div class="list"> 
+            <div class="item mangan-align-center item-text-wrap">
+                <img width="45" height="45" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgMzgwLjcyMSAzODAuNzIxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzODAuNzIxIDM4MC43MjE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTkwLjM3MiwyOS44MTNjLTg4LjY3MywwLTE2MC41NDYsNzEuODczLTE2MC41NDYsMTYwLjU0N2MwLDYzLjg5MSwzNy40MTgsMTE4Ljg5NCw5MS40NDUsMTQ0LjczNGw1LjAyNS05Ny4wOTggICAgYzAsMC05LjQ1Mi0zLjEwMi0xMS41MjEtNC4xMTJjLTIwLjA0OC04LjgzMS0zNC42MTItMzQuODMzLTM0LjYxMi02OC41OGMwLTM2LjgyNSwyOC41NTktNjguNTQ0LDU2LjE3LTY4LjgwNiAgICBjMC4wMzUsMCwwLjAzNSwwLDAuMDU4LDBjMC4wMTIsMCwwLjAzNSwwLDAuMDQ2LDBjMjcuNjE3LDAuMjYxLDU2LjE3NywzMS45OCw1Ni4xNzcsNjguODA2YzAsMzMuNzQ3LTE0LjU4Miw1OS43MzgtMzQuNTg5LDY4LjU4ICAgIGMtMC4xNTcsMC4wNjktMTEuNjEzLDQuMjI5LTExLjYxMyw0LjIyOWw1LjYxMiwxMDcuOTYxYzEyLjMxNSwzLjAzMSwyNS4xMTksNC44MSwzOC4zNyw0LjgxYzE3Ljg3LDAsMzQuOTg0LTMuMDQ0LDUxLjA0MS04LjQyNCAgICBsNC45NzMtOTYuMjE0Yy0xMy4xMDUtMi44ODItMjQuMjgzLTExLjIyNS0zMS4yODktMjEuNjkyYy04LjY3OS0xMy4wMDEsNi42ODEtMTI4LjA2Nyw2LjY4MS0xMjguMDY3aDkuOTkydjEwNy45NzhoOS45MjNWOTYuNDk5ICAgIGgxMC44NTJ2MTA3Ljk5aDkuODc2Vjk2LjQ5OWgxMS4yNTl2MTA3Ljk5aDkuOTFWOTYuNDk5aDcuNjY4YzAsMCwxNS4zNiwxMTUuMDY2LDYuNjcsMTI4LjA2NyAgICBjLTYuOTM3LDEwLjM2NC0xOC4wMSwxOC42ODMtMzAuOTUyLDIxLjYzNGMtMC4yMzIsMC4wODItMC40NDIsMC4xNjItMC40NDIsMC4xNjJsNC4zMjIsODIuNzYxICAgIGM0Ny44MjMtMjcuODA0LDgwLjA1My03OS40Niw4MC4wNTMtMTM4Ljc2MkMzNTAuOTA3LDEwMS42ODcsMjc5LjAzNCwyOS44MTMsMTkwLjM3MiwyOS44MTN6IiBmaWxsPSIjZDRkNGQ0Ii8+CgkJPHBhdGggZD0iTTEwMy42NjIsMTQ4Ljk4YzAuNTc1LTIuMzQxLDEuMzQ4LTQuNTY2LDEuMzgzLTQuNjA2YzAuMjUtMC44NzctMC4yMTUtMS43NzItMS4xNjgtMi4zNDEgICAgYy0wLjkwNi0wLjQ4OC0yLjAxLTAuMjM4LTIuNTIxLDAuNTQ2YzAsMC0xLjA5OCwxLjc0OS0yLjY5LDQuMzM0Yy0xLjI5NSwyLjIyNS0zLjIxMiw1Ljc4LTQuNTIsMTAuMjA3ICAgIGMtMS4xMzMsMy44OC0yLjQ4Niw5LjAzOS0zLjA5NiwxNC44MTNjLTAuMjYxLDMuMDMzLTAuMzIsNS43NjktMC4yMjcsOC41ODZjMC4yMjcsMy4yMTIsMC43MTQsNS45NiwxLjY0NCw5LjEwMyAgICBjMy4xNTQsOC45NjQsNS41ODMsMTcuNjQ0LDE0LjM0OSwyNi4yMDZjMi43NzEsMi44NDcsNS42MTgsNC43ODcsNy42NzQsNi4yMTZsMC43MjYsMC41MTFjMC40NDIsMC4yOTEsMC44NjYsMC41NTksMS4yODQsMC44MDMgICAgYzEuNzI2LDAuOTA2LDIuODgxLDEuMjMxLDMuMDkxLDEuMjc3YzAuODU5LDAuMjMyLDEuNzQzLTAuMTg2LDIuMTA4LTAuODgzYzAuMzQzLTAuNzMyLDAuMDkzLTEuNjUtMC42MjEtMi4yMyAgICBjMCwwLTEtMC44NzEtMi4yODMtMi40OThjLTAuODc3LTAuOTg4LTEuODMtMi40MTctMi45MzktNC4wMzFjLTAuNzg0LTEuMTM5LTEuNzA4LTIuNDI5LTIuNTY4LTMuNjg0ICAgIGMtNC4yNy02LjUxOC02LjczMi0xNS42MTUtMTAuMTM3LTI0LjkzNGMtMC42NjgtMi4wMjItMS4yMTQtNC42NDItMS40MTgtNi44NjdjLTAuMjcyLTIuNTY4LTAuNC01LjA0Mi0wLjQtNy4zMzcgICAgYy0wLjA5OS01LjMzMywwLjEzOS05LjkxMSwwLjYwNC0xMy42MjNDMTAyLjQ3MSwxNTQuMzYsMTAyLjg4OSwxNTEuMjE3LDEwMy42NjIsMTQ4Ljk4eiIgZmlsbD0iI2Q0ZDRkNCIvPgoJCTxwYXRoIGQ9Ik0xOTAuMzcyLDBDODUuNDE1LDAsMCw4NS4zOTcsMCwxOTAuMzZDMCwyOTUuMyw4NS40MTUsMzgwLjcyMSwxOTAuMzcyLDM4MC43MjFjMTA0Ljk1MiwwLDE5MC4zNS04NS40MjEsMTkwLjM1LTE5MC4zNjEgICAgQzM4MC43MjEsODUuMzk3LDI5NS4zMjQsMCwxOTAuMzcyLDB6IE0xOTAuMzcyLDM2Ni41MjNjLTk3LjE0NCwwLTE3Ni4xOC03OS4wMy0xNzYuMTgtMTc2LjE2MyAgICBjMC05Ny4xNDQsNzkuMDM2LTE3Ni4xOCwxNzYuMTgtMTc2LjE4Yzk3LjEzMywwLDE3Ni4xNzUsNzkuMDM2LDE3Ni4xNzUsMTc2LjE4QzM2Ni41NDYsMjg3LjQ5MywyODcuNTA0LDM2Ni41MjMsMTkwLjM3MiwzNjYuNTIzeiAgICAiIGZpbGw9IiNkNGQ0ZDQiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                <p style="margin-top: 8px;">Daftarkan usaha kuliner Anda untuk menjangkau lebih banyak pengunjung</p>
             </div>
-            <div class="row item mangan-item-clear">
-                <div class="col col-10">
-                    <i class="icon mangan-icon-left ion-android-person"></i>
-                </div>
-                <div class="col">
-                    <label class="item-input item-stacked-label item-text-wrap">
-                        <span class="input-label" style="width:auto;">Nama Pemilik</span>
-                        <input type="text"placeholder="Nama Pemilik" ng-model="data.namaPemilik" required>
-                    </label>
-                </div>
-            </div>
-            <div class="row item mangan-item-clear">
-                <div class="col col-10">
-                    <i class="icon mangan-icon-left ion-location"></i>
-                </div>
-                <div class="col">
-                    <label class="item-input item-stacked-label item-text-wrap">
-                        <span class="input-label" style="width:auto;">Alamat Usaha Kuliner</span>
-                        <input type="text" placeholder="Alamat Usaha Kuliner" ng-model="data.alamat" required>
-                    </label>
-                </div>
-            </div>
-            <div class="row item mangan-item-clear">
-                <div class="col col-10">
-                    <i class="icon mangan-icon-left ion-android-call"></i>
-                </div>
-                <div class="col">
-                    <label class="item-input item-stacked-label item-text-wrap">
-                        <span class="input-label" style="width:auto;">Telepon Pemilik</span>
-                        <input type="text" placeholder="Telepon Pemilik" ng-model="data.kontak" required>
-                    </label>
-                </div>
-            </div>
-            <div class="row item mangan-item-clear">
-                <div class="col col-10">
-                    <i class="icon mangan-icon-left ion-quote"></i>
-                </div>
-                <div class="col" style="margin-bottom: 10px;">
-                    <label class="item-input item-stacked-label item-text-wrap">
-                        <span class="input-label" style="width:auto;">Deskripsi Kuliner</span>
-                        <textarea placeholder="Deskripsi Kuliner" rows="3" style="border-bottom: 1px solid #ccc" ng-model="data.deskripsi" required></textarea>
-                      </label>
-                </div>
+
+            <div class="mangan-form" style="margin-top: 10px">  
+                <label class="item item-input item-stacked-label item-text-wrap" style="border: 0;">
+                    <span class="input-label">Nama Usaha Kuliner</span>
+                    <input type="text" placeholder="Nama Usaha Kuliner" ng-model="data.namaResto" style="border-bottom: 1px solid rgb(242,243,243);" required>
+                </label>
+            
+                <label class="item item-input item-stacked-label item-text-wrap" style="border: 0;">
+                    <span class="input-label">Nama Pemilik</span>
+                    <input type="text"placeholder="Nama Pemilik" ng-model="data.namaPemilik" style="border-bottom: 1px solid rgb(242,243,243);" required>
+                </label>
+            
+                <label class="item item-input item-stacked-label item-text-wrap" style="border: 0;">
+                    <span class="input-label">Alamat Usaha Kuliner</span>
+                    <input type="text" placeholder="Alamat Usaha Kuliner" ng-model="data.alamat" style="border-bottom: 1px solid rgb(242,243,243);" required>
+                </label>
+            
+                <label class="item item-input item-stacked-label item-text-wrap" style="border: 0;">
+                    <span class="input-label">Telepon Pemilik</span>
+                    <input type="text" placeholder="Telepon Pemilik" ng-model="data.kontak" style="border-bottom: 1px solid rgb(242,243,243);" required>
+                </label>
+            
+                <label class="item item-input item-stacked-label item-text-wrap" style="border: 0;">
+                    <span class="input-label">Deskripsi Kuliner</span>
+                    <textarea placeholder="Deskripsi Kuliner" rows="3" ng-model="data.deskripsi" style="border-bottom: 1px solid rgb(242,243,243);" required></textarea>
+                </label>
             </div>
         </div>
         <button class="button button-block button-oren" ng-click="daftar()" ion-ripple>DAFTAR SEKARANG</button>
