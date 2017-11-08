@@ -48,10 +48,13 @@
             </div>
         </div>
 
-        <div class="item item-text-wrap" style="border: 0;" ng-show="!restorans || restorans.length > 0">
-            <img width="12" height="12" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDMxLjk3MiA0MzEuOTcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MzEuOTcyIDQzMS45NzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzkzLjE0NiwxNC4yNzljLTMuNzEzLTUuMzMzLTguNzEzLTkuMjMzLTE0Ljk4OS0xMS43MDdjLTMuOTk3LTEuNzExLTguMTg2LTIuNTY4LTEyLjU2NS0yLjU2OFYwSDY2LjM3OCAgIGMtNC4zNzcsMC04LjU2MiwwLjg1Ny0xMi41NiwyLjU2OGMtNi4yOCwyLjQ3Mi0xMS4yNzgsNi4zNzctMTQuOTg5LDExLjcwN2MtMy43MSw1LjMzLTUuNTY4LDExLjIyOC01LjU2OCwxNy43MDF2MzY4LjAxOSAgIGMwLDYuNDc1LDEuODU4LDEyLjM3MSw1LjU2OCwxNy43MDZjMy43MTEsNS4zMjksOC43MDksOS4yMzMsMTQuOTg5LDExLjcwNGMzLjk5NCwxLjcxMSw4LjE4MywyLjU2NiwxMi41NiwyLjU2NiAgIGM4Ljk0OSwwLDE2Ljg0NC0zLjE0MiwyMy42OTgtOS40MThsMTI1LjkxLTEyMS4wNjJsMTI1LjkxLDEyMS4wNjVjNi42NjMsNi4wODEsMTQuNTYyLDkuMTI3LDIzLjY5NSw5LjEyNyAgIGM0Ljc2LDAsOC45NDgtMC43NTYsMTIuNTY1LTIuMjc5YzYuMjc2LTIuNDcxLDExLjI3Ni02LjM3NSwxNC45ODktMTEuNzExYzMuNzEtNS4zMjgsNS41NjQtMTEuMjI1LDUuNTY0LTE3LjY5OVYzMS45OCAgIEMzOTguNzEsMjUuNTA3LDM5Ni44NTIsMTkuNjA5LDM5My4xNDYsMTQuMjc5eiIgZmlsbD0iI2ZmNzg0NiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
-            <span style="padding-left: 5px;">{{restorans.length}} Wishlist yang akan Kamu kunjungi</span>
+        <div class="item item-text-wrap" style="border: 0; text-align: center;" ng-show="!restorans || restorans.length > 0">
+            <!-- <img width="12" height="12" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDMxLjk3MiA0MzEuOTcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MzEuOTcyIDQzMS45NzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzkzLjE0NiwxNC4yNzljLTMuNzEzLTUuMzMzLTguNzEzLTkuMjMzLTE0Ljk4OS0xMS43MDdjLTMuOTk3LTEuNzExLTguMTg2LTIuNTY4LTEyLjU2NS0yLjU2OFYwSDY2LjM3OCAgIGMtNC4zNzcsMC04LjU2MiwwLjg1Ny0xMi41NiwyLjU2OGMtNi4yOCwyLjQ3Mi0xMS4yNzgsNi4zNzctMTQuOTg5LDExLjcwN2MtMy43MSw1LjMzLTUuNTY4LDExLjIyOC01LjU2OCwxNy43MDF2MzY4LjAxOSAgIGMwLDYuNDc1LDEuODU4LDEyLjM3MSw1LjU2OCwxNy43MDZjMy43MTEsNS4zMjksOC43MDksOS4yMzMsMTQuOTg5LDExLjcwNGMzLjk5NCwxLjcxMSw4LjE4MywyLjU2NiwxMi41NiwyLjU2NiAgIGM4Ljk0OSwwLDE2Ljg0NC0zLjE0MiwyMy42OTgtOS40MThsMTI1LjkxLTEyMS4wNjJsMTI1LjkxLDEyMS4wNjVjNi42NjMsNi4wODEsMTQuNTYyLDkuMTI3LDIzLjY5NSw5LjEyNyAgIGM0Ljc2LDAsOC45NDgtMC43NTYsMTIuNTY1LTIuMjc5YzYuMjc2LTIuNDcxLDExLjI3Ni02LjM3NSwxNC45ODktMTEuNzExYzMuNzEtNS4zMjgsNS41NjQtMTEuMjI1LDUuNTY0LTE3LjY5OVYzMS45OCAgIEMzOTguNzEsMjUuNTA3LDM5Ni44NTIsMTkuNjA5LDM5My4xNDYsMTQuMjc5eiIgZmlsbD0iI2ZmNzg0NiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /> -->
+            <p>{{restorans.length}} Wishlist yang akan kamu kunjungi. <br> Simpan lebih banyak lagi!</p>
         </div>
+        <!-- <div class="item item-text-wrap" style="border:0; margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
+            <p>Simpan lebih banyak untuk kamu kunjungi nanti</p>          
+        </div> -->
 
         <div class="row gallery"> 
             <div class="mangan-jelajah-tile col col-50" style="position:relative; padding-bottom:0;" ng-repeat="restoran in restorans" ng-click="openRestoran(restoran.index)" ion-ripple>
@@ -80,16 +83,14 @@
                 <img ng-src="{{restoran.gambar[0]}}" class="mangan-image-jelajah" style="object-fit: cover; width: 100%;">
             </div>
         </div> -->
-        <div class="item item-text-wrap" style="border:0; margin-bottom: 10px; text-align: center;" ng-show="restorans.length > 0">
-            <p>Simpan lebih banyak untuk kamu kunjungi nanti</p>
-            <button class="button button-oren button-clear" style="width: 100%;" ng-click="jelajah()" ion-ripple>JELAJAHI</button>            
-        </div>
 
-        <div class="mangan-nodata" ng-hide="notersimpan || dataUser">
-            <i class="icon ion-heart-broken"></i>
-            <p>Kamu Belum Login. Login Sekarang Juga.</p>
-            <div class="row">
-                <button ng-show="!dataUser || dataUser == null" class="button button-oren button-clear"  style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
+        <div class="list" ng-hide="notersimpan || dataUser">
+            <div class="item mangan-align-center item-text-wrap">
+                <img width="35" height="35" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2My40MyA1NjMuNDMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2My40MyA1NjMuNDM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPHBhdGggZD0iTTI4MC43OSwzMTQuNTU5YzgzLjI2NiwwLDE1MC44MDMtNjcuNTM4LDE1MC44MDMtMTUwLjgwM1MzNjQuMDU1LDEzLjQxNSwyODAuNzksMTMuNDE1UzEyOS45ODcsODAuOTUzLDEyOS45ODcsMTYzLjc1NiAgUzE5Ny41MjQsMzE0LjU1OSwyODAuNzksMzE0LjU1OXogTTI4MC43OSw1Mi43MzVjNjEuMDYxLDAsMTExLjAyMSw0OS45NTksMTExLjAyMSwxMTEuMDIxUzM0MS44NTEsMjc0Ljc3NiwyODAuNzksMjc0Ljc3NiAgcy0xMTEuMDIxLTQ5Ljk1OS0xMTEuMDIxLTExMS4wMjFTMjE5LjcyOCw1Mi43MzUsMjgwLjc5LDUyLjczNXoiIGZpbGw9IiNiOGI4YjgiLz4KPHBhdGggZD0iTTE5Ljg5MSw1NTAuMDE1aDUyMy42NDhjMTEuMTAyLDAsMTkuODkxLTguNzg5LDE5Ljg5MS0xOS44OTFjMC0xMDQuMDgyLTg0LjY1My0xODkuMTk4LTE4OS4xOTgtMTg5LjE5OEgxODkuMTk4ICBDODUuMTE2LDM0MC45MjYsMCw0MjUuNTc5LDAsNTMwLjEyNEMwLDU0MS4yMjYsOC43ODksNTUwLjAxNSwxOS44OTEsNTUwLjAxNXogTTE4OS4xOTgsMzgwLjcwOGgxODUuMDM0ICBjNzUuODY0LDAsMTM4LjMxMyw1Ni40MzYsMTQ4LjAyOCwxMjkuNTI0SDQxLjE3QzUwLjg4NCw0MzcuNjA3LDExMy4zMzQsMzgwLjcwOCwxODkuMTk4LDM4MC43MDh6IiBmaWxsPSIjYjhiOGI4Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                <p>Kamu belum Login. Login sekarang juga!</p>
+                <div class="row">
+                    <button ng-show="!dataUser || dataUser == null" class="button button-oren button-clear" style="width: 50%; display: block; margin: auto;" ng-click="login()" ion-ripple>LOGIN</button>
+                </div>
             </div>
         </div>
     </ion-content>

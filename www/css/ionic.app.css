@@ -10486,6 +10486,12 @@ input[type="checkbox"][readonly] {
   border: 0;
   text-align: center;
   padding: 20px; }
+  .mangan-align-center p {
+    margin-top: 8px;
+    font-weight: 300; }
 
 .input-label {
   width: auto; }
+
+.bar .buttons-right span {
+  padding: 8px; }
