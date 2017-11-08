@@ -26,21 +26,40 @@ var config = {
 
 firebase.initializeApp(config);
 
-var kategori = firebase.database().ref('kategori');
+// ref analytics (new and deprecated)
+var appLogs = firebase.database().ref('appLogs');
+var appVersion = firebase.database().ref('appVersion');
+
+// ref daftar dan rekomendasi
+var daftar = firebase.database().ref('daftar');
+var rekomendasi = firebase.database().ref('rekomendasi');
+
+// ref data restoran
 var restoran = firebase.database().ref('dataResto');
 var menu = firebase.database().ref('dataMenu');
-var review = firebase.database().ref('reviewRating');
-var search = firebase.database().ref('searching');
 var keyword = firebase.database().ref('keywordResto');
+var review = firebase.database().ref('reviewRating');
+
+// ref data kategori
+var kategori = firebase.database().ref('kategori');
+
+// ref data iklan
+var manganAds = firebase.database().ref('manganAds');
 var slider = firebase.database().ref('slider');
 var promo = firebase.database().ref('promo');
-var version = firebase.database().ref('version');
-var refUser = firebase.database().ref('user');
+
+// ref data pesan antar
 var transaksi = firebase.database().ref('transaksi');
-var queue = firebase.database().ref('status').child('queue');
 var ongkir = firebase.database().ref('ongkir');
+var queue = firebase.database().ref('status').child('queue');
+
+// ref user generate data
+var refUser = firebase.database().ref('user');
+var search = firebase.database().ref('searching');
+
+// ref utility apps
 var settings = firebase.database().ref('settings');
-var appVersion = firebase.database().ref('appVersion');
+var version = firebase.database().ref('version');
 
 angular.module('app.services', [])
 
@@ -108,28 +127,35 @@ angular.module('app.services', [])
 			);
 	}
 
+	// new by city
+	this.getRestoranReviewsByCity = function(id) {
+		return promiseValue(
+			getRefKota('reviewRating').child(id).orderByChild('tglReview')
+		);
+	}
+
 	this.getJmlSad = function(id) {
 		return promiseValue(
 			getRefKota('dataResto').child(id +'/jmlSad')
-			);
+		);
 	}
 
 	this.getJmlHappy = function(id) {
 		return promiseValue(
 			getRefKota('dataResto').child(id +'/jmlHappy')
-			);
+		);
 	}
 
 	this.getJmlFavorite = function(id) {
 		return promiseValue(
 			getRefKota('dataResto').child(id +'/jmlFavorite')
-			);
+		);
 	}
 
 	this.getRestoransByLocation = function(lon1, lon2) {
 		return promiseValue(
 			getRefKota('dataResto').orderByChild('map/long').startAt(lon1).endAt(lon2)
-			);
+		);
 	}
 
 	this.getSavedRestorans = function() {
@@ -180,20 +206,22 @@ angular.module('app.services', [])
 		return promise.promise;
 	}
 
-	this.getRatingReview = function(resto, user) {
-		console.log('try get ratrev');
-		var promise = $q.defer();
+	// not used
+	// this.getRatingReview = function(resto, user) {
+	// 	console.log('try get ratrev');
+	// 	var promise = $q.defer();
 
-		firebase.database().ref('reviewRating/'+ resto +'/'+ user).on('value', function(data) {
-			promise.resolve(data.val());
-		});
+	// 	firebase.database().ref('reviewRating/'+ resto +'/'+ user).on('value', function(data) {
+	// 		promise.resolve(data.val());
+	// 	});
 
-		return promise.promise;
-	}
+	// 	return promise.promise;
+	// }
 
+	// change ref to parent city
 	this.updateRatingReview = function(userIndex, resto, user, userPhotoUrl, userRating, titleReview, userReview, emoji) {
 		var promise = $q.defer();
-		review.child(resto).push({
+		getRefKota('reviewRating').child(resto).push({
 			'indexUser': userIndex,
 			'rating': userRating || null,
 			'titleReview': titleReview || null,
@@ -210,7 +238,6 @@ angular.module('app.services', [])
 
 	this.updateJmlSad = function(resto) {
 		var promise = $q.defer();
-
 		getRefKota('dataResto').child(resto +'/jmlSad').once('value', function(jml) {
 			var jmlSad = jml.val();
 			if(typeof jmlSad === 'number' && jmlSad >= 1) {
@@ -223,13 +250,11 @@ angular.module('app.services', [])
 				promise.resolve(true);
 			});
 		});
-
 		return promise.promise;
 	}
 
 	this.updateJmlHappy = function(resto, jmlHappy) {
 		var promise = $q.defer();
-
 		getRefKota('dataResto').child(resto +'/jmlHappy').once('value', function(jml) {
 			var jmlHappy = jml.val();
 			if(typeof jmlHappy === 'number' && jmlHappy >= 1) {
@@ -237,18 +262,15 @@ angular.module('app.services', [])
 			} else {
 				jmlHappy = 1;
 			}
-
 			getRefKota('dataResto').child(resto +'/jmlHappy').set(jmlHappy).then(function() {
 				promise.resolve(true);
 			});
 		});
-
 		return promise.promise;
 	}
 
 	this.updateJmlFavorite = function(resto, jmlFavorite) {
 		var promise = $q.defer();
-
 		getRefKota('dataResto').child(resto +'/jmlFavorite').once('value', function(jml) {
 			var jmlFavorite = jml.val();
 			if(typeof jmlFavorite === 'number' && jmlFavorite >= 1) {
@@ -261,7 +283,6 @@ angular.module('app.services', [])
 				promise.resolve(true);
 			});
 		});
-
 		return promise.promise;
 	}
 
@@ -289,7 +310,7 @@ angular.module('app.services', [])
 	this.searchRestorans = function(keyword) {
 		return promiseValue(
 			getRefKota('dataResto').orderByChild('keyword').startAt(keyword)//.endAt(keyword)
-			);
+		);
 	}
 
 	this.getSliders = function() {
@@ -322,10 +343,11 @@ angular.module('app.services', [])
 		);
 	}
 
+	// unused
 	this.getSettingsLocation = function() {
 		return promiseValue(
 			settings.child('location')
-			);
+		);
 	}
 
 	this.isUserHasPickLocation = function(uid) {
@@ -338,13 +360,13 @@ angular.module('app.services', [])
 		console.log(uid +"/pickLocation/"+ $localStorage.location);
 		return promiseValue(
 			refUser.child(uid +"/pickLocation/"+ $localStorage.location)
-			);
+		);
 	}
 
 	this.getRecomendation = function(slide) {
 		return promiseValue(
 			getRefKota('kategori/rekomendasi').orderByChild('slide').equalTo(slide)
-			);
+		);
 	}
 
 	this.getRecomendations = function() {
@@ -469,6 +491,7 @@ angular.module('app.services', [])
 		return promise.promise;
 	}
 
+	// change to new ref
 	this.addTransaction = function(kurir, idTransaksi, dataTransaksi) {
 		var promise = $q.defer();
 
@@ -509,10 +532,10 @@ angular.module('app.services', [])
 		}).then(function(result) {
 			promise.resolve(true);
 		});
-
 		return promise.promise;
 	}
 
+	// change to new ref by city
 	this.addQueue = function(kurir, idTransaksi) {
 		var promise = $q.defer();
 
@@ -545,12 +568,14 @@ angular.module('app.services', [])
 		);
 	}
 
+	// change to new ref by city
 	this.getTransaksiDetails = function(kurir, index) {
 		return promiseValue(
 			transaksi.child(kurir +'/'+ index)
 		);
 	}
 
+	// change to new ref by city
 	this.changeStatus = function(kurir, index) {
 		var promise = $q.defer();
 
@@ -566,6 +591,7 @@ angular.module('app.services', [])
 	}
 
 	// delete entri in queue list
+	// change to new ref by city
 	this.deleteQueue = function(kurir, index) {
 		var promise = $q.defer();
 
@@ -585,21 +611,24 @@ angular.module('app.services', [])
 		})
 	}
 
+	// change to new ref by city
 	this.getFeeDelivery = function(kurir) {
 		return promiseValue(
-			ongkir.child(kurir)
+			getRefKota('ongkir').child(kurir)
 		);
 	}
 
+	// change to new ref by city
 	this.getKurir = function() {
 		return promiseValue(
-			ongkir
+			getRefKota('ongkir')
 		);
 	}
 
+	// change to new ref by city
 	this.getKurirDetail = function(kurir) {
 		return promiseValue(
-			ongkir.child(kurir)
+			getRefKota('ongkir').child(kurir)
 		);	
 	}
 
@@ -627,10 +656,11 @@ angular.module('app.services', [])
 	}
 
 	// DAFTAR& REKOMENDASI
+	// change to new ref by city
 	this.daftarResto = function(data) {
 		var promise = $q.defer();
 
-		firebase.database().ref('daftar').push({
+		getRefKota('daftar').push({
 			'namaResto': data.namaResto,
 			'namaPemilik': data.namaPemilik,
 			'alamat': data.alamat,
@@ -643,10 +673,11 @@ angular.module('app.services', [])
 		return promise.promise;
 	}
 
+	// change to new ref by city
 	this.rekomendasiResto = function(data) {
 		var promise = $q.defer();
 
-		firebase.database().ref('rekomendasi').push({
+		getRefKota('rekomendasi').push({
 			'namaResto': data.namaResto,
 			'alamat': data.alamat,
 			'jenis': data.jenis,
@@ -812,7 +843,9 @@ angular.module('app.services', [])
 
 .service('ManganAds', function() {
 	this.getAdsUrl = function() {
-		return "https://i.ytimg.com/vi/8yLDH51NTPU/hqdefault.jpg";
+		return promiseValue(
+			manganAds
+		);
 	}
 })
 

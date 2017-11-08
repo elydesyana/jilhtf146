@@ -10454,6 +10454,12 @@ input[type="checkbox"][readonly] {
     left: 8px;
     right: 8px; }
 
+.mangan-image-category h3 {
+  z-index: 999; }
+
+.mangan-image-category img {
+  opacity: 0.7; }
+
 .mangan-registration {
   text-align: center;
   margin-bottom: 0;
@@ -10494,4 +10500,5 @@ input[type="checkbox"][readonly] {
   width: auto; }
 
 .bar .buttons-right span {
-  padding: 8px; }
+  padding: 8px; 
+}

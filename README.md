@@ -118,3 +118,11 @@ then copy ionic-native folder from node_modules/ to lib/. And add link script in
 * UI Improvement
 * list nearest restaurant on tab 'terdekat'
 * Menu Book
+
+### 1.4.4
+* Remove Google Login
+* etc.
+* see more at https://blog.mobilepangan.com/2017/04/27/fresh-ui-look-at-update-1-4-4/
+
+### 1.4.5
+* not listed yet

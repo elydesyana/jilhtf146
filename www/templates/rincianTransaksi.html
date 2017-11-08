@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="row item mangan-item-clear">
+        <div class="row item mangan-item-clear" ng-show="detailTransaksi.alamatUserDetail">
             <div class="col col-10">
                 <i class="icon mangan-icon-left ion-android-navigate"></i>
             </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="col">
                 <label class="item-input item-stacked-label item-text-wrap">
-                    <span class="input-label" style="width:auto;">LINE ID</span>
+                    <span class="input-label" style="width:100%;">LINE ID</span>
                     <input type="text" ng-model="detailTransaksi.lineUsername" readonly="true">
                 </label>
             </div>
@@ -163,9 +163,9 @@
 
 <button class="button button-full button-oren" ng-click="cancelTransaction()" ng-show='detailTransaksi.status == "queue"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-android-cancel"> Batalkan Pesanan</button>
 
-<button class="button button-full button-oren" ng-show='detailTransaksi.status == "cancel"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-ios-information"> Pesanan Ini Telah Dibatalkan</button>
+<button class="button button-full button-oren" ng-show='detailTransaksi.status == "cancel"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);"><i class="icon ion-ios-information"> Pesanan Ini Telah Dibatalkan</button>
 
 <button class="button button-full button-oren" ng-click="call(detailTransaksi.kontakKurir)" ng-show='detailTransaksi.status == "process"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-android-call"></i> Hubungi Kurir</button>
 
-<button class="button button-full button-balanced" ng-show='detailTransaksi.status == "done"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);" ion-ripple><i class="icon ion-checkmark"></i> Pesanan Telah Diterima. Terima Kasih</button>
+<button class="button button-full button-balanced" ng-show='detailTransaksi.status == "done"' style="position:fixed; border-top-right-radius:0px; border-top-left-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:0px; bottom:0px;left:0px;right:0px;box-shadow: 0px 0px 10px 2px rgba(136,136,136,1);"><i class="icon ion-checkmark"></i> Pesanan Telah Diterima. Terima Kasih</button>
 </ion-view>

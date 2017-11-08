@@ -7,14 +7,14 @@
 
         <div class="list mangan-location-terdekat" ng-show="currentLocation" style="margin-bottom:0;">
             <div class="item item-icon-left item-text-wrap">
-                <i class="icon ion-ios-location"></i> <p>Lokasi saat ini : {{currentLocation}}</p>
+                <i class="icon ion-location"></i> <p>Lokasi saat ini : {{currentLocation}}</p>
             </div>
         </div>
 
-        <div class="mangan-nodata" ng-show="nodata == false">
-            <center><i class="ion-sad-outline"></i></center>
-            <p style="margin-bottom: 10px;">Ups, belum ada kuliner terdekat di lokasi kamu</p>
-            <center><button class="button button-oren button-small button-outline" style="width: 50%; display: block; margin: 10px auto;" ng-click="jelajahi()" ion-ripple>JELAJAHI</button></center>
+        <div class="mangan-nodata" ng-show="nodata == false" style="margin-top: 20px;">
+            <i class="icon ion-android-restaurant"></i>
+            <p>Ups, belum ada kuliner terdekat di lokasi kamu</p>
+            <button class="button button-oren button-small button-clear" style="width: 100%; padding-top: 10px;" ng-click="rekomendasikan()" ion-ripple>REKOMENDASIKAN</button></center>
         </div>
 
         <div class="item item-text-wrap" style="margin:0; border:0;" ng-show="getFoundCount(restoranList)">
