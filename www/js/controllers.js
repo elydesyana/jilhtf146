@@ -677,11 +677,14 @@ angular.module('app.controllers', [])
 	};
 
 	function refreshRatingReview() {
+		$scope.jmlReview = 0;
 		Services.getRestoranReviews($stateParams.index).then(function(reviews) {
 			if(reviews) {
 				for(var r in reviews) {
+					$scope.jmlReview++;
 					if(reviews[r].review == undefined || reviews[r].review == null) {
 						delete reviews[r];
+						$scope.jmlReview--;
 					}
 				}
 				$scope.reviews = reviews;
@@ -1096,7 +1099,7 @@ angular.module('app.controllers', [])
 					"Simpan Kuliner",
 					"Simpan Penuh"
 				]);
-				makeToast('Penyimpanan restoran penuh (max. 5)', 1500, 'bottom');
+				makeToast('Penyimpanan restoran penuh (max. 30)', 1500, 'bottom');
 			});
 		}
 	}
@@ -1248,6 +1251,43 @@ angular.module('app.controllers', [])
 		}
 	}
 
+	///////////////////////////////////////////////////////////
+	//
+	// MODAL SECTION
+	//
+	///////////////////////////////////////////////////////////
+
+	$ionicModal.fromTemplateUrl('templates/rating.html', {
+		scope: $scope,
+		animation: 'slide-in-up'
+	}).then(function(modal) { $scope.modalRating = modal; });
+
+	$scope.openRating = function() {
+		var user = firebase.auth().currentUser;
+		if (user) {
+			// trackView
+			Analytics.logView('Tulis Ulasan');
+			// trackEvent
+			Analytics.logEvent('Ulasan Pengguna', 'Tulis Ulasan');
+			// trackUser View
+			Analytics.logUserArr([
+						$localStorage.indexUser? $localStorage.indexUser : $localStorage.token,
+						'trackView',
+						'Tulis Ulasan'
+					]);
+			// trackUser Event
+			Analytics.logUserArr([
+						$localStorage.indexUser? $localStorage.indexUser : $localStorage.token,
+						'trackEvent',
+						'Ulasan Pengguna',
+						'Tulis Ulasan'
+					]);
+			$scope.modalRating.show();
+		} else {
+			$state.go('login');
+		}
+	}
+
 	function makeToast(_message) {
 		window.plugins.toast.showWithOptions({
 			message: _message,
@@ -1255,6 +1295,14 @@ angular.module('app.controllers', [])
 			position: 'bottom',
 			addPixelsY: -40
 		});
+	}
+
+	$scope.klaim = function() {
+		$state.go("tabsController.klaim"); 
+	}
+
+	$scope.lapor = function() {
+		$state.go("tabsController.lapor"); 
 	}
 })
 
@@ -3256,7 +3304,7 @@ angular.module('app.controllers', [])
 		console.log('ulasanMenu');
 		$scope.$broadcast('scroll.refreshComplete');
 	}
-
+	
 	$scope.getMenu();
 })
 
@@ -5672,4 +5720,12 @@ angular.module('app.controllers', [])
 			});
 		}
 	}
-});
+})
+
+.controller('klaimCtrl', function($scope, $state, $localStorage){
+	
+})
+
+.controller('laporCtrl', function($scope, $state, $localStorage){
+	
+})

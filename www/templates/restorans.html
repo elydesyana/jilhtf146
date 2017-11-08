@@ -1,6 +1,6 @@
 <ion-view id="page3">
     <ion-nav-title>{{category}}</ion-nav-title>
-    <ion-content lazy-scroll padding="true" class="has-header">
+    <ion-content lazy-scroll class="has-header">
         <ion-refresher
             pulling-text="Lepas untuk memperbarui"
             on-refresh="getRestorans()"
@@ -13,47 +13,51 @@
             <button class="button button-balanced button-clear icon ion-android-refresh" ng-click="getRestorans()" ion-ripple></button>
         </div>
 
-        <div class="list card" padding="false" ng-repeat="restoran in restorans | orderObjectBy: 'tglInput' :true track by $index" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'">
-
-            <!-- <div ng-controller="adsController" ng-show="$index%adsCounter == 0 && $index!=0" style="margin-bottom: 5px; padding: 0;">
-                <img image-lazy-src="{{showRowAds($index%5 == 0 && $index!=0)}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50">
-            </div> -->
-
+        <div class="list" border="none" style="margin-bottom:0; padding-bottom:0;" ng-repeat="restoran in restorans | orderObjectBy: 'tglInput' :true track by $index" ng-show="restoran.keteranganResto && restoran.keteranganResto != 'null'">
             <div class="mangan-list-header" ion-ripple>
-                <div class="mangan-nama-resto">{{restoran.namaResto}}</div>
-                <div ng-click="openRestoran(restoran.index, true)"><img image-lazy-src="{{restoran.gambar[0]}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50"></div>
+                <div ng-click="openRestoran(restoran.index, true)">
+                    <img image-lazy-src="{{restoran.gambar[0]}}" class="mangan-image-4_3" image-lazy-distance-from-bottom-to-load="50">
+                </div>
             </div>
-            <div class="item item-icon-left item-text-wrap mangan-open-hour" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" ng-click="openRestoran(restoran.index)">
-                <i class="icon mangan-icon-col ion-android-alarm-clock"></i>
-                <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'"><p>Buka {{restoran.keteranganBuka}}</p>
+
+            <div class="item item-text-wrap mangan-open-hour" style="border: 0; padding-bottom:0;" ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'">
+                <div class="row" style="padding: 0;">
+                    <div class="col col-75" style="padding: 0;">
+                        <span style="font-size: 18px">
+                            {{restoran.namaResto}}
+                        </span>
+                    </div>
+                    <div class="col col-25" style="padding: 0;">
+                        <span style="float: right;">
+                            <span style="color: #c85054; font-size: 16px">
+                                <i class="icon ion-android-favorite" style="margin-right: 4px;"></i>
+                                <span>4.9</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <p ng-show="restoran.keteranganBuka && restoran.keteranganBuka != 'null'" style="padding: 10px 0; color: black;">
+                    Buka {{restoran.keteranganBuka}}
+                </p>
+                <p ng-bind-html="(restoran.keteranganResto | limitTo: 200) + (restoran.keteranganResto.length > 200 ? '...' : '')"></p>
             </div>
-            <div class="item item-text-wrap mangan-keterangan">
-                <p ng-bind-html="restoran.keteranganResto"></p>
-            </div>
-            
-            <div class="row">
-                <span class="col col-20" style="padding: 0;"></span>
-                <span class="col col-25" style="padding: 0; margin-left: -10px;" ion-ripple>
-                    <button class="button button-balanced button-clear" ng-click="shareRestoran(restoran.index)">
-                        <i class="icon ion-android-share-alt"></i>
-                    </button>
+
+            <div class="row" style="padding: 20px 10px;">
+                <span class="col col-25"></span>
+                <span class="col col-20" ng-click="shareRestoran(restoran.index)" ion-ripple>
+                    <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU5IDU5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OSA1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgo8cGF0aCBkPSJNNDcsMzljLTIuNjcxLDAtNS4xODIsMS4wNC03LjA3MSwyLjkyOWMtMC41MjQsMC41MjQtMC45NzUsMS4xLTEuMzY1LDEuNzA5bC0xNy4yOC0xMC40ODkgIEMyMS43NDEsMzIuMDA1LDIyLDMwLjc2MSwyMiwyOS40NTZjMC0xLjMwNS0wLjI1OS0yLjU0OS0wLjcxNS0zLjY5M2wxNy4yODQtMTAuNDA5QzQwLjM0NSwxOC4xNDIsNDMuNDU2LDIwLDQ3LDIwICBjNS41MTQsMCwxMC00LjQ4NiwxMC0xMFM1Mi41MTQsMCw0NywwUzM3LDQuNDg2LDM3LDEwYzAsMS4yNTYsMC4yNDMsMi40NTQsMC42NjcsMy41NjJMMjAuMzYxLDIzLjk4NSAgYy0xLjc4OC0yLjcyNC00Ljg2Ni00LjUyOS04LjM2MS00LjUyOWMtNS41MTQsMC0xMCw0LjQ4Ni0xMCwxMHM0LjQ4NiwxMCwxMCwxMGMzLjQ5NSwwLDYuNTcyLTEuODA1LDguMzYtNC41MjlMMzcuNjY0LDQ1LjQzICBDMzcuMjM0LDQ2LjU1NiwzNyw0Ny43NTksMzcsNDljMCwyLjY3MSwxLjA0LDUuMTgzLDIuOTI5LDcuMDcxQzQxLjgxOCw1Ny45Niw0NC4zMjksNTksNDcsNTlzNS4xODItMS4wNCw3LjA3MS0yLjkyOSAgQzU1Ljk2LDU0LjE4Myw1Nyw1MS42NzEsNTcsNDlzLTEuMDQtNS4xODMtMi45MjktNy4wNzFDNTIuMTgyLDQwLjA0LDQ5LjY3MSwzOSw0NywzOXoiIGZpbGw9IiMwMWIxYjIiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />                        
                 </span>
-                <span class="col col-25" style="padding: 0;" ng-if="checkSavedRestoran(restoran.index) == false" ion-ripple>
-                    <button class="button button-balanced button-clear" ng-click="saveRestoran(restoran.index)">
-                        <i class="icon ion-android-favorite-outline"></i>
-                    </button>
+                <span class="col col-20" ng-if="checkSavedRestoran(restoran.index) == false" ng-click="saveRestoran(restoran.index)" ion-ripple>
+                    <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDMxLjk3MiA0MzEuOTcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MzEuOTcyIDQzMS45NzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzkzLjE0NiwxNC4yNzljLTMuNzEzLTUuMzMzLTguNzEzLTkuMjMzLTE0Ljk4OS0xMS43MDdjLTMuOTk3LTEuNzExLTguMTg2LTIuNTY4LTEyLjU2NS0yLjU2OFYwSDY2LjM3OCAgIGMtNC4zNzcsMC04LjU2MiwwLjg1Ny0xMi41NiwyLjU2OGMtNi4yOCwyLjQ3Mi0xMS4yNzgsNi4zNzctMTQuOTg5LDExLjcwN2MtMy43MSw1LjMzLTUuNTY4LDExLjIyOC01LjU2OCwxNy43MDF2MzY4LjAxOSAgIGMwLDYuNDc1LDEuODU4LDEyLjM3MSw1LjU2OCwxNy43MDZjMy43MTEsNS4zMjksOC43MDksOS4yMzMsMTQuOTg5LDExLjcwNGMzLjk5NCwxLjcxMSw4LjE4MywyLjU2NiwxMi41NiwyLjU2NiAgIGM4Ljk0OSwwLDE2Ljg0NC0zLjE0MiwyMy42OTgtOS40MThsMTI1LjkxLTEyMS4wNjJsMTI1LjkxLDEyMS4wNjVjNi42NjMsNi4wODEsMTQuNTYyLDkuMTI3LDIzLjY5NSw5LjEyNyAgIGM0Ljc2LDAsOC45NDgtMC43NTYsMTIuNTY1LTIuMjc5YzYuMjc2LTIuNDcxLDExLjI3Ni02LjM3NSwxNC45ODktMTEuNzExYzMuNzEtNS4zMjgsNS41NjQtMTEuMjI1LDUuNTY0LTE3LjY5OVYzMS45OCAgIEMzOTguNzEsMjUuNTA3LDM5Ni44NTIsMTkuNjA5LDM5My4xNDYsMTQuMjc5eiBNMzYyLjE2NiwzOTEuMTM5TDI0MS4zOTcsMjc1LjIyNGwtMjUuNDExLTI0LjI2NGwtMjUuNDA5LDI0LjI2NEw2OS44MDksMzkxLjEzOSAgIFYzNi41NDloMjkyLjM1N1YzOTEuMTM5TDM2Mi4xNjYsMzkxLjEzOXoiIGZpbGw9IiMwMWIxYjIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
                 </span>
-                <span class="col col-25" style="padding: 0;" ng-if="checkSavedRestoran(restoran.index) == true" ion-ripple>
-                   <button class="button button-light button-clear" ng-click="saveRestoran(restoran.index)">
-                        <i class="icon ion-android-favorite" style="color:#c85054;"></i>
-                    </button>
+                <span class="col col-20" ng-if="checkSavedRestoran(restoran.index) == true" ng-click="saveRestoran(restoran.index)" ion-ripple>
+                    <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDMxLjk3MiA0MzEuOTcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MzEuOTcyIDQzMS45NzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzkzLjE0NiwxNC4yNzljLTMuNzEzLTUuMzMzLTguNzEzLTkuMjMzLTE0Ljk4OS0xMS43MDdjLTMuOTk3LTEuNzExLTguMTg2LTIuNTY4LTEyLjU2NS0yLjU2OFYwSDY2LjM3OCAgIGMtNC4zNzcsMC04LjU2MiwwLjg1Ny0xMi41NiwyLjU2OGMtNi4yOCwyLjQ3Mi0xMS4yNzgsNi4zNzctMTQuOTg5LDExLjcwN2MtMy43MSw1LjMzLTUuNTY4LDExLjIyOC01LjU2OCwxNy43MDF2MzY4LjAxOSAgIGMwLDYuNDc1LDEuODU4LDEyLjM3MSw1LjU2OCwxNy43MDZjMy43MTEsNS4zMjksOC43MDksOS4yMzMsMTQuOTg5LDExLjcwNGMzLjk5NCwxLjcxMSw4LjE4MywyLjU2NiwxMi41NiwyLjU2NiAgIGM4Ljk0OSwwLDE2Ljg0NC0zLjE0MiwyMy42OTgtOS40MThsMTI1LjkxLTEyMS4wNjJsMTI1LjkxLDEyMS4wNjVjNi42NjMsNi4wODEsMTQuNTYyLDkuMTI3LDIzLjY5NSw5LjEyNyAgIGM0Ljc2LDAsOC45NDgtMC43NTYsMTIuNTY1LTIuMjc5YzYuMjc2LTIuNDcxLDExLjI3Ni02LjM3NSwxNC45ODktMTEuNzExYzMuNzEtNS4zMjgsNS41NjQtMTEuMjI1LDUuNTY0LTE3LjY5OVYzMS45OCAgIEMzOTguNzEsMjUuNTA3LDM5Ni44NTIsMTkuNjA5LDM5My4xNDYsMTQuMjc5eiIgZmlsbD0iI2ZmNzg0NiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
                 </span>
-                <span class="col col-25" style="padding: 0;" ion-ripple>
-                    <button class="button button-balanced button-clear" ng-click="openRestoran(restoran.index, false)">
-                        <i class="icon ion-more"></i>
-                    </button>
+                <span class="col col-20" ng-click="openRestoran(restoran.index, false)" ion-ripple>
+                    <img  width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNjEyIDYxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjEyIDYxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxjaXJjbGUgY3g9IjY5LjU0NSIgY3k9IjMwNiIgcj0iNjkuNTQ1IiBmaWxsPSIjMDFiMWIyIi8+CgkJPGNpcmNsZSBjeD0iMzA2IiBjeT0iMzA2IiByPSI2OS41NDUiIGZpbGw9IiMwMWIxYjIiLz4KCQk8Y2lyY2xlIGN4PSI1NDIuNDU1IiBjeT0iMzA2IiByPSI2OS41NDUiIGZpbGw9IiMwMWIxYjIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
                 </span>
             </div>
+            <div class="item item-divider mangan-item-divider"></div> 
         </div>
         <ion-infinite-scroll on-infinite="loadMoreResto()" distance="5%" immediate-check="false" spinner="ripple" ng-if="canLoadResto()">
         </ion-infinite-scroll>

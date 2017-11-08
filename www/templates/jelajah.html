@@ -1,6 +1,6 @@
 <ion-view hide-back-button="true" id="page2">
 <ion-nav-title>
-    <button ng-show="locSettings == true" class="button button-small button-clear" id="mangan-pickcity-jelajah" ng-click="pickCity()" ion-ripple>Kamu Melihat : {{selectedCity}} <i class="ion-ios-arrow-down"></i></button>
+    <button ng-show="locSettings == true" class="button button-clear" id="mangan-pickcity-jelajah" ng-click="pickCity()" style="font-weight: 500;" ion-ripple>{{selectedCity}} <i class="ion-ios-arrow-down"></i></button>
     <p ng-show="!locSettings || locSettings == false">Jelajah</p>
 </ion-nav-title>
     
@@ -15,103 +15,84 @@
             </div>
         </div>
 
+        <!-- Search box -->
         <form class="list mangan-input-search" ng-submit="searchQuery()">
-            <label class="item item-input" name="Pencarian">
-                <div><i class="icon ion-ios-search placeholder-icon"></i></div>
-                <input type="search" placeholder="Cari" ng-model="user.query" ng-focus="typeSearch()" ion-ripple>
+            <label class="item item-input item-icon-left" name="Pencarian">
+                <input type="search" placeholder="Cari kuliner, restoran, atau kaki lima..." ng-model="user.query" ng-focus="typeSearch()">
+                <i class="icon ion-ios-search-strong"></i>                
             </label>
         </form>
-
-        <div class="mangan-divider"></div>
         
-        <div class="list">
-            <div class="item item-text-wrap item-thumbnail-right mangan-text mangan-greeting-card">
-                <img class="mangan-greeting-gambar" ng-src="{{dataUser.photoUrl}}">
+        <div class="list" style="padding-top: 0;">
+            <div class="item item-text-wrap mangan-text mangan-greeting-card">
+                <!-- <img class="mangan-greeting-gambar" ng-src="{{dataUser.photoUrl}}"> -->
                 <h2 ng-show="!dataUser.name" style="">Hai</h2>
                 <h2 ng-show="dataUser.name" style="">Hai {{dataUser.name}},</h2>
-                <p>Kamu lapar? Mau makan apa hari ini?</p>
+                <p style="font-size: 16px;">Mau makan apa hari ini?</p>
                
-                <p ng-show="lokasiUser" style="color: orangered;"><i class="icon ion-location" style="padding-right:5px"></i>{{lokasiUser}}</p>
-                <p ng-click="greeting()" ng-show="!lokasiUser"><i class="icon ion-ios-location" style="padding-right:5px"></i>Lokasi tidak ditemukan</p>
+                <!-- <p ng-show="lokasiUser" style="color: orangered;"><i class="icon ion-location" style="padding-right:5px"></i>{{lokasiUser}}</p>
+                <p ng-click="greeting()" ng-show="!lokasiUser"><i class="icon ion-ios-location" style="padding-right:5px"></i>Lokasi tidak ditemukan</p> -->
             </div>
         </div>
     </div>
+    
+    <div class="row" style="margin: 10px 0 20px 0;">
+        <div class="col" style="padding:0; text-align: center" ui-sref="tabsController.restorans({category: 'terbaru', 'name': 'Terbaru'})" ion-ripple>
+            <a><img width="40" height="40" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiB2aWV3Qm94PSIwIDAgNDc2LjMwNiA0NzYuMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzYuMzA2IDQ3Ni4zMDU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNDU1LjAxLDMzOS42NzZjMC4wMjMtMS4xNzgsMC4wNDctMi4zNTYsMC4wNDctMy41MTljMC01Ni44MTktMTguNzUzLTEwNS41NjYtNTQuMjMtMTQwLjk2OSAgIGMtMzQuNzgzLTM0LjcwOS04NC40MTItNTQuNTQ0LTE0NC4zMTYtNTcuODc3di0xMy45MjdjMC0wLjA4LTAuMDExLTAuMTU3LTAuMDEyLTAuMjM2aDEyLjk3NWM2LjgwMSwwLDEyLjMzNC01LjUzMywxMi4zMzQtMTIuMzM0ICAgVjk4Ljc3NGMwLTYuODAxLTUuNTMzLTEyLjMzNC0xMi4zMzQtMTIuMzM0aC02Mi42MzljLTYuODAxLDAtMTIuMzM0LDUuNTMzLTEyLjMzNCwxMi4zMzR2MTIuMDQxICAgYzAsNi44MDEsNS41MzMsMTIuMzM0LDEyLjMzNCwxMi4zMzRoMTIuOTc2Yy0wLjAwMSwwLjA3OS0wLjAxMiwwLjE1Ni0wLjAxMiwwLjIzNnYxMy45MzkgICBjLTU4Ljk5OSwzLjM3NC0xMDguMjc5LDIzLjE5OC0xNDMuMzIzLDU3Ljg0NmMtMTguMDUzLDE3Ljg0OC0zMS45NzIsMzkuMjMzLTQxLjM3Miw2My41NjMgICBjLTkuMTkyLDIzLjc5NC0xMy44NTQsNDkuODQzLTEzLjg1NCw3Ny40MjRjMCwxLjE1MiwwLjAyNCwyLjMzNiwwLjA0OCwzLjUxOEM5LjI0NiwzNDEuNTc1LDAsMzUyLjAzNiwwLDM2NC42MTggICBjMCwxMy45MjIsMTEuMzIzLDI1LjI0OCwyNS4yNDIsMjUuMjQ4SDQ1MS4wNmMxMy45MjEsMCwyNS4yNDYtMTEuMzI2LDI1LjI0Ni0yNS4yNDggICBDNDc2LjMwNiwzNTIuMDQsNDY3LjA2MSwzNDEuNTgxLDQ1NS4wMSwzMzkuNjc2eiBNMjA2LjQ5OSwxMTAuODE2Vjk4Ljc3NWMwLTAuMTcyLDAuMTYyLTAuMzM0LDAuMzM0LTAuMzM0aDYyLjY0ICAgYzAuMTcyLDAsMC4zMzQsMC4xNjIsMC4zMzQsMC4zMzR2MTIuMDQxYzAsMC4xNzItMC4xNjIsMC4zMzQtMC4zMzQsMC4zMzRoLTIzLjgxNmMtMC40ODYtMC4wNTktMC45NzktMC4wOTgtMS40OC0wLjA5OGgtMTIuMDQ1ICAgYy0wLjUwMiwwLTAuOTk0LDAuMDM5LTEuNDgsMC4wOThoLTIzLjgxNkMyMDYuNjYxLDExMS4xNSwyMDYuNDk5LDExMC45ODgsMjA2LjQ5OSwxMTAuODE2eiBNMjMxLjc5NywxMjMuMzg2ICAgYzAtMC4wODgsMC4wNDYtMC4xNzMsMC4xMTItMC4yMzZoMTIuNDg3YzAuMDY1LDAuMDYzLDAuMTExLDAuMTQ4LDAuMTExLDAuMjM2djEzLjQ3OWMtMi4xMDUtMC4wNC00LjIyNi0wLjA2LTYuMzU0LTAuMDYgICBjLTIuMTMxLDAtNC4yNDksMC4wMjEtNi4zNTYsMC4wNjJWMTIzLjM4NnogTTIzOC4xNTMsMTQ4LjgwNmMxNTEuMDc1LDAsMjA0LjkwMiw5Ni43OCwyMDQuOTAyLDE4Ny4zNTMgICBjMCwxLjA2MS0wLjAxMSwyLjEzMS0wLjAzLDMuMjA3SDMzLjI4Yy0wLjAyMS0xLjA4Mi0wLjAzMi0yLjE1Mi0wLjAzMi0zLjIwN0MzMy4yNDgsMjIyLjM0NiwxMTMuNjc4LDE0OC44MDYsMjM4LjE1MywxNDguODA2eiAgICBNNDUxLjA1OCwzNzcuODY4SDI1LjI0MWMtNy4zMDIsMC0xMy4yNDItNS45NDMtMTMuMjQyLTEzLjI0OGMwLTcuMzA5LDUuOTQtMTMuMjU0LDEzLjI0Mi0xMy4yNTRoNDI1LjgxNiAgIGM3LjMwNiwwLDEzLjI0Nyw1Ljk0NSwxMy4yNDcsMTMuMjU0QzQ2NC4zMDYsMzcxLjkyNCw0NTguMzYzLDM3Ny44NjgsNDUxLjA1OCwzNzcuODY4eiIgZmlsbD0iIzAxYjFiMiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+            </a><br><p style="color: #4d544d; padding-top: 10px;">Baru Diulas</p>
+        </div>
+        <div class="col" style="padding:0; text-align: center" ui-sref="tabsController.terdekat" ion-ripple>
+            <a><img width="40" height="40" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNTZweCIgaGVpZ2h0PSIyNTZweCI+CjxnPgoJPHBhdGggZD0iTTMwLDI2YzMuODYsMCw3LTMuMTQxLDctN3MtMy4xNC03LTctN3MtNywzLjE0MS03LDdTMjYuMTQsMjYsMzAsMjZ6IE0zMCwxNGMyLjc1NywwLDUsMi4yNDMsNSw1cy0yLjI0Myw1LTUsNSAgIHMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIgZmlsbD0iIzAxYjFiMiIvPgoJPHBhdGggZD0iTTI5LjgyMyw1NC43NTdMNDUuMTY0LDMyLjZjNS43NTQtNy42NzEsNC45MjItMjAuMjgtMS43ODEtMjYuOTgyQzM5Ljc2MSwxLjk5NSwzNC45NDUsMCwyOS44MjMsMCAgIHMtOS45MzgsMS45OTUtMTMuNTYsNS42MTdjLTYuNzAzLDYuNzAyLTcuNTM1LDE5LjMxMS0xLjgwNCwyNi45NTJMMjkuODIzLDU0Ljc1N3ogTTE3LjY3Nyw3LjAzMUMyMC45MjIsMy43ODcsMjUuMjM1LDIsMjkuODIzLDIgICBzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40ICAgQzEwLjg4MiwyNC40NjgsMTEuNjI4LDEzLjA4LDE3LjY3Nyw3LjAzMXoiIGZpbGw9IiMwMWIxYjIiLz4KCTxwYXRoIGQ9Ik00Mi4xMTcsNDMuMDA3Yy0wLjU1LTAuMDY3LTEuMDQ2LDAuMzI3LTEuMTEsMC44NzZzMC4zMjgsMS4wNDYsMC44NzYsMS4xMUM1Mi4zOTksNDYuMjMxLDU4LDQ5LjU2Nyw1OCw1MS41ICAgYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMSAgIGMtMC4wNjUtMC41NDktMC41NjEtMC45NDUtMS4xMS0wLjg3NkM3LjM1NCw0NC4yNDcsMCw0Ny43MzksMCw1MS41QzAsNTUuNzI0LDEwLjMwNSw2MCwzMCw2MHMzMC00LjI3NiwzMC04LjUgICBDNjAsNDcuNzM5LDUyLjY0Niw0NC4yNDcsNDIuMTE3LDQzLjAwN3oiIGZpbGw9IiMwMWIxYjIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+            </a><br><p style="color: #4d544d; padding-top: 10px;">Eat Near</p>
+        </div>
+        <div class="col" style="padding:0; text-align: center" ui-sref="tabsController.promo" ion-ripple>
+            <a><img width="40" height="40" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwOCA1MDgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwOCA1MDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMjU2cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zOTYuNTUsMzA2LjJsMzUuNC0yNy45bC0wLjItNDUuMWwxOS43LTQwLjZsLTE5LjYtNDAuNmwwLjItNDUuMWwtMzUuNC0yOGwtMTkuNC00MC43bC00NC05LjlMMjk4LjA1LDBsLTQ0LDEwLjMgICAgTDIxMC4xNSwwbC0zNS4yLDI4LjNsLTQ0LDkuOWwtMTkuNCw0MC43bC0zNS41LDI4bDAuMiw0NS4xbC0xOS43LDQwLjZsMTkuNyw0MC42bC0wLjIsNDUuMWwzNS40LDI4bDE0LjIsMjkuOWwtNTcuNSwxMjMuMyAgICBsNjguMS0xMC40bDM1LjgsNTguOWw1OS42LTEyNy45bDIyLjMtNS4ybDE3LjYsNC4xbDYwLjIsMTI5bDM1LjgtNTguOWw2OC4xLDEwLjRsLTU1LjUtMTE5TDM5Ni41NSwzMDYuMnogTTE3MC4xNSw0NzMuMyAgICBsLTI1LjYtNDIuMWwtNDguNiw3LjRsNDItOTAuMmwzNyw4LjNsMzUuMiwyOC4zTDE3MC4xNSw0NzMuM3ogTTI1NC4wNSwzNThsLTM5LjksOS40bC0zMS45LTI1LjdsLTQwLTlsLTE3LjYtMzdsLTMyLjItMjUuNCAgICBsMC4yLTQxbC0xNy45LTM2LjhsMTcuOS0zNi45bC0wLjItNDFsMzIuMi0yNS40bDE3LjYtMzdsNDAtOWwzMS45LTI1LjdsMzkuOSw5LjNsMzkuOS05LjNsMzEuOSwyNS43bDQwLDlsMTcuNiwzN2wzMi4yLDI1LjQgICAgbC0wLjIsNDFsMTcuOSwzNi44bC0xNy45LDM2LjhsMC4yLDQxbC0zMi4yLDI1LjRsLTE3LjYsMzdsLTQwLDlsLTMxLjksMjUuN0wyNTQuMDUsMzU4eiBNNDA3Ljg1LDQzOC43bC00OC42LTcuNGwtMjUuNiw0MiAgICBsLTQxLjgtODkuNmw2LjEsMS40bDM1LjItMjguM2wzMy4xLTcuNEw0MDcuODUsNDM4Ljd6IiBmaWxsPSIjMDFiMWIyIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU0LjA1LDUwLjljLTc4LjEsMC0xNDEuNyw2My42LTE0MS43LDE0MS43czYzLjYsMTQxLjcsMTQxLjcsMTQxLjdjNzguMS0wLjEsMTQxLjctNjMuNiwxNDEuNy0xNDEuNyAgICBTMzMyLjE1LDUwLjksMjU0LjA1LDUwLjl6IE0yNTQuMDUsMzE3LjljLTY5LjEsMC0xMjUuMy01Ni4yLTEyNS4zLTEyNS4zczU2LjItMTI1LjMsMTI1LjMtMTI1LjNzMTI1LjMsNTYuMiwxMjUuMywxMjUuMyAgICBTMzIzLjE1LDMxNy45LDI1NC4wNSwzMTcuOXoiIGZpbGw9IiMwMWIxYjIiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNjAuNTUsMTU4aC04MS40bC0yNS4xLTc3LjRsLTI1LjEsNzcuNGgtODEuNGw2NS44LDQ3LjhsLTI1LjEsNzcuNGw2NS44LTQ3LjhsNjUuOCw0Ny44bC0yNS4xLTc3LjRMMzYwLjU1LDE1OHogICAgIE0yNTQuMDUsMjE1LjFsLTM0LjcsMjUuMmwxMy4yLTQwLjhsLTM0LjctMjUuMmg0Mi44bDEzLjItNDAuOGwxMy4yLDQwLjhoNDIuOGwtMzQuNywyNS4ybDEzLjYsNDAuOEwyNTQuMDUsMjE1LjF6IiBmaWxsPSIjMDFiMWIyIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            </a><br><p style="color: #4d544d; padding-top: 10px;">Hot Deals</p>
+        </div>    
+    </div>
+
+    <!-- <a-carousel
+        item-directive="name-of-your-directive"
+        carousel-options="::vm.carouselOptions"
+        array-provider="::vm.carouselData"
+        on-select="vm.onSelectCarousel(item)">
+    </a-carousel> -->
 
     <div class="item item-divider mangan-item-divider"></div>
-
         <!-- Kategori    -->
-        <ion-item class="item-text-wrap" style="border: 0;" ng-show="showRecomendation">Favorit di {{selectedCity || 'Surakarta'}}</ion-item>
+        <div class="item item-text-wrap" style="border: 0;">
+            <span ng-show="showRecomendation">Favorit di {{selectedCity || 'Surakarta'}}</span>
+            <span style="font-size: 14px; float: right;" ng-show="showRecomendation" ng-click="openAll()">
+                Lihat semua 
+                <i class="icon ion-ios-arrow-forward" style="padding-left: 5px;"></i>
+            </span>
+        </div>
 
-        <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false" auto-play="true" slide-interval="6000" does-continue="true">
+        <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false" auto-play="true" slide-interval="6000" does-continue="true" style="margin-top: 0px;">
             <ion-slide ng-repeat="slideRestoran in slideRestorans" style="text-align: left;">
                 <div class="row gallery">
-                    <div class="mangan-jelajah-tile col col-33" ng-repeat="restoran in slideRestoran" ng-click="openRestoran(restoran.index)" ion-ripple>
-                            <img ng-src="{{restoran.imgRec}}" class="mangan-image-jelajah">
-                            <div class="item item-text-wrap col" style="position:relative; border:0;" ion-ripple>
-                                <h3>{{restoran.namaResto}}</h3>
-                                <p>{{restoran.keteranganBuka}}</p>
-                            </div>
+                    <div class="mangan-jelajah-tile col col-33" ng-repeat="restoran in slideRestoran" ng-click="openRestoran(restoran.index)">
+                        <img ng-src="{{restoran.imgRec}}" class="mangan-image-jelajah" style="border-radius: 10px;">
+                        <div class="item item-text-wrap col" style="position:relative; border:0;">
+                            <p style="color: black;" ng-bind-html="(restoran.namaResto | limitTo: 20) + (restoran.namaResto.length > 20 ? '...' : '')"></p>
+                            <p style="font-size: 12px;"><i class="icon ion-location" style="padding-right: 5px"></i>2 KM</p>
+                        </div>
                     </div>
                 </div>
             </ion-slide>
         </ion-slide-box>
 
-        <div class="item item-icon-right mangan-text" ng-show="showRecomendation" ng-click="openAll()" style="border-bottom:0;" ion-ripple>
-           <p>Lihat Semua Kuliner <i class="icon mangan-right-icon ion-ios-arrow-right"></i></p>
-        </div>
-
-        <div class="item item-divider mangan-item-divider" ng-show="showRecomendation"></div>
-
-        <!-- Rekomendasi -->
-        <ion-item class="item-text-wrap" style="border: 0;">Rekomendasi Untuk Kamu</ion-item>
-        <div class="row gallery" ion-ripple>
-            <div class="mangan-jelajah-tile col col-50" ion-ripple>
-                    <img src="img/terbaru.jpg" class="mangan-image-jelajah">
-                </a>
-            </div>
-            <div class="item item-text-wrap mangan-jelajah-tile col col-50" ui-sref="tabsController.restorans({category: 'terbaru', 'name': 'Terbaru'})" style="border: 0;" ion-ripple>
-                <h3>Baru Diulas</h3>
-                <p>Temukan kuliner yang baru kami ulas disini</p>
-            </div>
-        </div>
-
-         <div class="row gallery" ng-show="category.delivery" ion-ripple>
-            <div class="mangan-jelajah-tile col col-50" ion-ripple>
-                <a ui-sref="tabsController.restorans({category: 'delivery', 'name': 'Laper Mager'})">
-                    <img src="img/delivery.jpg" class="mangan-image-jelajah">
-                </a>
-            </div>
-            <div class="item item-text-wrap mangan-jelajah-tile col col-50" ui-sref="tabsController.restorans({category: 'delivery', 'name': 'Laper Mager'})" style="border: 0;" ion-ripple>
-                <h3>Laper Mager</h3>
-                <p>Laper tapi mager? tenang, kumpulan kuliner ini bisa kamu pesan untuk diantar ke rumah</p>
-            </div>
-        </div>
-
-        <div class="row gallery" ng-show="category.kampusuns" ion-ripple>
-            <div class="mangan-jelajah-tile col col-50" ion-ripple>
-                <a ui-sref="tabsController.restorans({category: 'kampusuns', name: 'Sekitar Kampus'})">
-                    <!-- <div class="mangan-kategori">SEKITAR KAMPUS</div> -->
-                    <img src="img/kampus.jpg" class="mangan-image-jelajah">
-                </a>
-            </div>
-            <div class="item item-text-wrap mangan-jelajah-tile col col-50" ui-sref="tabsController.restorans({category: 'kampusuns', name: 'Sekitar Kampus'})" style="border: 0;" ion-ripple>
-                <h3>Ala Mahasiswa</h3>
-                <p>Kumpulan kuliner dekat kampus dan murah cuma disini nih</p>
-            </div>
-        </div>
+        <div class="item item-divider mangan-item-divider"></div>
 
         <!-- Slider Dinamis -->
         <ion-slides ng-show="sliders || sliders.length > 0" options="sliderOptions" class="row mangan-slider-ads">
-            <ion-slide-page ng-repeat="slider in sliders" ng-click="gotoURL(slider.index, slider.linkUrl, slider.tel)" on-swipe-left="next()" on-swipe-right="previous()" ion-ripple>
+            <ion-slide-page ng-repeat="slider in sliders" ng-click="gotoURL(slider.index, slider.linkUrl, slider.tel)" on-swipe-left="next()" on-swipe-right="previous()">
                 <img ng-src="{{ image[$index] }}">
             </ion-slide-page>
         </ion-slides>
 
-        <div class="item item-divider mangan-item-divider"></div>
-
         <!-- Kategori    -->
-
-        <ion-item class="item-text-wrap" style="border: 0;">Kategori</ion-item>
+        <ion-item class="item-text-wrap" style="border: 0; padding-top: 0;">Kategori</ion-item>
         <div class="row gallery">
             <div class="mangan-image-category col col-50" style="position:relative;" ng-show="category.indonesia" ion-ripple>
                 <a ui-sref="tabsController.restorans({category: 'indonesia', 'name': 'Khas Indonesia'})">
@@ -210,8 +191,9 @@
                 </a>
             </div>
         </div>
-        <div class="item item-divider mangan-item-divider"></div>
-        <div class="item item-text-wrap" style="text-align: center;">
+        
+        <!-- Rekomendasi & Daftar Kuliner -->
+        <div class="item item-text-wrap" style="border-top:0; text-align: center;">
             <p>Berikan Rekomendasi atau Daftarkan Usaha Kulinermu</p>
         </div>
         <div class="row list">

@@ -6,22 +6,22 @@
             spinner = "ripple" >
         </ion-refresher>
         <!-- content -->
-            <div class="list" ng-show="selectedMenu.review" ng-show="loadFlag">
-                <img ng-src="{{selectedMenu.reviewGambar}}" class="mangan-image-4_3">
-                <div class="item item-avatar" style="border: 0; padding-bottom:0px; background-color:rgb(1,177,178);">
-                    <img class="mangan-image-host" src="{{selectedMenu.reviewer.foto}}">
-                    <h2 style="color: white;">Diulas oleh {{ selectedMenu.reviewer.nama }}</h2>
-                    <p style="color: white;">Host Kuliner MANGAN</p>
-                </div>
-                <div class="item item-text-wrap" style="border:0;">
-                    <h3>{{ selectedMenu.namaMenu }}</h3>
-                    <p ng-show="(selectedMenu.harga % 1) == 0">{{ selectedMenu.harga | currency:'Rp ':2 }}</p>
-                    <p ng-hide="(selectedMenu.harga % 1) == 0">{{ selectedMenu.harga }}</p>
-                    <span ng-show="selectedMenu.tag" class="mangan-tag-menumakanan">{{ selectedMenu.tag }}</span>
-                </div>
-                <div class="item item-body item-text-wrap" style="padding-top: 0;">
-                    <p>{{ selectedMenu.review }}</p>
-                </div>
+        <div class="list" ng-show="selectedMenu.review" ng-show="loadFlag">
+            <img ng-src="{{selectedMenu.reviewGambar}}" class="mangan-image-4_3">
+            <div class="item item-avatar item-text-wrap" style="border: 0; padding-bottom:0px; background-color:rgb(1,177,178);">
+                <img class="mangan-image-host" src="{{selectedMenu.reviewer.foto}}">
+                <p style="font-size: 16px; color: white; font-weight: 500;">Diulas oleh {{ selectedMenu.reviewer.nama }}</p>
+                <p style="color: white;">Host Kuliner MANGAN</p>
             </div>
+            <div class="item item-text-wrap" style="border:0;">
+                <p style="font-size: 16px; font-weight: 500; color: black; text-transform: capitalize">{{selectedMenu.namaMenu}}</p>
+                <p style="font-weight: 500; color: black" ng-show="(selectedMenu.harga % 1) == 0">{{selectedMenu.harga | currency:'Rp ':2}}</p>
+                <p style="font-weight: 500; color: black" ng-hide="(selectedMenu.harga % 1) == 0">{{selectedMenu.harga}}</p>
+                <span ng-show="selectedMenu.tag" class="mangan-tag-menumakanan">{{selectedMenu.tag}}</span>
+            </div>
+            <div class="item item-body item-text-wrap" style="border: none; padding-top: 0;">
+                <p>{{ selectedMenu.review }}</p>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

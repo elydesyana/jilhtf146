@@ -5,40 +5,33 @@
 		<button class="button button-primary" ng-click="modal.hide()"><span class="icon ion-close"></span></button>
 	</ion-header-bar>
 
-	<ion-content lazy-scroll overflow-scroll="false" has-header="true" padding="true" class="has-footer">
-		<div class="list" style="position: relative; border: 0;">
+	<ion-content lazy-scroll overflow-scroll="false" has-header="true" padding="false" class="has-footer">
+		<div class="list" style="position: relative; border: 0; padding: 0;">
 			<img class="mangan-image-4_3" src="{{selectedPromo.url}}"> 
-			<div class="item item-icon-left item-text-wrap" style="border-top:0;">
-                <i class="icon ion-android-notifications-none"></i>
+			<div class="item item-text-wrap" style="border-top:0;">
                 {{selectedPromo.namaPromo}}
-                <p style="margin-top: 0;">{{selectedPromo.resto}}</p>
+                <p>{{selectedPromo.resto}}</p>
                 <p style="color: orangered;">Valid hingga : {{selectedPromo.valid}}</p>
             </div>
             <div class="item item-body item-text-wrap" style="border-bottom:0;">
-                <p style="margin-top:0;">{{selectedPromo.keterangan}}</p>
+                <p style="margin: 0 0 20px 0">{{selectedPromo.keterangan}}</p>
             </div>
         </div>
 	</ion-content>
 
 	<div style="height:auto; position:fixed; bottom:0px;left:0px;right:0px;"> 
 		<div class="item mangan-item-clear" style="border-top: 1px solid rgb(242,243,243)">
-    	<div class="row" style="padding: 0;">
-        	<div style="padding:0;"></div>
-            <div class="col" style="text-align: center;" ion-ripple>
-                <button class="button button-balanced button-clear" ng-click="sharePromo(selectedPromo)">
-                    <i class="icon ion-android-share-alt"></i>
-                </button>
-            </div>
-             <div class="col" style="text-align: center;" ng-show="selectedPromo.extUrl" ion-ripple>
-                <button class="button button-balanced button-clear" ng-click="gotoUrl(selectedPromo)">
-                    <i class="icon ion-link"></i>
-                </button>
-            </div>
-            <div class="col" style="text-align: center;" ng-show="selectedPromo.indexResto" ion-ripple>
-                <button class="button button-balanced button-clear" ng-click="restoran(selectedPromo)">
-                    <i class="icon ion-ios-arrow-right"></i>
-                </button>
-            </div>
+        <div class="row" style="padding: 10px;">
+            <span class="col col-25"></span>
+            <span class="col col-20" ng-click="sharePromo(selectedPromo)" ion-ripple>
+                <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU5IDU5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OSA1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgo8cGF0aCBkPSJNNDcsMzljLTIuNjcxLDAtNS4xODIsMS4wNC03LjA3MSwyLjkyOWMtMC41MjQsMC41MjQtMC45NzUsMS4xLTEuMzY1LDEuNzA5bC0xNy4yOC0xMC40ODkgIEMyMS43NDEsMzIuMDA1LDIyLDMwLjc2MSwyMiwyOS40NTZjMC0xLjMwNS0wLjI1OS0yLjU0OS0wLjcxNS0zLjY5M2wxNy4yODQtMTAuNDA5QzQwLjM0NSwxOC4xNDIsNDMuNDU2LDIwLDQ3LDIwICBjNS41MTQsMCwxMC00LjQ4NiwxMC0xMFM1Mi41MTQsMCw0NywwUzM3LDQuNDg2LDM3LDEwYzAsMS4yNTYsMC4yNDMsMi40NTQsMC42NjcsMy41NjJMMjAuMzYxLDIzLjk4NSAgYy0xLjc4OC0yLjcyNC00Ljg2Ni00LjUyOS04LjM2MS00LjUyOWMtNS41MTQsMC0xMCw0LjQ4Ni0xMCwxMHM0LjQ4NiwxMCwxMCwxMGMzLjQ5NSwwLDYuNTcyLTEuODA1LDguMzYtNC41MjlMMzcuNjY0LDQ1LjQzICBDMzcuMjM0LDQ2LjU1NiwzNyw0Ny43NTksMzcsNDljMCwyLjY3MSwxLjA0LDUuMTgzLDIuOTI5LDcuMDcxQzQxLjgxOCw1Ny45Niw0NC4zMjksNTksNDcsNTlzNS4xODItMS4wNCw3LjA3MS0yLjkyOSAgQzU1Ljk2LDU0LjE4Myw1Nyw1MS42NzEsNTcsNDlzLTEuMDQtNS4xODMtMi45MjktNy4wNzFDNTIuMTgyLDQwLjA0LDQ5LjY3MSwzOSw0NywzOXoiIGZpbGw9IiMwMWIxYjIiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            </span>
+            <span class="col col-20" ng-show="selectedPromo.extUrl" ng-click="gotoUrl(selectedPromo)" ion-ripple>
+                <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNjRweCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiPgogIDxnPgogICAgPGcgZmlsbD0iIzFEMUQxQiI+CiAgICAgIDxwYXRoIGQ9Im02MC4xMzUsMy44NzVjLTUuMTU2LTUuMTY2LTEzLjU0NS01LjE2OC0xOC42OTcsMGwtMTEuNTc2LDExLjYxOWMtMC43ODgsMC43OTEtMC43ODgsMi4wNzQgMCwyLjg2NSAwLjc5LDAuNzkyIDIuMDY3LDAuNzkyIDIuODU2LDBsMTEuNTc2LTExLjYxOGMzLjU3OC0zLjU4OSA5LjQwMS0zLjU4NyAxMi45ODQsMCAzLjU3OCwzLjU5MSAzLjU3OCw5LjQzNSAwLDEzLjAyNGwtMTUuMjkyLDE1LjMzOWMtMS43MzIsMS43MzktNC4wMzgsMi42OTctNi40OSwyLjY5Ny0yLjQ1MSwwLTQuNzU4LTAuOTU5LTYuNDkyLTIuNjk3LTAuNzg5LTAuNzkyLTIuMDY3LTAuNzkyLTIuODU3LDAtMC43ODgsMC43OTEtMC43ODgsMi4wNzQgMCwyLjg2NSAyLjQ5OSwyLjUwNSA1LjgxOCwzLjg4NSA5LjM1LDMuODg1czYuODQ4LTEuMzgxIDkuMzQ3LTMuODg1bDE1LjI5Mi0xNS4zMzhjNS4xNTItNS4xNyA1LjE1Mi0xMy41ODQtMC4wMDEtMTguNzU2eiIgZmlsbD0iIzAxYjFiMiIvPgogICAgICA8cGF0aCBkPSJtMzEuMDE1LDQ1LjkwNGwtMTEuMzEyLDExLjM0NmMtMS43MzIsMS43MzktNC4wMzksMi42OTctNi40OTEsMi42OTctMi40NTEsMC00Ljc1OS0wLjk1OC02LjQ4OS0yLjY5Ny0zLjU3OC0zLjU5MS0zLjU3OC05LjQzNCAwLTEzLjAyM2wxNS4yODktMTUuMzM4YzMuNTgyLTMuNTg4IDkuNDA2LTMuNTg4IDEyLjk4MywwIDAuNzg5LDAuNzkzIDIuMDY3LDAuNzkzIDIuODU2LDAgMC43ODktMC43OTEgMC43ODktMi4wNzIgMC0yLjg2NC01LjE1Mi01LjE3LTEzLjU0MS01LjE3LTE4LjY5NywwbC0xNS4yODgsMTUuMzM2Yy01LjE1NSw1LjE3LTUuMTU1LDEzLjU4NCA0LjQ0MDg5ZS0xNiwxOC43NTQgMi40OTcsMi41MDYgNS44MTYsMy44ODUgOS4zNDYsMy44ODUgMy41MzEsMCA2Ljg1My0xLjM3OSA5LjM0OC0zLjg4NWwxMS4zMS0xMS4zNDVjMC43OS0wLjc5MSAwLjc5LTIuMDc0IDAtMi44NjUtMC43ODgtMC43OTItMi4wNjctMC43OTItMi44NTUtMC4wMDF6IiBmaWxsPSIjMDFiMWIyIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" />
+            </span>
+            <span class="col col-20" ng-show="selectedPromo.indexResto" ng-click="restoran(selectedPromo)" ion-ripple>
+                <img width="20" height="20" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4OS40IDQ4OS40IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODkuNCA0ODkuNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNTZweCIgaGVpZ2h0PSIyNTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM0Ny43LDI2My43NWgtNjYuNWMtMTguMiwwLTMzLDE0LjgtMzMsMzN2NTFjMCwxOC4yLDE0LjgsMzMsMzMsMzNoNjYuNWMxOC4yLDAsMzMtMTQuOCwzMy0zM3YtNTEgICAgQzM4MC43LDI3OC41NSwzNjUuOSwyNjMuNzUsMzQ3LjcsMjYzLjc1eiBNMzU2LjcsMzQ3Ljc1YzAsNS00LjEsOS05LDloLTY2LjVjLTUsMC05LTQuMS05LTl2LTUxYzAtNSw0LjEtOSw5LTloNjYuNSAgICBjNSwwLDksNC4xLDksOVYzNDcuNzV6IiBmaWxsPSIjMDFiMWIyIi8+CgkJPHBhdGggZD0iTTQ4OS40LDE3MS4wNWMwLTIuMS0wLjUtNC4xLTEuNi01LjlsLTcyLjgtMTI4Yy0yLjEtMy43LTYuMS02LjEtMTAuNC02LjFIODQuN2MtNC4zLDAtOC4zLDIuMy0xMC40LDYuMWwtNzIuNywxMjggICAgYy0xLDEuOC0xLjYsMy44LTEuNiw1LjljMCwyOC43LDE3LjMsNTMuMyw0Miw2NC4ydjIxMS4xYzAsNi42LDUuNCwxMiwxMiwxMmg2Ni4zYzAuMSwwLDAuMiwwLDAuMywwaDkzYzAuMSwwLDAuMiwwLDAuMywwaDIyMS40ICAgIGM2LjYsMCwxMi01LjQsMTItMTJ2LTIwOS42YzAtMC41LDAtMC45LTAuMS0xLjNDNDcyLDIyNC41NSw0ODkuNCwxOTkuODUsNDg5LjQsMTcxLjA1eiBNOTEuNyw1NS4xNWgzMDUuOWw1Ni45LDEwMC4xSDM0LjkgICAgTDkxLjcsNTUuMTV6IE0zNDguMywxNzkuMTVjLTMuOCwyMS42LTIyLjcsMzgtNDUuNCwzOGMtMjIuNywwLTQxLjYtMTYuNC00NS40LTM4SDM0OC4zeiBNMjMyLDE3OS4xNWMtMy44LDIxLjYtMjIuNywzOC00NS40LDM4ICAgIHMtNDEuNi0xNi40LTQ1LjUtMzhIMjMyeiBNMjQuOCwxNzkuMTVoOTAuOWMtMy44LDIxLjYtMjIuOCwzOC00NS41LDM4QzQ3LjUsMjE3LjI1LDI4LjYsMjAwLjc1LDI0LjgsMTc5LjE1eiBNMjAxLjYsNDM0LjM1aC02OSAgICB2LTEyOS41YzAtOS40LDcuNi0xNy4xLDE3LjEtMTcuMWgzNC45YzkuNCwwLDE3LjEsNy42LDE3LjEsMTcuMXYxMjkuNUgyMDEuNnogTTQyMy4zLDQzNC4zNUgyMjUuNnYtMTI5LjUgICAgYzAtMjIuNi0xOC40LTQxLjEtNDEuMS00MS4xaC0zNC45Yy0yMi42LDAtNDEuMSwxOC40LTQxLjEsNDEuMXYxMjkuNkg2NnYtMTkzLjNjMS40LDAuMSwyLjgsMC4xLDQuMiwwLjEgICAgYzI0LjIsMCw0NS42LTEyLjMsNTguMi0zMWMxMi42LDE4LjcsMzQsMzEsNTguMiwzMXM0NS41LTEyLjMsNTguMi0zMWMxMi42LDE4LjcsMzQsMzEsNTguMSwzMWMyNC4yLDAsNDUuNS0xMi4zLDU4LjEtMzEgICAgYzEyLjYsMTguNywzNCwzMSw1OC4yLDMxYzEuNCwwLDIuNy0wLjEsNC4xLTAuMUw0MjMuMyw0MzQuMzVMNDIzLjMsNDM0LjM1eiBNNDE5LjIsMjE3LjI1Yy0yMi43LDAtNDEuNi0xNi40LTQ1LjQtMzhoOTAuOSAgICBDNDYwLjgsMjAwLjc1LDQ0MS45LDIxNy4yNSw0MTkuMiwyMTcuMjV6IiBmaWxsPSIjMDFiMWIyIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            </span>
         </div>
     </div>
 </div>

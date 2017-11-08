@@ -1,4 +1,11 @@
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'ion-floating-menu'])
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova', 'ngStorage', 'ionic-ratings', 'ionicLazyLoad', 'ionMDRipple', 'ngCordovaOauth', 'ionic.native', 'aCarousel', 'ion-gallery', 'ion-floating-menu','plgn.ionic-segment'])
 
 .run(function($ionicPlatform, $ionicPopup, Services, $localStorage, $timeout, $cordovaDeeplinks, $state, Analytics, $ionicHistory) {
 	$ionicPlatform.ready(function() {
@@ -118,15 +125,20 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 })
 
 .filter('orderObjectBy', function() {
-	return function(items, field, reverse) {
-		var filtered = [];
-		angular.forEach(items, function(item) {
-			filtered.push(item);
-		});
-		filtered.sort(function (a,b) {
-			return (a[field] > b[field] ? 1: -1);
-		});
-		if(reverse) filtered.reverse();
-		return filtered;
-	};
+    return function(items, field, reverse) {
+      // console.log(field);
+      // console.log(items);
+      // console.log(reverse);
+      // console.log('wwwwww');
+      var filtered = [];
+      angular.forEach(items, function(item) {
+        filtered.push(item);
+      });
+      filtered.sort(function (a,b) {
+        // console.log(a[field] +"|"+ b[field] + "|"+ a[field]>b[field]);
+        return (a[field] > b[field] ? 1: -1);
+      });
+      if(reverse) filtered.reverse();
+      return filtered;
+    };
 })
